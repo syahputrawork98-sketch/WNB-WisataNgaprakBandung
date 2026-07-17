@@ -15,8 +15,8 @@ export function Navbar({
   onMobileMenuToggle,
 }: NavbarProps) {
   const activeClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm font-semibold uppercase tracking-wider transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-wnb-focus focus-visible:outline-offset-3 ${
-      isActive ? "text-wnb-white border-b-2 border-wnb-white pb-1" : "text-wnb-muted hover:text-wnb-white"
+    `text-sm font-semibold uppercase tracking-wider transition-colors duration-200 border-b-2 pb-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-wnb-focus focus-visible:outline-offset-3 ${
+      isActive ? "border-wnb-white text-wnb-white" : "border-transparent text-wnb-muted hover:text-wnb-white"
     }`;
 
   return (

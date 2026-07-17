@@ -19,9 +19,9 @@ export function Footer() {
 
         {/* Navigation Column */}
         <div className="flex flex-col gap-3">
-          <h4 className="text-xs font-semibold uppercase tracking-widest text-wnb-white">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-wnb-white">
             Navigasi
-          </h4>
+          </h2>
           <nav className="flex flex-col gap-2">
             {NAVIGATION_ITEMS.map((item) => (
               <Link
@@ -37,9 +37,9 @@ export function Footer() {
 
         {/* CTA & Info Column */}
         <div className="flex flex-col gap-3">
-          <h4 className="text-xs font-semibold uppercase tracking-widest text-wnb-white">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-wnb-white">
             Reservasi
-          </h4>
+          </h2>
           <div className="flex flex-col items-start gap-4">
             <Link
               to={ROUTE_PATHS.booking}

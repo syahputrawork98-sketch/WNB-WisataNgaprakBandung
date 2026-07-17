@@ -18,24 +18,25 @@ export function MobileNavigation({
   // Close menu when route changes
   useEffect(() => {
     onClose();
-  }, [location.pathname, onClose]);
+  }, [location.pathname, location.search, onClose]);
 
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [isOpen]);
 
-  // Close menu when Escape key is pressed
+  // Close menu when Escape key is pressed (only when open)
   useEffect(() => {
+    if (!isOpen) return;
+    
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
+      if (e.key === "Escape") {
         onClose();
       }
     };
@@ -44,6 +45,28 @@ export function MobileNavigation({
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, onClose]);
+
+  // Close menu when viewport shifts to desktop to prevent body locking
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    
+    const handleMediaQueryChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        onClose();
+      }
+    };
+    
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    
+    // Initial check
+    if (mediaQuery.matches) {
+      onClose();
+    }
+    
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, [onClose]);
 
   if (!isOpen) return null;
 

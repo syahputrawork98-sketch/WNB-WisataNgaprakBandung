@@ -1,7 +1,7 @@
-import type { ReactNode, ElementType } from "react";
+import type { ReactNode } from "react";
 
 type ContainerProps = {
-  as?: ElementType;
+  as?: "div" | "section" | "main";
   className?: string;
   children: ReactNode;
 };
