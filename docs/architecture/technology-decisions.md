@@ -10,15 +10,17 @@ Dokumen ini mencatat keputusan arsitektur teknologi awal yang dipilih untuk peng
 | :--- | :--- | :--- | :--- | :--- |
 | `AD-001` | Workspace & Package Manager | `npm Workspaces` | **Accepted** | Memungkinkan struktur monorepo yang bersih antara `client` dan `server` tanpa overhead konfigurasi lerna/nx. |
 | `AD-002` | Bahasa Pemrograman | `TypeScript` | **Accepted** | Mencegah bug tipe data saat runtime dan mempermudah pemeliharaan model data Paket/Rute secara strict. |
-| `AD-003` | UI Library (Frontend) | `React` | **Accepted** | Standar industri yang solid, ekosistem besar, dan komponen modular yang mudah dipelihara. Versi stabil yang kompatibel akan dipilih pada Implementation Plan 003. |
-| `AD-004` | Build Tool (Frontend) | `Vite` | **Accepted** | Waktu start server lokal dan hot reload yang jauh lebih cepat dibanding Webpack/CRA tradisional. |
-| `AD-005` | Styling CSS | `Tailwind CSS` | **Accepted** | Mempercepat penataan gaya antarmuka modern yang konsisten tanpa perlu menulis ribuan baris CSS manual. |
-| `AD-006` | Client Routing | `React Router` | **Accepted** | Library navigasi standar SPA React yang mendukung parameter URL dinamis (slug) secara bersih. |
+| `AD-003` | UI Library (Frontend) | `React` | **Accepted** | Standar industri yang solid, ekosistem besar, dan komponen modular yang mudah dipelihara. Versi stabil yang kompatibel dipilih saat eksekusi dan dikunci via root `package-lock.json`. |
+| `AD-004` | Build Tool (Frontend) | `Vite` | **Accepted** | Waktu start server lokal dan hot reload yang sangat cepat dibanding bundler tradisional. |
+| `AD-005` | Styling CSS | `Tailwind CSS` | **Accepted** | Menggunakan Tailwind CSS v4 terintegrasi melalui `@tailwindcss/vite` plugin resmi untuk konfigurasi modern yang efisien. |
+| `AD-006` | Client Routing | `React Router` | **Accepted** | Menggunakan React Router dalam **Declarative Mode** pada MVP untuk penanganan rute statis, dynamic slug, dan outlet layout. |
 | `AD-007` | Perpustakaan Ikon | `Lucide React` | **Accepted** | Ikon berbasis SVG yang ringan, beresolusi tajam, konsisten, dan mudah disesuaikan. |
 | `AD-008` | Penyimpanan Data Awal | `Typed Local Data` | **Accepted** | Karena data paket dan rute bersifat statis untuk MVP, data disimpan sebagai objek bertipe TypeScript di frontend. |
 | `AD-009` | Integrasi Transaksi | `WhatsApp Click-to-Chat Redirect` | **Accepted** | Alur booking langsung dialihkan ke WhatsApp untuk menyederhanakan MVP tanpa perlu payment gateway. |
 | `AD-010` | Database & Backend Server | *Tanpa Database* (Ditunda) | **Deferred** | Kebutuhan MVP sepenuhnya bersifat informasional. Pembuatan backend API ditunda untuk mempercepat validasi produk. |
 | `AD-011` | State Management Global | *Tanpa Global State* | **Accepted** | Kompleksitas aplikasi masih rendah. Props drilling sederhana dan URL Query parameter sudah memadai. |
+| `AD-012` | React Compiler | `React Compiler` | **Deferred** | React Compiler ditunda hingga ada kebutuhan nyata untuk optimasi rendering otomatis. |
+| `AD-013` | Test Framework | *Tanpa Test Framework* | **Deferred** | Pengujian unit dan integrasi ditunda untuk mempercepat pengembangan fondasi awal MVP. |
 
 ---
 

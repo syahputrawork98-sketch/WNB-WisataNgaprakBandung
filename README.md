@@ -1,17 +1,18 @@
 # WNB — Wisata Ngaprak Bandung
 
-Wisata Ngaprak Bandung (WNB) adalah aplikasi pemandu wisata untuk menjelajahi keindahan dan keunikan kota Bandung.
+Wisata Ngaprak Bandung (WNB) adalah aplikasi pemandu wisata untuk menjelajahi keindahan dan keunikan kota Bandung menggunakan kendaraan off-road Land Rover klasik dengan varian Short dan Long.
 
 ## Status Proyek
-- **Tahap saat ini:** Inisialisasi struktur proyek (Monorepo).
-- **Frontend & Backend:** Belum diinisialisasi.
+- **Frontend foundation:** Initialized
+- **Frontend design implementation:** Not started
+- **Backend:** Not initialized / deferred for MVP
 
 ## Struktur Monorepo
 Proyek ini dikembangkan dengan arsitektur monorepo menggunakan npm workspaces:
 
 ```text
 WNB-WisataNgaprakBandung/
-├── client/          # Frontend aplikasi (React, TypeScript, Vite) [Belum Aktif]
+├── client/          # Frontend aplikasi (React, TypeScript, Vite) [Aktif - Fondasi]
 ├── server/          # Backend aplikasi (Node.js, TypeScript) [Belum Aktif]
 ├── docs/            # Dokumentasi proyek (Architecture, Design, Plans, Requirements)
 ├── .gitignore
@@ -23,9 +24,29 @@ WNB-WisataNgaprakBandung/
 
 ## Prasyarat (*Prerequisites*)
 Untuk menjalankan proyek ini secara lokal, pastikan Anda telah memasang:
-- **Node.js** `>= 20.0.0`
-- **npm** `>= 10.0.0`
+- **Node.js:** `^20.19.0 || >=22.12.0`
+- **npm:** `>=10.0.0`
+
+## Perintah Pengembangan (Development Commands)
+Semua perintah dijalankan dari **root repository**:
+
+1. **Instalasi Dependensi Monorepo:**
+   ```bash
+   npm install
+   ```
+2. **Menjalankan Server Pengembangan Client:**
+   ```bash
+   npm run dev:client
+   ```
+3. **Melakukan Typecheck Client:**
+   ```bash
+   npm run typecheck:client
+   ```
+4. **Membangun Bundel Produksi Client:**
+   ```bash
+   npm run build:client
+   ```
 
 ## Dokumentasi Proyek
 Seluruh dokumentasi detail mengenai kebutuhan, arsitektur, desain, dan rencana implementasi dapat diakses pada tautan berikut:
-- [Dokumentasi Utama WNB](docs/README.md)
+- [Dokumentasi Utama WNB (docs/README.md)](docs/README.md)

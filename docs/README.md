@@ -33,4 +33,5 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 
 Setiap dokumen rencana implementasi di dalam folder `plans/` menggunakan penomoran berurutan tiga digit:
 *   [001-project-structure-setup.md](plans/001-project-structure-setup.md): Tahap inisialisasi struktur monorepo.
-*   [002-product-requirements-and-page-map.md](plans/002-product-requirements-and-page-map.md): Tahap dokumentasi kebutuhan produk dan peta halaman (rencana saat ini).
+*   [002-product-requirements-and-page-map.md](plans/002-product-requirements-and-page-map.md): Tahap dokumentasi kebutuhan produk dan peta halaman.
+*   [003-client-foundation-setup.md](plans/003-client-foundation-setup.md): Inisialisasi fondasi frontend React (rencana saat ini).
