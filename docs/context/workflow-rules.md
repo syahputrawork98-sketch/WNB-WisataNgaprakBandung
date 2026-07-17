@@ -18,19 +18,25 @@ Dokumen ini mendefinisikan pembagian peran, siklus pengembangan, status verifika
 -   Menyusun rencana implementasi (*implementation plan*) secara bertahap dan terstruktur.
 -   Merekomendasikan tipe model Gemini Antigravity yang paling efisien berdasarkan bobot tugas.
 -   Memeriksa hasil pekerjaan Gemini Antigravity (berdasarkan perbedaan SHA commit / diff) untuk memvalidasi kepatuhan terhadap rencana.
--   **DILARALANG** memicu eksekusi rencana baru secara otomatis sebelum pengguna memberikan persetujuan eksplisit.
+-   **DILARANG** memicu eksekusi rencana baru secara otomatis sebelum pengguna memberikan persetujuan eksplisit.
 
 ### 1.3 Gemini Antigravity (Executor)
 -   Membaca dokumen rencana implementasi yang disetujui.
 -   Mengubah kode sumber *repository* sesuai ruang lingkup rencana secara tepat.
--   Menjalankan pengujian kompilasi (build & typecheck) wajib.
+-   Menjalankan pengujian validasi wajib (lihat aturan di bawah).
 -   Membuat commit Git otomatis dengan format pesan yang telah ditentukan.
 -   Melaporkan rincian file yang berubah, hasil kompilasi, status git, dan SHA commit kepada pengguna.
 -   **DILARANG** membuat keputusan bisnis baru, mengarang data, atau mengubah bagian file di luar instruksi rencana.
 
 ---
 
-## 2. Siklus Kerja Standar (Standard Lifecycle)
+## 2. Aturan Validasi Pengujian (Validation Rules)
+*   **Untuk perubahan kode:** Wajib menjalankan typecheck dan build (`npm run typecheck:client` dan `npm run build:client`).
+*   **Untuk documentation-only:** Wajib memeriksa relative links, changed files, git diff, dan git status; typecheck/build tidak wajib bila kode tidak berubah.
+
+---
+
+## 3. Siklus Kerja Standar (Standard Lifecycle)
 Setiap penambahan fitur atau pembenahan sistem mengikuti langkah berurutan berikut:
 ```text
 [Diskusi Scope] 
@@ -48,7 +54,7 @@ Setiap penambahan fitur atau pembenahan sistem mengikuti langkah berurutan berik
 
 ---
 
-## 3. Status Verifikasi Commit (Commit Verification Status)
+## 4. Status Verifikasi Commit (Commit Verification Status)
 Setiap commit implementasi yang dihasilkan oleh Gemini Antigravity diklasifikasikan ke dalam salah satu dari tiga status berikut:
 1.  **Candidate (Kandidat):** Status awal ketika Antigravity melaporkan SHA commit. Commit baru berstatus kandidat dan belum dinilai patuh sepenuhnya.
 2.  **Verified (Terverifikasi):** Status yang diberikan oleh ChatGPT setelah memeriksa perubahan diff kode dan memastikannya bebas dari deviasi/asumsi. Commit terverifikasi terakhir dijadikan sebagai baseline pengembangan berikutnya.
@@ -59,14 +65,14 @@ Setiap commit implementasi yang dihasilkan oleh Gemini Antigravity diklasifikasi
 
 ---
 
-## 4. Konvensi Penomoran Rencana (Plan Numbering)
+## 5. Konvensi Penomoran Rencana (Plan Numbering)
 -   Rencana implementasi utama menggunakan penomoran berurutan tiga digit (contoh: `001`, `002`, `003`, `004`, `005`, `006`).
 -   Rencana sisipan darurat atau penataan dokumentasi sebelum milestone utama menggunakan akhiran huruf (contoh: `005A`, `005B`).
 -   **DILARANG** melakukan penamaan ulang (*renumbering*) atau mengubah riwayat rencana lama yang sudah selesai agar dokumentasi monorepo tetap konsisten secara kronologis.
 
 ---
 
-## 5. Pedoman Pemilihan Model AI (Model Recommendation Rule)
+## 6. Pedoman Pemilihan Model AI (Model Recommendation Rule)
 Untuk menjaga efisiensi penggunaan token, ikuti pedoman pemilihan model Gemini Antigravity berikut:
 *   **Flash Low:** Digunakan untuk koreksi typo minor, perbaikan satu baris kode, atau tugas investigasi sederhana.
 *   **Flash Medium:** Digunakan untuk penulisan dokumentasi teks, penyelarasan file indeks, atau tugas-tugas koordinasi non-kode.
@@ -75,7 +81,7 @@ Untuk menjaga efisiensi penggunaan token, ikuti pedoman pemilihan model Gemini A
 
 ---
 
-## 6. Aturan Kontrol Perubahan (Change Control)
+## 7. Aturan Kontrol Perubahan (Change Control)
 *   **Minimal Scope:** Ubah hanya file dan baris yang benar-benar diperintahkan di dalam rencana. Jangan merapikan kode atau melakukan refactor file lain secara ad-hoc tanpa izin.
 *   **Lockfile Protection:** Jangan mengubah isi berkas `package-lock.json` kecuali jika ada perintah instalasi paket baru yang disepakati bersama.
 *   **No Code on Documentation Plans:** Rencana yang berkarakter *documentation-only* (seperti `005A`) dilarang keras mengubah baris kode apa pun di folder `client/` atau `server/`.

@@ -12,11 +12,11 @@ Dokumen ini memetakan fakta bisnis resmi, terminologi wajib, dan daftar asumsi y
     -   Land Rover Short / Short Wheelbase (SWB)
     -   Land Rover Long / Long Wheelbase (LWB)
 *   **Perbedaan Konsep:** Paket Wisata dan Rute Perjalanan merupakan entitas yang berbeda:
-    -   *Paket* = Produk komersial yang dipesan (memuat fasilitas, harga, dsb.).
-    -   *Rute* = Jalur fisik medan yang dilalui (memuat kondisi jalan, kesulitan, dsb.).
-*   **Integrasi Reservasi:** Alur pemesanan MVP menggunakan pengalihan data input formulir langsung ke WhatsApp Click-to-Chat.
+    -   *Paket* = layanan atau produk perjalanan yang ditawarkan WNB.
+    -   *Rute* = jalur perjalanan yang digunakan dalam suatu kegiatan.
+*   **Integrasi Reservasi:** Booking MVP direncanakan menggunakan form singkat yang menghasilkan WhatsApp Click-to-Chat setelah nomor resmi dan data yang diperlukan dikonfirmasi.
 *   **Status Visual:** Halaman Beranda (Home) menggunakan komponen media placeholder abu-abu bermotif garis (*media pattern*) selama materi foto resmi belum terkonfirmasi oleh pemilik proyek.
-*   **Mockup Mockup:** Arah mockup/desain grafis yang diberikan bersifat panduan visual saja (*visual direction*), bukan blueprint struktur halaman final yang wajib ditiru 100%.
+*   **Mockup:** Arah mockup/desain grafis yang diberikan bersifat panduan visual saja (*visual direction*), bukan blueprint struktur halaman final yang wajib ditiru 100%.
 
 ---
 

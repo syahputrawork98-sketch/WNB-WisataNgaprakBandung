@@ -17,25 +17,25 @@ Dokumen ini menyediakan ringkasan profil umum, tujuan produk, arsitektur fronten
 
 ## 2. Tujuan Produk (Product Purpose)
 Aplikasi WNB dibangun sebagai platform digital untuk:
-1.  Memperkenalkan pengalaman wisata petualangan berkendara off-road secara aman dan menyenangkan.
-2.  Menampilkan Katalog Paket Wisata komersial yang tersedia bagi individu maupun korporasi.
-3.  Menampilkan Katalog Rute lintasan fisik (off-road, jalur pegunungan, dsb.) sebagai bukti variasi tingkat kesulitan.
-4.  Menampilkan Galeri dokumentasi foto keseruan perjalanan sebelumnya.
-5.  Menyediakan formulir pemesanan (*booking*) awal dengan alur pengalihan pengiriman pesan ke WhatsApp Click-to-Chat.
-6.  Berfungsi sebagai portal informasi publik statis pada versi MVP.
+1.  Memperkenalkan pengalaman wisata petualangan menggunakan Land Rover klasik.
+2.  Menampilkan informasi Paket setelah data resminya dikonfirmasi.
+3.  Menampilkan informasi Rute setelah nama, lokasi, dan detail jalurnya dikonfirmasi.
+4.  Menampilkan Galeri setelah aset foto resmi tersedia.
+5.  Menyediakan halaman Booking dengan rencana WhatsApp Click-to-Chat setelah nomor resmi dikonfirmasi.
+6.  Menjadi portal informasi publik pada MVP.
 
 ---
 
 ## 3. Rute URL Aplikasi MVP (MVP Routes)
 Aplikasi mengonfigurasi jalur navigasi Single Page Application (SPA) berikut:
-*   `/` (Beranda): Hero, Manifesto, eksplorasi menu, dan pengenalan armada WNB.
-*   `/about` (Tentang Kami): Cerita WNB, profil armada, dan prosedur keamanan operasional.
-*   `/paket` (Katalog Paket): Grid katalog seluruh paket wisata yang tersedia.
-*   `/paket/:slug` (Detail Paket): Rincian durasi, harga, rute, dan fasilitas masuk/keluar dari suatu paket tertentu.
-*   `/rute` (Katalog Rute): Daftar seluruh jalur off-road fisik yang ditawarkan.
-*   `/rute/:slug` (Detail Rute): Rincian kondisi jalan, titik awal/akhir, dan tingkat kesulitan rute tertentu.
-*   `/gallery` (Galeri): Grid dokumentasi foto perjalanan dengan filter kategori.
-*   `/booking` (Booking): Formulir reservasi awal terintegrasi WhatsApp.
+*   `/` (Beranda): Halaman utama pengenalan WNB.
+*   `/about` (Tentang Kami): Informasi profil WNB yang hanya menggunakan konten terkonfirmasi.
+*   `/paket` (Katalog Paket): Daftar paket setelah data paket resmi tersedia.
+*   `/paket/:slug` (Detail Paket): Detail satu paket berdasarkan data yang telah dikonfirmasi.
+*   `/rute` (Katalog Rute): Daftar rute setelah nama dan lokasi rute dikonfirmasi.
+*   `/rute/:slug` (Detail Rute): Detail satu rute berdasarkan data yang telah dikonfirmasi.
+*   `/gallery` (Galeri): Dokumentasi visual setelah aset resmi tersedia.
+*   `/booking` (Booking): Halaman persiapan booking; integrasi Click-to-Chat belum aktif sampai nomor WhatsApp resmi dikonfirmasi.
 *   `*` (Error 404): Halaman penanganan alamat rute yang tidak ditemukan.
 
 ---

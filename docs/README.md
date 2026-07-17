@@ -48,4 +48,4 @@ Setiap dokumen rencana implementasi di dalam folder `plans/` menggunakan penomor
 *   [003-client-foundation-setup.md](plans/003-client-foundation-setup.md): Inisialisasi fondasi frontend React.
 *   [004-design-system-and-responsive-shell.md](plans/004-design-system-and-responsive-shell.md): Design system dan application shell responsif.
 *   [005-home-page-implementation.md](plans/005-home-page-implementation.md): Implementasi halaman Home.
-*   [005A-project-context-and-handoff-documentation.md](plans/005A-project-context-and-handoff-documentation.md): Dokumentasi konteks dan handoff room baru (rencana saat ini).
+*   [005A-project-context-and-handoff-documentation.md](plans/005A-project-context-and-handoff-documentation.md): Dokumentasi konteks dan handoff room baru.

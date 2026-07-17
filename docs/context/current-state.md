@@ -52,7 +52,8 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 ---
 
 ## 5. Masalah Terbuka Menunggu Koreksi (Open Corrections)
-Daftar minor koreksi berikut **ditangguhkan** dan wajib dikerjakan pada rencana implementasi kode berikutnya (Plan 006):
+Daftar minor koreksi berikut berstatus:
+**Deferred to the next approved frontend implementation plan.**
 
 1.  **Typo di `homeContent.ts`:**
     *   Berkas: [homeContent.ts](../../client/src/features/home/homeContent.ts)
@@ -75,7 +76,7 @@ Daftar minor koreksi berikut **ditangguhkan** dan wajib dikerjakan pada rencana 
 ---
 
 ## 7. Kemungkinan Milestone Berikutnya (Next Likely Milestone)
-*   **Usulan Tahap Berikutnya:** Rencana 006 — Implementasi Halaman Tentang Kami (*About Page Implementation*).
-*   **Status:** Usulan awal (*proposed*), belum disetujui secara resmi.
-*   **Cakupan Potensial:** Mengganti placeholder `/about` dengan layout profil WNB terstruktur, memuat spesifikasi varian sasis SWB/LWB secara konseptual, serta menyajikan standar keselamatan yang dikonfirmasi.
-*   **Dilarang Keras:** Mengarang cerita berdirinya WNB, profil tim fiktif, kualifikasi driver, atau standar keselamatan yang belum tertulis secara eksplisit dari pengguna.
+Likely next milestone: Plan 006
+Possible focus: About Page Implementation
+Status: Proposed, not approved
+Final scope must be discussed and approved first
