@@ -33,7 +33,7 @@ Berikut adalah struktur hierarki halaman aplikasi WNB:
 | `/*` | Not Found | Wildcard | Halaman error jika URL tidak ditemukan. |
 
 *Contoh slug:*
-*   `/paket/jeep-adventure`
+*   `/paket/land-rover-adventure`
 *   `/paket/corporate-outing`
 *   `/rute/ciwidey-off-road`
 *   `/rute/pangalengan-mountain-trail`
@@ -45,11 +45,11 @@ Berikut adalah struktur hierarki halaman aplikasi WNB:
 ### 1. Home (`/`)
 *   **Tujuan:** Memberikan impresi awal petualangan yang kuat tentang WNB dan mengarahkan pengunjung mengeksplorasi layanan.
 *   **Konten Utama:**
-    *   Hero section dengan headline berani dan latar belakang video/foto jeep off-road.
+    *   Hero section dengan headline berani dan latar belakang video/foto Land Rover klasik off-road.
     *   Highlight Paket Unggulan (maksimal 3 paket).
     *   Highlight Rute Terfavorit (maksimal 3 rute).
-    *   Sekilas cerita WNB & standar keamanan armada.
-    *   Grid testimonial / review dari pengunjung terdahulu.
+    *   Sekilas cerita WNB & standar keamanan armada (TBD — hanya ditampilkan setelah dikonfirmasi).
+    *   Grid testimonial / review dari pengunjung terdahulu (TBD — hanya ditampilkan setelah dikonfirmasi).
     *   CTA Booking di bagian bawah.
 *   **CTA Utama:** Tombol "Jelajahi Paket" (mengarahkan ke `/paket`) dan "Pesan Sekarang" (mengarahkan ke `/booking`).
 
@@ -58,15 +58,15 @@ Berikut adalah struktur hierarki halaman aplikasi WNB:
 *   **Konten Utama:**
     *   Cerita asal mula WNB.
     *   Manifesto Petualangan (Visi & Misi).
-    *   Spesifikasi armada Jeep yang digunakan (armada off-road tangguh).
-    *   Dokumentasi pelatihan driver profesional & standar keselamatan darurat.
+    *   Spesifikasi armada Land Rover klasik yang digunakan (TBD — hanya ditampilkan setelah dikonfirmasi).
+    *   Dokumentasi pelatihan driver profesional & standar keselamatan darurat (TBD — hanya ditampilkan setelah dikonfirmasi).
 *   **CTA Utama:** Tombol "Pilih Paket Perjalanan" (mengarahkan ke `/paket`).
 
 ### 3. Paket List (`/paket`)
 *   **Tujuan:** Menyajikan seluruh paket perjalanan komersial WNB yang dapat disewa kelompok/individu.
 *   **Konten Utama:**
     *   Grid card daftar paket wisata.
-    *   Filter kategori paket (Jeep Offroad, Family Trip, Corporate Gathering, Custom).
+    *   Filter kategori paket (Land Rover Offroad, Family Trip, Corporate Gathering, Custom).
     *   Section khusus "Custom Trip" bagi yang ingin merancang perjalanan sendiri.
 *   **CTA Utama:** Tombol "Detail Paket" pada setiap card paket (mengarahkan ke `/paket/:slug`).
 
@@ -75,11 +75,11 @@ Berikut adalah struktur hierarki halaman aplikasi WNB:
 *   **Konten Utama:**
     *   Nama dan deskripsi lengkap paket.
     *   Galeri slide foto aktivitas dalam paket.
-    *   Durasi (misal: 1 Hari, 2 Hari 1 Malam).
-    *   Kapasitas peserta (misal: Maksimal 4 orang per Jeep).
+    *   Durasi (TBD — hanya ditampilkan setelah dikonfirmasi).
+    *   Kapasitas peserta (TBD — hanya ditampilkan setelah dikonfirmasi).
     *   Fasilitas yang Didapat (*Included*) dan Tidak Didapat (*Excluded*).
     *   Rute perjalanan yang akan ditempuh (terkait dengan `/rute/:slug`).
-    *   Estimasi harga mulai dari (`startingPrice`).
+    *   Estimasi harga mulai dari (startingPrice — TBD — hanya ditampilkan setelah dikonfirmasi).
 *   **CTA Utama:** Tombol "Booking Paket Ini" (mengarahkan ke `/booking?package=slug`).
 
 ### 5. Rute List (`/rute`)
@@ -90,12 +90,12 @@ Berikut adalah struktur hierarki halaman aplikasi WNB:
 *   **CTA Utama:** Tombol "Detail Rute" pada setiap card rute (mengarahkan ke `/rute/:slug`).
 
 ### 6. Rute Detail (`/rute/:slug`)
-*   **Tujuan:** Memberikan panduan teknis medan dan visual jalur untuk meyakinkan pencari tantangan.
+*   **Tujuan:** Memberikan panduan teknis medan dan visual jalur untuk meyakinkan pengunjung.
 *   **Konten Utama:**
     *   Nama rute, lokasi, titik start, dan titik finish.
     *   Tingkat kesulitan (Easy, Medium, Hard) dengan indikator warna.
     *   Kondisi lintasan (lumpur, tanah liat, bebatuan tajam, sungai).
-    *   Highlight pemandangan alam (kebun teh, hutan pinus, kawah).
+    *   Highlight pemandangan alam (TBD — hanya ditampilkan setelah dikonfirmasi).
     *   Daftar paket wisata WNB yang menggunakan rute ini.
 *   **CTA Utama:** Tombol "Pilih Paket Rute Ini" (mengarahkan ke `/paket` atau langsung ke `/booking`).
 
@@ -152,4 +152,4 @@ Berikut adalah komponen React terencana yang akan dibuat pada tahapan inisialisa
 
 ### Komponen Fitur Booking
 *   `BookingForm`: Formulir masukan data pemesanan.
-*   `WhatsAppBookingButton`: Tombol khusus yang menangani validasi formulir dan menyusun redirect URL WhatsApp API.
+*   `WhatsAppBookingButton`: Tombol khusus yang menangani validasi formulir dan menyusun redirect URL WhatsApp.

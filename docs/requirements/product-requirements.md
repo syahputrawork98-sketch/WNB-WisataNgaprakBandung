@@ -1,7 +1,7 @@
 # Product Requirements Document (PRD) — WNB
 
 ## 1. Ringkasan Produk
-WNB (Wisata Ngaprak Bandung) adalah aplikasi web yang dirancang untuk memperkenalkan dan memasarkan pengalaman wisata petualangan di wilayah Bandung. Fokus utama aplikasi adalah pada kegiatan outdoor petualangan seperti perjalanan menggunakan kendaraan Jeep, off-road, wisata pegunungan, corporate outing, dan trip komunitas.
+WNB (Wisata Ngaprak Bandung) adalah aplikasi web yang dirancang untuk memperkenalkan dan memasarkan pengalaman wisata petualangan di wilayah Bandung. Fokus utama aplikasi adalah pada kegiatan outdoor petualangan seperti perjalanan menggunakan kendaraan off-road Land Rover klasik dengan varian Short dan Long, off-road, wisata pegunungan, corporate outing, dan trip komunitas.
 
 ## 2. Tujuan
 *   Menjadi pusat informasi terpercaya untuk paket wisata petualangan off-road dan pegunungan di Bandung.
@@ -68,3 +68,40 @@ Informasi berikut belum ditentukan secara resmi dan memerlukan konfirmasi lebih 
 *   Alamat kantor operasional, jam kerja, dan legalitas usaha (`TBD — membutuhkan konfirmasi pemilik proyek`).
 *   Profil resmi tim manajemen dan daftar driver berlisensi (`TBD — membutuhkan konfirmasi pemilik proyek`).
 *   Nama badan hukum dan detail hak cipta aplikasi (`TBD — membutuhkan konfirmasi pemilik proyek`).
+*   Spesifikasi armada kendaraan WNB, termasuk seri Land Rover, tahun produksi, kapasitas penumpang, jenis mesin, spesifikasi modifikasi, material teknis bodi, dan jumlah unit kendaraan (`TBD — membutuhkan konfirmasi pemilik proyek`).
+
+## 11. Dokumentasi Kendaraan Konseptual
+Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik dengan varian Short dan Long. Berikut adalah dokumentasi konseptual dua varian kendaraan tersebut:
+
+### Varian Kendaraan
+1. **Land Rover Short / Short Wheelbase (SWB)**
+   - Seri Land Rover: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Tahun Produksi: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Kapasitas Penumpang: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Jenis Mesin: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Spesifikasi Modifikasi: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Material Teknis Bodi: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Jumlah Unit Kendaraan: `TBD — membutuhkan konfirmasi pemilik proyek`
+
+2. **Land Rover Long / Long Wheelbase (LWB)**
+   - Seri Land Rover: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Tahun Produksi: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Kapasitas Penumpang: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Jenis Mesin: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Spesifikasi Modifikasi: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Material Teknis Bodi: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Jumlah Unit Kendaraan: `TBD — membutuhkan konfirmasi pemilik proyek`
+
+### Model Data Konseptual Kendaraan
+Pada model data konseptual, kendaraan direncanakan memiliki struktur:
+```text
+Vehicle
+- id
+- name
+- variant: short | long
+- image
+- description
+- capacity
+- technicalSpecifications
+```
+*Catatan: Nilai `capacity` dan `technicalSpecifications` masih `TBD — membutuhkan konfirmasi pemilik proyek`.*

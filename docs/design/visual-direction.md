@@ -8,7 +8,7 @@ Dokumen ini memandu arah estetika dan visual antarmuka aplikasi **WNB (Wisata Ng
 
 Gaya visual WNB ditargetkan untuk membangkitkan nuansa petualangan alam bebas yang berani namun tetap dikemas secara profesional dan modern.
 
-*   **Adventure & Rugged:** Kuat, kokoh, bertekstur alam bebas, cocok untuk aktivitas off-road dan jeep adventure.
+*   **Adventure & Rugged:** Kuat, kokoh, bertekstur alam bebas, cocok untuk aktivitas off-road dan Land Rover Classic Adventure.
 *   **Modern & Bold:** Menggunakan garis batas yang tipis dan kontras yang tinggi untuk tampilan modern dan premium.
 *   **Monokrom & Profesional:** Didominasi oleh warna netral gelap (hitam/abu-abu) dan terang (putih) guna memperkuat kredibilitas dan keamanan penyedia jasa.
 
@@ -36,8 +36,8 @@ Aplikasi ini menggunakan skema warna terkurasi dengan kontras tinggi:
 ## 4. Arahan Fotografi (Photography Direction)
 
 Fotografi adalah elemen visual terpenting dalam aplikasi ini.
-*   Menggunakan foto nyata Jeep WNB di medan off-road berlumpur atau berliku.
-*   Foto lanskap alam Bandung (Ciwidey, Lembang, Pangalengan) dengan kontras tinggi.
+*   Menggunakan foto nyata Land Rover klasik WNB di medan off-road berlumpur atau berliku.
+*   Foto lanskap alam Bandung (TBD — lokasi mengikuti area operasional WNB yang telah dikonfirmasi oleh pemilik proyek) dengan kontras tinggi.
 *   Perpaduan foto berwarna penuh (untuk keindahan alam) dan filter hitam-putih bersaturasi rendah pada elemen latar belakang guna mempertegas nuansa *rugged*.
 
 ---

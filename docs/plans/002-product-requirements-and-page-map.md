@@ -41,7 +41,7 @@ WNB adalah singkatan dari **Wisata Ngaprak Bandung**.
 
 WNB direncanakan sebagai aplikasi web untuk memperkenalkan dan memasarkan pengalaman wisata petualangan di Bandung, terutama kegiatan seperti:
 
-- Perjalanan menggunakan kendaraan jeep.
+- Perjalanan menggunakan kendaraan off-road Land Rover klasik dengan varian Short dan Long.
 - Off-road.
 - Wisata pegunungan.
 - Corporate outing.
@@ -251,7 +251,7 @@ Gunakan slug yang mudah dibaca.
 Contoh:
 
 ```text
-/paket/jeep-adventure
+/paket/land-rover-adventure
 /paket/corporate-outing
 /rute/ciwidey-off-road
 /rute/pangalengan-mountain-trail
@@ -380,7 +380,7 @@ Menampilkan pilihan layanan atau produk perjalanan yang dapat dipilih pengunjung
 
 ### Contoh kategori paket
 
-- Jeep Adventure.
+- Land Rover Adventure.
 - Open Off-Road.
 - Mountain Adventure.
 - Corporate Outing.
@@ -842,6 +842,20 @@ BookingDraft
 - participantCount
 - notes
 ```
+
+### Vehicle
+
+```text
+Vehicle
+- id
+- name
+- variant: short | long
+- image
+- description
+- capacity
+- technicalSpecifications
+```
+*Catatan: Nilai `capacity` dan `technicalSpecifications` masih `TBD — membutuhkan konfirmasi pemilik proyek`.*
 
 Model tersebut hanya referensi awal dan dapat direvisi saat backend direncanakan.
 

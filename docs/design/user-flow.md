@@ -63,23 +63,23 @@ flowchart TD
 
 ---
 
-## Flow 3: Membaca Profil WNB & Standar Keamanan (About)
-Alur ketika pengunjung ingin memastikan aspek keselamatan, legalitas tepercaya, dan jenis kendaraan sebelum melakukan booking.
+## Flow 3: Membaca Profil WNB (About)
+Alur ketika pengunjung ingin membaca informasi profil WNB yang telah dikonfirmasi sebelum melakukan booking.
 
 ```mermaid
 flowchart TD
     Start([Pengunjung Masuk Beranda]) --> ClickAbout[Klik Menu About di Navbar]
     ClickAbout --> ViewAboutPage[Buka Halaman Tentang Kami]
-    ViewAboutPage --> ReadSecurity[Baca Standar Keamanan & Kualifikasi Driver]
-    ReadSecurity --> ReadFleet[Lihat Detail Armada Jeep Offroad]
+    ViewAboutPage --> ReadSecurity[Baca Informasi Keamanan & Driver yang Telah Dikonfirmasi]
+    ReadSecurity --> ReadFleet[Lihat Informasi Armada yang Telah Dikonfirmasi]
     ReadFleet --> ClickCTAPkg[Klik CTA Lihat Paket Wisata]
     ClickCTAPkg --> ViewPkgList[Buka Katalog Paket]
 ```
 
 ### Penjelasan Langkah
 1.  **Navigasi About:** Pengunjung mengakses `/about` dari navbar.
-2.  **Edukasi Keamanan:** Membaca info keselamatan guna mengurangi rasa cemas terhadap aktivitas ekstrem off-road.
-3.  **Konversi:** Pengunjung diyakinkan oleh standar keselamatan WNB lalu mengklik CTA untuk melihat daftar paket yang siap disewa.
+2.  **Edukasi Keamanan & Armada:** Membaca informasi mengenai keamanan, driver, dan armada yang telah dikonfirmasi oleh pemilik proyek.
+3.  **Konversi:** Pengunjung mengklik CTA untuk melihat daftar paket yang siap disewa setelah membaca profil tersebut.
 
 ---
 

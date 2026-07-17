@@ -30,13 +30,13 @@ Peran berikut telah direncanakan untuk pengembangan tahap lanjutan setelah fonda
 ### Administrator (Admin)
 Admin adalah pemilik bisnis WNB atau staf operasional yang bertanggung jawab mengelola penawaran paket, rute, galeri, dan meninjau pemesanan masuk.
 
-*   **Autentikasi:** Wajib melewati proses autentikasi aman menggunakan email/password dan sesi token (JWT atau cookie session).
+*   **Autentikasi:** Direncanakan melewati proses autentikasi aman menggunakan email/password dan sesi token (Opsi: JWT, cookie session, dll. - Status: Open).
 *   **Hak Akses:**
-    *   Masuk ke dasbor admin khusus (`/admin/dashboard`).
+    *   Masuk ke dasbor admin khusus (URL potensial: /admin/dashboard - Status: Open).
     *   Melakukan operasi CRUD (Create, Read, Update, Delete) pada data Paket Wisata.
     *   Melakukan operasi CRUD pada data Rute Perjalanan.
     *   Mengunggah, mengedit, dan menghapus foto di Galeri Dokumentasi.
-    *   Melihat daftar reservasi/booking masuk yang disimpan di database, mengubah status booking (misal: *Pending, Confirmed, Cancelled, Completed*).
+    *   Melihat daftar reservasi/booking masuk yang disimpan di database potensial, mengubah status booking (Opsi status: Pending, Confirmed, Cancelled, Completed - Status: Open).
     *   Mengubah konfigurasi umum aplikasi seperti nomor WhatsApp admin aktif, harga promosi global, dan alamat kontak.
 *   **Batasan:**
     *   Tidak diizinkan mengubah kode program inti aplikasi secara langsung melalui antarmuka dasbor.

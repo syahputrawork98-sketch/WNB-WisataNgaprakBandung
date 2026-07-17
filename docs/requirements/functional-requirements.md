@@ -28,7 +28,7 @@ Dokumen ini mendefinisikan kebutuhan fungsional sistem untuk aplikasi **WNB (Wis
 | Kode ID | Deskripsi Kebutuhan Fungsional |
 | :--- | :--- |
 | `FR-ABOUT-001` | Pengunjung dapat membaca cerita latar belakang berdirinya WNB serta visi misi petualangan yang ditawarkan. |
-| `FR-ABOUT-002` | Halaman harus menampilkan informasi mengenai standar keamanan operasional, kualifikasi driver, serta kondisi perawatan armada Jeep yang digunakan. |
+| `FR-ABOUT-002` | Halaman menampilkan informasi mengenai standar keamanan operasional, kondisi armada Land Rover klasik, serta driver yang telah dikonfirmasi oleh pemilik proyek. |
 | `FR-ABOUT-003` | Halaman harus memuat tombol navigasi yang mengarahkan pengunjung menuju daftar paket (`/paket`) atau formulir pemesanan (`/booking`) sebagai kelanjutan informasi. |
 
 ## 4. Halaman Paket Wisata (`FR-PKG`)
@@ -37,8 +37,8 @@ Dokumen ini mendefinisikan kebutuhan fungsional sistem untuk aplikasi **WNB (Wis
 | :--- | :--- |
 | `FR-PKG-001` | Pengunjung dapat melihat daftar seluruh paket perjalanan yang tersedia dalam format grid card yang rapi dan konsisten. |
 | `FR-PKG-002` | Pengunjung dapat mengklik tombol detail pada card paket untuk membuka halaman detail paket wisata terkait. |
-| `FR-PKG-003` | Setiap paket wisata harus dapat diakses melalui URL unik menggunakan format slug ramah SEO (contoh: `/paket/jeep-adventure`). |
-| `FR-PKG-004` | Halaman detail paket harus menampilkan informasi lengkap meliputi: Nama paket, gambar sampul, deskripsi lengkap, highlight aktivitas, estimasi durasi, kapasitas peserta per Jeep, kisaran harga (jika terkonfirmasi), serta daftar fasilitas yang termasuk (*included*) dan tidak termasuk (*excluded*). |
+| `FR-PKG-003` | Setiap paket wisata harus dapat diakses melalui URL unik menggunakan format slug ramah SEO (contoh: `/paket/land-rover-adventure`). |
+| `FR-PKG-004` | Halaman detail paket harus menampilkan informasi lengkap meliputi: Nama paket, gambar sampul, deskripsi lengkap, highlight aktivitas, estimasi durasi, kapasitas peserta per kendaraan, kisaran harga (jika terkonfirmasi), serta daftar fasilitas yang termasuk (*included*) dan tidak termasuk (*excluded*). |
 | `FR-PKG-005` | Halaman detail paket harus menyediakan tombol CTA "Pesan Paket Ini" yang secara otomatis mengarahkan pengunjung ke halaman `/booking` dengan parameter paket tersebut telah terpilih secara bawaan. |
 
 ## 5. Halaman Rute Perjalanan (`FR-ROUTE`)
@@ -68,7 +68,7 @@ Dokumen ini mendefinisikan kebutuhan fungsional sistem untuk aplikasi **WNB (Wis
 | `FR-BOOK-002` | Pengunjung dapat mengisi informasi pemesanan yang meliputi: Nama lengkap, Nomor WhatsApp aktif, Tanggal rencana perjalanan, Jumlah peserta, dan Catatan tambahan/khusus. |
 | `FR-BOOK-003` | Form harus melakukan validasi input dasar di sisi klien (seperti memastikan kolom nama, nomor WhatsApp, tanggal, dan jumlah peserta terisi dan berformat valid) sebelum form dikirimkan. |
 | `FR-BOOK-004` | Sistem harus menyusun pesan teks terformat secara otomatis dari input form (contoh pesan: *"Halo WNB, saya ingin booking paket [Nama Paket] untuk [Jumlah] orang pada tanggal [Tanggal]..."*). |
-| `FR-BOOK-005` | Saat form dikirimkan, aplikasi harus membuka tautan WhatsApp API resmi (`https://wa.me/` atau `https://api.whatsapp.com/send`) di tab baru dengan nomor tujuan resmi WNB beserta teks pesan terformat yang telah disusun. |
+| `FR-BOOK-005` | Saat form dikirimkan, aplikasi harus membuka tautan WhatsApp Click-to-Chat (`https://wa.me/` atau `https://api.whatsapp.com/send`) di tab baru dengan nomor tujuan resmi WNB beserta teks pesan terformat yang telah disusun. |
 | `FR-BOOK-006` | Sesuai dengan batasan MVP, sistem **tidak menyimpan** data transaksi atau formulir ke dalam database lokal maupun database server apa pun. |
 
 ## 8. Penanganan Error (`FR-ERR`)
