@@ -15,32 +15,33 @@ Home Page (`/`) berfungsi sebagai pintu gerbang utama aplikasi WNB untuk:
 
 ## 2. Urutan Bagian Halaman (Section Sequence) & Warna
 Untuk menjaga kedalaman dan kontras visual, diterapkan pola berselang-seling (*alternating background*) berikut:
-1.  **Hero Section** (`bg-wnb-black`): Introduksi utama headline petualangan dan tombol aksi utama.
-2.  **Manifesto Section** (`bg-wnb-surface`): Penjabaran karakter petualangan klasik WNB dan detail armada konseptual.
-3.  **Explore Section** (`bg-wnb-black`): Navigasi taktis berupa grid card penghubung Paket, Rute, dan Galeri.
-4.  **Vehicle Section** (`bg-wnb-surface`): Ulasan dua varian armada Land Rover (Short SWB dan Long LWB).
-5.  **Final CTA Section** (`bg-wnb-surface-elevated`): Ajakan bertindak penutup dengan garis pembatas di atas dan bawah.
+1.  **Hero Section** (`bg-wnb-black`): Introduksi utama headline petualangan dengan background visual full-bleed dan tombol aksi utama.
+2.  **Manifesto Section** (`bg-wnb-surface`): Penjabaran karakter petualangan klasik WNB dengan layout editorial majalah asimetris.
+3.  **Explore Section** (`bg-wnb-black`): Navigasi taktis berupa grid card berbasis foto yang menghubungkan Paket, Rute, dan Galeri.
+4.  **Vehicle Section** (`bg-wnb-surface`): Ulasan dua varian armada Land Rover (Short SWB dan Long LWB) menggunakan card editorial bertipografi kuat (tanpa foto stock kendaraan SWB/LWB palsu).
+5.  **Final CTA Section** (`bg-wnb-surface-elevated`): Ajakan bertindak penutup dengan background lanskap pegunungan dan garis pembatas di atas dan bawah.
 
 ---
 
 ## 3. Komponen & Struktur File
 Komponen diletakkan secara modular di dalam folder fitur `client/src/features/home/`:
-- `homeTypes.ts`: Pendefinisian tipe data `ExploreItem` dan `VehicleItem`.
+- `homeTypes.ts`: Pendefinisian tipe data `ExploreItem`, `VehicleItem`, dan `HomeEditorialMedia`.
 - `homeContent.ts`: Penyimpanan konten statis terpusat.
-- `components/HomeMediaPlaceholder.tsx`: Komponen visual abu-abu bermotif garis (*media pattern*) sebagai pengganti foto resmi.
-- `components/HeroSection.tsx`: Section pendaratan awal.
-- `components/ManifestoSection.tsx`: Manifesto konsep WNB.
-- `components/ExploreCard.tsx` & `ExploreSection.tsx`: Katalog navigasi interaktif.
-- `components/VehicleCard.tsx` & `VehicleSection.tsx`: Informasi armada WNB.
-- `components/FinalCtaSection.tsx`: CTA penutup halaman.
+- `components/HomeMediaPlaceholder.tsx`: Komponen visual abu-abu bermotif garis (*media pattern*) sebagai fallback.
+- `components/EditorialImage.tsx`: Komponen wrapper gambar stok dengan caption sumber dan label notice ilustrasi otomatis.
+- `components/HeroSection.tsx`: Section pendaratan awal dengan background penuh.
+- `components/ManifestoSection.tsx`: Manifesto konsep WNB dengan layout asimetris.
+- `components/ExploreCard.tsx` & `ExploreSection.tsx`: Katalog navigasi interaktif berbasis gambar latar.
+- `components/VehicleCard.tsx` & `VehicleSection.tsx`: Informasi armada WNB bertema tipografis bersih.
+- `components/FinalCtaSection.tsx`: CTA penutup halaman berlatar foto lanskap pegunungan.
 
 ---
 
 ## 4. Strategi Aset Visual & Media Placeholder
-- Karena aset foto dokumentasi asli WNB belum tersedia, halaman ini **tidak menggunakan foto palsu dari AI atau stock photo eksternal** demi menjaga kejujuran informasi.
-- Digunakan komponen kontainer bermotif latar belakang garis abu-abu dengan label:
-  `Aset foto resmi WNB akan ditambahkan`
-- Kontainer placeholder ini dirancang dengan rasio aspek standar (`landscape aspect-video` dan `hero aspect-height`) sehingga mempermudah proses penggantian dengan tag `<img>` atau `<picture>` di masa mendatang tanpa merusak tata letak halaman.
+- Karena aset foto dokumentasi asli WNB belum tersedia, halaman ini menggunakan foto stok dari Pexels sebagai **aset ilustrasi sementara** (*temporary stock illustration*).
+- Untuk menjaga kejujuran visual, setiap gambar yang memperlihatkan unit kendaraan wajib menyertakan keterangan: `"Foto ilustrasi — bukan dokumentasi armada WNB"`.
+- Foto stok disimpan secara lokal dalam format WebP terkompresi guna memangkas bandwidth muatan halaman. Detail lisensi dan URL dicatat di dalam [docs/assets/image-sources.md](../assets/image-sources.md).
+- Card spesifikasi armada pada `VehicleSection` sengaja tidak menyertakan foto unit agar tidak memicu misrepresentasi visual Short Wheelbase atau Long Wheelbase sebelum kendaraan aslinya dikonfirmasi.
 
 ---
 
@@ -66,14 +67,14 @@ Semua salinan bahasa menggunakan Bahasa Indonesia yang netral, ramah SEO, dan ti
 
 ## 6. Daftar Data Menunggu Konfirmasi (TBD)
 Data-data berikut belum terintegrasi di halaman utama karena masih membutuhkan keputusan pemilik proyek:
-- Foto utama Hero.
-- Foto Manifesto.
-- Foto unit Land Rover Short (SWB) & Long (LWB).
-- Daftar 3 Paket Wisata Unggulan.
-- Daftar 3 Rute Perjalanan Terfavorit.
-- Grid Galeri Foto Pilihan.
+- Foto utama Hero resmi WNB.
+- Foto Manifesto resmi WNB.
+- Foto unit asli Land Rover Short (SWB) & Long (LWB) WNB.
+- Daftar Paket Wisata Unggulan.
+- Daftar Rute Perjalanan Terfavorit.
+- Grid Galeri Foto Pilihan WNB.
 - Ulasan & Testimoni Pelanggan.
-- Nomor WhatsApp Resmi.
+- Nomor WhatsApp Resmi Admin.
 
 ---
 
@@ -81,12 +82,4 @@ Data-data berikut belum terintegrasi di halaman utama karena masih membutuhkan k
 *   **Responsif:** Menggunakan CSS Grid Tailwind (`grid-cols-1`, `sm:grid-cols-2`, `lg:grid-cols-3`) agar halaman menyesuaikan otomatis pada perangkat seluler, tablet, hingga desktop tanpa kebocoran layar (*horizontal overflow*).
 *   **Satu H1:** Halaman utama hanya memuat satu elemen `<h1>` yang terletak di bagian Hero. Section lainnya menggunakan tag `<h2>` dan `<h3>` secara runtut.
 *   **Landmark Navigation:** Kontainer navigasi di Navbar (`aria-label="Navigasi utama"`), Mobile Drawer (`aria-label="Navigasi utama mobile"`), dan Footer (`aria-label="Navigasi footer"`) telah dilabeli secara aksesibel untuk alat pembaca layar (*screen reader*).
-*   **Media Description:** Setiap placeholder gambar menyertakan `role="img"` dan `aria-label` yang menerangkan perannya secara tekstual.
-
----
-
-## 8. Langkah Kerja Lanjutan
-Ketika aset foto resmi dan data bisnis telah dikonfirmasi, langkah lanjutan meliputi:
-1.  Mengganti komponen `HomeMediaPlaceholder` dengan tag `<img>` atau `<picture>` responsif.
-2.  Membuat data paket nyata di file data terpusat dan menyalurkannya ke dalam komponen `PackageCard` dinamis di Beranda.
-3.  Memasukkan data rute nyata ke dalam komponen `RouteCard` dinamis di Beranda.
+*   **Aksesibilitas Section:** Tiap section besar telah dilabeli menggunakan `aria-labelledby` yang dipetakan ke ID tajuk utama masing-masing section.

@@ -5,7 +5,7 @@ Wisata Ngaprak Bandung (WNB) adalah aplikasi pemandu wisata untuk menjelajahi ke
 ## Status Proyek
 - **Frontend foundation:** Initialized
 - **Responsive application shell:** Initialized
-- **Home page:** Implemented with official-asset placeholders
+- **Home page:** Enhanced with temporary visuals
 - **Other pages:** Not implemented
 - **Backend:** Deferred for MVP
 

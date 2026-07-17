@@ -10,14 +10,24 @@ export const EXPLORE_ITEMS: readonly ExploreItem[] = [
     path: ROUTE_PATHS.packages,
     linkLabel: "Lihat Paket",
     icon: Compass,
+    media: {
+      src: "/images/home/explore-package.webp",
+      alt: "Foto ilustrasi kendaraan klasik dalam perjalanan di jalan pedesaan",
+      illustrationNotice: true,
+    },
   },
   {
     title: "Rute Petualangan",
     description:
-      "Pelajari jalur perjalanan setelah nama and detail rute dikonfirmasi.",
+      "Pelajari jalur perjalanan setelah nama dan detail rute dikonfirmasi.",
     path: ROUTE_PATHS.routes,
     linkLabel: "Lihat Rute",
     icon: Map,
+    media: {
+      src: "/images/home/explore-route.webp",
+      alt: "Jalan tanah yang melintasi lanskap pegunungan",
+      illustrationNotice: false,
+    },
   },
   {
     title: "Galeri Perjalanan",
@@ -26,6 +36,11 @@ export const EXPLORE_ITEMS: readonly ExploreItem[] = [
     path: ROUTE_PATHS.gallery,
     linkLabel: "Buka Galeri",
     icon: Images,
+    media: {
+      src: "/images/home/explore-gallery.webp",
+      alt: "Jalan hutan dengan pegunungan di kejauhan",
+      illustrationNotice: false,
+    },
   },
 ] as const;
 

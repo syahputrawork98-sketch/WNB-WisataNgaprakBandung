@@ -9,6 +9,7 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 - **[`design/`](design/)**: Mockup, design system, dan diagram alur pengguna (*user flow*).
 - **[`plans/`](plans/)**: Rencana implementasi (*implementation plans*) secara berurutan.
 - **[`requirements/`](requirements/)**: Dokumen kebutuhan fungsional dan nonfungsional proyek.
+- **[`assets/`](assets/)**: Dokumentasi sumber aset gambar dan lisensi eksternal.
 
 ---
 
@@ -34,6 +35,7 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 *   [Page Map](design/page-map.md): Sitemap, rute navigasi, dan peta komponen React konseptual.
 *   [User Flow](design/user-flow.md): Alur eksplorasi paket, rute, dan booking menggunakan diagram Mermaid.
 *   [Visual Direction](design/visual-direction.md): Karakter desain visual, palet warna, tipografi, dan prinsip panduan mockup.
+*   [Image Asset Sources](assets/image-sources.md): Daftar sumber dan lisensi aset gambar ilustrasi sementara.
 
 ### Dokumen Arsitektur (Architecture)
 *   [Technology Decisions](architecture/technology-decisions.md): Catatan keputusan teknologi (*Architecture Decision Registry*) frontend dan penundaan backend.
@@ -49,4 +51,4 @@ Setiap dokumen rencana implementasi di dalam folder `plans/` menggunakan penomor
 *   [004-design-system-and-responsive-shell.md](plans/004-design-system-and-responsive-shell.md): Design system dan application shell responsif.
 *   [005-home-page-implementation.md](plans/005-home-page-implementation.md): Implementasi halaman Home.
 *   [005A-project-context-and-handoff-documentation.md](plans/005A-project-context-and-handoff-documentation.md): Dokumentasi konteks dan handoff room baru.
-*   [006-home-page-visual-enhancement.md](plans/006-home-page-visual-enhancement.md): Peningkatan visual Home menggunakan aset ilustrasi sementara, layout editorial, dan perbaikan aksesibilitas. **Approved, pending implementation.**
+*   [006-home-page-visual-enhancement.md](plans/006-home-page-visual-enhancement.md): Peningkatan visual halaman Home.
