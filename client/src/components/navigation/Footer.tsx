@@ -22,7 +22,7 @@ export function Footer() {
           <h2 className="text-xs font-semibold uppercase tracking-widest text-wnb-white">
             Navigasi
           </h2>
-          <nav className="flex flex-col gap-2">
+          <nav aria-label="Navigasi footer" className="flex flex-col gap-2">
             {NAVIGATION_ITEMS.map((item) => (
               <Link
                 key={item.path}

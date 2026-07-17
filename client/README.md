@@ -8,6 +8,17 @@ Frontend WNB dikembangkan sebagai Single Page Application (SPA) berbasis kompone
 ## Desain & Application Shell Responsif
 Aplikasi saat ini telah dilengkapi dengan *responsive application shell* lengkap yang menyesuaikan tata letak untuk ukuran layar ponsel, tablet, dan desktop secara otomatis tanpa adanya kebocoran visual (*horizontal overflow*).
 
+### Halaman Beranda (`client/src/pages/HomePage/`)
+Halaman utama WNB telah diimplementasikan penuh menggunakan pembagian section berikut:
+- **Hero Section:** Headline utama, deskripsi pengantar, dan CTA menuju katalog paket/rute.
+- **Manifesto Section:** Ulasan konseptual tentang karakter petualangan off-road klasik.
+- **Explore Section:** Tautan navigasi grid tiga kolom (`Compass`, `Map`, `Images`).
+- **Vehicle Section:** Pengenalan detail dua varian utama kendaraan Land Rover klasik (Short SWB dan Long LWB).
+- **Final CTA Section:** Aksen penutup untuk mengarahkan pengguna ke halaman Booking.
+
+> [!NOTE]
+> Semua foto dokumentasi di halaman utama menggunakan komponen `HomeMediaPlaceholder` karena aset resmi WNB belum dikonfirmasi.
+
 ### Komponen Reusable UI (`src/components/common/`)
 *   `Container`: Kontainer grid responsif yang menyelaraskan lebar maksimum konten.
 *   `Button`: Tombol interaktif dengan varian *primary*, *secondary*, dan *ghost*.
@@ -63,17 +74,17 @@ Jalankan perintah berikut dari **root repository** (bukan dari dalam folder `cli
 
 ## Daftar Route Aplikasi
 Aplikasi mengonfigurasi jalur navigasi berikut:
-*   Beranda (`/`): Halaman pendaratan utama.
-*   Tentang Kami (`/about`): Profil dan cerita WNB.
-*   Katalog Paket (`/paket`): Grid penawaran petualangan.
-*   Detail Paket (`/paket/:slug`): Rincian spesifik satu paket petualangan.
-*   Katalog Rute (`/rute`): Daftar lintasan perjalanan fisik.
-*   Detail Rute (`/rute/:slug`): Informasi kondisi medan dan kesulitan rute.
-*   Galeri (`/gallery`): Dokumentasi foto aktivitas.
-*   Booking (`/booking`): Formulir reservasi awal via WhatsApp Click-to-Chat.
-*   Halaman Error 404 (`*`): Tampilan rute tidak ditemukan.
+*   Beranda (`/`): Halaman pendaratan utama. [Selesai]
+*   Tentang Kami (`/about`): Profil dan cerita WNB. [Placeholder]
+*   Katalog Paket (`/paket`): Grid penawaran petualangan. [Placeholder]
+*   Detail Paket (`/paket/:slug`): Rincian spesifik satu paket petualangan. [Placeholder]
+*   Katalog Rute (`/rute`): Daftar lintasan perjalanan fisik. [Placeholder]
+*   Detail Rute (`/rute/:slug`): Informasi kondisi medan dan kesulitan rute. [Placeholder]
+*   Galeri (`/gallery`): Dokumentasi foto aktivitas. [Placeholder]
+*   Booking (`/booking`): Formulir reservasi awal via WhatsApp Click-to-Chat. [Placeholder]
+*   Halaman Error 404 (`*`): Tampilan rute tidak ditemukan. [Selesai]
 
 ## Status Implementasi Saat Ini
-- **Desain Halaman:** Halaman-halaman utama masih menggunakan format placeholder terstruktur dasar. Desain konten halaman final (hero khusus, card rute/paket, form isian) belum diimplementasikan.
+- **Desain Halaman:** Halaman Beranda (`HomePage`) telah dibuat lengkap, sedangkan halaman utama lainnya masih menggunakan format placeholder terstruktur dasar.
 - **Backend/API:** Belum dihubungkan/digunakan pada tahap MVP ini.
 - **Data Bisnis:** Semua harga, nomor kontak, detail rute operasional, dan info driver masih berstatus TBD (menunggu konfirmasi pemilik proyek).

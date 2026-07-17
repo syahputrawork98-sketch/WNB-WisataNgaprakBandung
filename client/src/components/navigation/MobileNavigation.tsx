@@ -6,7 +6,7 @@ import { NAVIGATION_ITEMS } from "./navigationItems";
 
 type MobileNavigationProps = {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: (restoreFocus?: boolean) => void;
 };
 
 export function MobileNavigation({
@@ -17,7 +17,7 @@ export function MobileNavigation({
 
   // Close menu when route changes
   useEffect(() => {
-    onClose();
+    onClose(false);
   }, [location.pathname, location.search, onClose]);
 
   // Lock body scroll when menu is open
@@ -31,13 +31,13 @@ export function MobileNavigation({
     }
   }, [isOpen]);
 
-  // Close menu when Escape key is pressed (only when open)
+  // Close menu when Escape key is pressed (only when open, returns focus)
   useEffect(() => {
     if (!isOpen) return;
     
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        onClose();
+        onClose(true);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -52,7 +52,7 @@ export function MobileNavigation({
     
     const handleMediaQueryChange = (e: MediaQueryListEvent) => {
       if (e.matches) {
-        onClose();
+        onClose(false);
       }
     };
     
@@ -60,7 +60,7 @@ export function MobileNavigation({
     
     // Initial check
     if (mediaQuery.matches) {
-      onClose();
+      onClose(false);
     }
     
     return () => {
@@ -87,7 +87,7 @@ export function MobileNavigation({
             to={item.path}
             end={item.end ?? false}
             className={activeClass}
-            onClick={onClose}
+            onClick={() => onClose(false)}
           >
             {item.label}
           </NavLink>
@@ -100,7 +100,7 @@ export function MobileNavigation({
           size="lg"
           variant="primary"
           className="w-full text-center"
-          onClick={onClose}
+          onClick={() => onClose(false)}
         >
           Booking Sekarang
         </LinkButton>

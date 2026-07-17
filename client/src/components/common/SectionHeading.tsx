@@ -1,4 +1,5 @@
 type SectionHeadingProps = {
+  id?: string;
   eyebrow?: string;
   title: string;
   description?: string;
@@ -8,6 +9,7 @@ type SectionHeadingProps = {
 };
 
 export function SectionHeading({
+  id,
   eyebrow,
   title,
   description,
@@ -25,7 +27,7 @@ export function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <Tag className="text-2xl sm:text-3xl font-bold font-display tracking-wide uppercase text-wnb-white">
+      <Tag id={id} className="text-2xl sm:text-3xl font-bold font-display tracking-wide uppercase text-wnb-white">
         {title}
       </Tag>
       {description && (

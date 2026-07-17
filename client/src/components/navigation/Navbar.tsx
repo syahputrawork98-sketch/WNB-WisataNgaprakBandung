@@ -1,3 +1,4 @@
+import type { RefObject } from "react";
 import { NavLink } from "react-router";
 import { Menu, X } from "lucide-react";
 import { ROUTE_PATHS } from "@/routes/routePaths";
@@ -8,11 +9,13 @@ import { NAVIGATION_ITEMS } from "./navigationItems";
 type NavbarProps = {
   isMobileMenuOpen: boolean;
   onMobileMenuToggle: () => void;
+  mobileMenuButtonRef: RefObject<HTMLButtonElement | null>;
 };
 
 export function Navbar({
   isMobileMenuOpen,
   onMobileMenuToggle,
+  mobileMenuButtonRef,
 }: NavbarProps) {
   const activeClass = ({ isActive }: { isActive: boolean }) =>
     `text-sm font-semibold uppercase tracking-wider transition-colors duration-200 border-b-2 pb-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-wnb-focus focus-visible:outline-offset-3 ${
@@ -26,7 +29,7 @@ export function Navbar({
         <BrandWordmark />
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav aria-label="Navigasi utama" className="hidden md:flex items-center gap-8">
           {NAVIGATION_ITEMS.map((item) => (
             <NavLink
               key={item.path}
@@ -49,6 +52,7 @@ export function Navbar({
 
           <button
             type="button"
+            ref={mobileMenuButtonRef}
             onClick={onMobileMenuToggle}
             className="md:hidden inline-flex items-center justify-center p-2 rounded text-wnb-muted hover:text-wnb-white hover:bg-wnb-surface-elevated transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-wnb-focus focus-visible:outline-offset-3"
             aria-label={isMobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
