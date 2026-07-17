@@ -28,4 +28,4 @@ Untuk menjalankan proyek ini secara lokal, pastikan Anda telah memasang:
 
 ## Dokumentasi Proyek
 Seluruh dokumentasi detail mengenai kebutuhan, arsitektur, desain, dan rencana implementasi dapat diakses pada tautan berikut:
-- [Dokumentasi Utama WNB (docs/README.md)](file:///i:/Workspace/Workspace-Syahputrawork/WNB-WisataNgaprakBandung/docs/README.md)
+- [Dokumentasi Utama WNB](docs/README.md)

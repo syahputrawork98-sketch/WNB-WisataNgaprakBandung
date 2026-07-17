@@ -4,10 +4,10 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 
 ## Pembagian Folder Dokumentasi
 
-- **[`architecture/`](file:///i:/Workspace/Workspace-Syahputrawork/WNB-WisataNgaprakBandung/docs/architecture/)**: Keputusan dan rancangan arsitektur sistem.
-- **[`design/`](file:///i:/Workspace/Workspace-Syahputrawork/WNB-WisataNgaprakBandung/docs/design/)**: Mockup, design system, dan diagram alur pengguna (*user flow*).
-- **[`plans/`](file:///i:/Workspace/Workspace-Syahputrawork/WNB-WisataNgaprakBandung/docs/plans/)**: Rencana implementasi (*implementation plans*) secara berurutan.
-- **[`requirements/`](file:///i:/Workspace/Workspace-Syahputrawork/WNB-WisataNgaprakBandung/docs/requirements/)**: Dokumen kebutuhan fungsional dan nonfungsional proyek.
+- **[`architecture/`](architecture/)**: Keputusan dan rancangan arsitektur sistem.
+- **[`design/`](design/)**: Mockup, design system, dan diagram alur pengguna (*user flow*).
+- **[`plans/`](plans/)**: Rencana implementasi (*implementation plans*) secara berurutan.
+- **[`requirements/`](requirements/)**: Dokumen kebutuhan fungsional dan nonfungsional proyek.
 
 ## Penomoran Rencana Implementasi
 
