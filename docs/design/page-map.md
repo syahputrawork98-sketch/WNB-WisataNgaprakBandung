@@ -35,8 +35,8 @@ Berikut adalah struktur hierarki halaman aplikasi WNB:
 *Contoh slug:*
 *   `/paket/land-rover-adventure`
 *   `/paket/corporate-outing`
-*   `/rute/ciwidey-off-road`
-*   `/rute/pangalengan-mountain-trail`
+*   `/rute/:slug`
+*   `/rute/nama-rute`
 
 ---
 
@@ -71,7 +71,7 @@ Berikut adalah struktur hierarki halaman aplikasi WNB:
 *   **CTA Utama:** Tombol "Detail Paket" pada setiap card paket (mengarahkan ke `/paket/:slug`).
 
 ### 4. Paket Detail (`/paket/:slug`)
-*   **Tujuan:** Menyediakan seluruh informasi keputusan yang dibutuhkan pengunjung untuk memesan paket tersebut.
+*   **Tujuan:** Menyediakan seluruh informasi keputusan yang dihadapi pengunjung untuk memesan paket tersebut.
 *   **Konten Utama:**
     *   Nama dan deskripsi lengkap paket.
     *   Galeri slide foto aktivitas dalam paket.

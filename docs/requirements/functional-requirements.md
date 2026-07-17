@@ -47,7 +47,7 @@ Dokumen ini mendefinisikan kebutuhan fungsional sistem untuk aplikasi **WNB (Wis
 | :--- | :--- |
 | `FR-ROUTE-001` | Pengunjung dapat melihat daftar seluruh jalur/rute off-road atau gunung yang ditawarkan. |
 | `FR-ROUTE-002` | Pengunjung dapat membuka detail rute perjalanan untuk mempelajari kondisi lapangan secara spesifik. |
-| `FR-ROUTE-003` | Setiap rute harus dapat diakses melalui URL unik menggunakan format slug (contoh: `/rute/ciwidey-off-road`). |
+| `FR-ROUTE-003` | Setiap rute harus dapat diakses melalui URL unik menggunakan format slug (contoh: `/rute/:slug` atau `/rute/nama-rute`). |
 | `FR-ROUTE-004` | Detail rute harus menampilkan tingkat kesulitan jalur (misal: Easy, Medium, Hard), estimasi waktu tempuh, kondisi medan (berbatu, lumpur, dll.), titik awal (starting point), dan titik akhir rute. |
 | `FR-ROUTE-005` | Halaman detail rute harus menampilkan daftar paket wisata terkait yang menggunakan rute perjalanan tersebut. |
 

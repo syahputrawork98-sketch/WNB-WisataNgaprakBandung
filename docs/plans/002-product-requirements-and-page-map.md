@@ -253,8 +253,8 @@ Contoh:
 ```text
 /paket/land-rover-adventure
 /paket/corporate-outing
-/rute/ciwidey-off-road
-/rute/pangalengan-mountain-trail
+/rute/:slug
+/rute/nama-rute
 ```
 
 Jangan gunakan ID numerik pada URL utama bila slug dapat digunakan.

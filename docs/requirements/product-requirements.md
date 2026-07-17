@@ -54,7 +54,7 @@ Fitur-fitur berikut **tidak diimplementasikan** pada tahap MVP ini:
 ## 8. Batasan Produk
 *   Aplikasi dikembangkan sebagai Single Page Application (SPA) berbasis React pada sisi frontend.
 *   Seluruh data paket dan rute bersifat statis pada frontend (typed local data) dan belum terhubung ke database.
-*   Pemesanan sepenuhnya mengandalkan pengalihan ke WhatsApp API.
+*   Pemesanan sepenuhnya mengandalkan pengalihan ke WhatsApp Click-to-Chat Redirect.
 
 ## 9. Asumsi Awal
 *   Pengguna memiliki koneksi internet aktif.
@@ -71,7 +71,7 @@ Informasi berikut belum ditentukan secara resmi dan memerlukan konfirmasi lebih 
 *   Spesifikasi armada kendaraan WNB, termasuk seri Land Rover, tahun produksi, kapasitas penumpang, jenis mesin, spesifikasi modifikasi, material teknis bodi, dan jumlah unit kendaraan (`TBD — membutuhkan konfirmasi pemilik proyek`).
 
 ## 11. Dokumentasi Kendaraan Konseptual
-Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik dengan varian Short dan Long. Berikut adalah dokumentasi konseptual dua varian kendaraan tersebut:
+Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik berbodi besi/logam dengan varian Short dan Long. Rincian teknis mengenai bodi, konstruksi, dan spesifikasi armada sepenuhnya berstatus TBD (memerlukan konfirmasi pemilik proyek). Berikut adalah dokumentasi konseptual dua varian kendaraan tersebut:
 
 ### Varian Kendaraan
 1. **Land Rover Short / Short Wheelbase (SWB)**
@@ -80,7 +80,7 @@ Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik denga
    - Kapasitas Penumpang: `TBD — membutuhkan konfirmasi pemilik proyek`
    - Jenis Mesin: `TBD — membutuhkan konfirmasi pemilik proyek`
    - Spesifikasi Modifikasi: `TBD — membutuhkan konfirmasi pemilik proyek`
-   - Material Teknis Bodi: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Konstruksi & Detail Material Bodi (Ketebalan/Tipe): `TBD — membutuhkan konfirmasi pemilik proyek`
    - Jumlah Unit Kendaraan: `TBD — membutuhkan konfirmasi pemilik proyek`
 
 2. **Land Rover Long / Long Wheelbase (LWB)**
@@ -89,7 +89,7 @@ Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik denga
    - Kapasitas Penumpang: `TBD — membutuhkan konfirmasi pemilik proyek`
    - Jenis Mesin: `TBD — membutuhkan konfirmasi pemilik proyek`
    - Spesifikasi Modifikasi: `TBD — membutuhkan konfirmasi pemilik proyek`
-   - Material Teknis Bodi: `TBD — membutuhkan konfirmasi pemilik proyek`
+   - Konstruksi & Detail Material Bodi (Ketebalan/Tipe): `TBD — membutuhkan konfirmasi pemilik proyek`
    - Jumlah Unit Kendaraan: `TBD — membutuhkan konfirmasi pemilik proyek`
 
 ### Model Data Konseptual Kendaraan
