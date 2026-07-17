@@ -16,7 +16,7 @@ Proyek ini dikembangkan dengan arsitektur monorepo menggunakan npm workspaces:
 WNB-WisataNgaprakBandung/
 ├── client/          # Frontend aplikasi (React, TypeScript, Vite) [Aktif - Fondasi, Shell & Home]
 ├── server/          # Backend aplikasi (Node.js, TypeScript) [Belum Aktif]
-├── docs/            # Dokumentasi proyek (Architecture, Design, Plans, Requirements)
+├── docs/            # Dokumentasi proyek (Architecture, Design, Plans, Requirements, Context)
 ├── .gitignore
 ├── .env.example
 ├── package.json     # Konfigurasi npm workspaces
@@ -49,6 +49,10 @@ Semua perintah dijalankan dari **root repository**:
    npm run build:client
    ```
 
-## Dokumentasi Proyek
+## Handoff & Dokumentasi Proyek
+Untuk melanjutkan proyek di room ChatGPT baru, baca [Current Project State](docs/context/current-state.md) dan gunakan [New Chat Handoff Prompt](docs/context/new-chat-prompt.md).
+
 Seluruh dokumentasi detail mengenai kebutuhan, arsitektur, desain, dan rencana implementasi dapat diakses pada tautan berikut:
 - [Dokumentasi Utama WNB (docs/README.md)](docs/README.md)
+- [Current Project State (docs/context/current-state.md)](docs/context/current-state.md)
+- [New Chat Handoff Prompt (docs/context/new-chat-prompt.md)](docs/context/new-chat-prompt.md)
