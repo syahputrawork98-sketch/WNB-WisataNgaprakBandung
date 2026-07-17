@@ -5,7 +5,11 @@ export function PackageListPage() {
     <PagePlaceholder
       eyebrow="Layanan"
       title="Daftar Paket Wisata"
-      description="Daftar paket wisata petualangan Land Rover klasik WNB akan disajikan menggunakan typed local data pada tahap implementasi berikutnya."
-    />
+      description="Daftar paket akan dibangun menggunakan typed local data setelah struktur data dan konten paket disepakati."
+    >
+      <p className="text-sm text-wnb-muted leading-relaxed">
+        Pilihan paket petualangan yang disesuaikan dengan kapasitas peserta, rute lintasan, dan durasi petualangan akan disajikan dalam bentuk grid card interaktif pada fase selanjutnya.
+      </p>
+    </PagePlaceholder>
   );
 }

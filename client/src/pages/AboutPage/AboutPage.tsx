@@ -5,7 +5,11 @@ export function AboutPage() {
     <PagePlaceholder
       eyebrow="Tentang Kami"
       title="Profil WNB"
-      description="Informasi resmi mengenai profil WNB, armada kendaraan off-road Land Rover klasik, driver, dan standar keselamatan akan ditambahkan setelah dikonfirmasi oleh pemilik proyek."
-    />
+      description="Profil, cerita, armada Land Rover klasik, dan informasi operasional WNB akan ditampilkan setelah konten resminya dikonfirmasi."
+    >
+      <p className="text-sm text-wnb-muted leading-relaxed">
+        Halaman ini nantinya akan memuat sejarah singkat berdirinya WNB, standar keamanan operasional untuk aktivitas off-road, kualifikasi driver terlatih, serta rincian varian armada klasik Land Rover Short dan Long.
+      </p>
+    </PagePlaceholder>
   );
 }

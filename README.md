@@ -4,15 +4,16 @@ Wisata Ngaprak Bandung (WNB) adalah aplikasi pemandu wisata untuk menjelajahi ke
 
 ## Status Proyek
 - **Frontend foundation:** Initialized
-- **Frontend design implementation:** Not started
-- **Backend:** Not initialized / deferred for MVP
+- **Responsive application shell:** Initialized
+- **Page implementation:** Not started
+- **Backend:** Deferred for MVP
 
 ## Struktur Monorepo
 Proyek ini dikembangkan dengan arsitektur monorepo menggunakan npm workspaces:
 
 ```text
 WNB-WisataNgaprakBandung/
-├── client/          # Frontend aplikasi (React, TypeScript, Vite) [Aktif - Fondasi]
+├── client/          # Frontend aplikasi (React, TypeScript, Vite) [Aktif - Fondasi & Shell]
 ├── server/          # Backend aplikasi (Node.js, TypeScript) [Belum Aktif]
 ├── docs/            # Dokumentasi proyek (Architecture, Design, Plans, Requirements)
 ├── .gitignore

@@ -5,6 +5,25 @@ Folder ini berisi kode sumber untuk frontend aplikasi **Wisata Ngaprak Bandung (
 ## Deskripsi
 Frontend WNB dikembangkan sebagai Single Page Application (SPA) berbasis komponen modular yang menyajikan informasi paket wisata, rute perjalanan, galeri dokumentasi, dan reservasi langsung.
 
+## Desain & Application Shell Responsif
+Aplikasi saat ini telah dilengkapi dengan *responsive application shell* lengkap yang menyesuaikan tata letak untuk ukuran layar ponsel, tablet, dan desktop secara otomatis tanpa adanya kebocoran visual (*horizontal overflow*).
+
+### Komponen Reusable UI (`src/components/common/`)
+*   `Container`: Kontainer grid responsif yang menyelaraskan lebar maksimum konten.
+*   `Button`: Tombol interaktif dengan varian *primary*, *secondary*, dan *ghost*.
+*   `LinkButton`: Tautan transisi rute dengan styling visual tombol.
+*   `SkipLink`: Tautan aksesibilitas keyboard cepat menuju konten utama.
+*   `PageHeader`: Panel atas halaman dinamis.
+*   `SectionHeading`: Header bagian halaman dengan dukungan subtitle dan deskripsi.
+*   `PagePlaceholder`: Template tata letak halaman sementara untuk MVP.
+
+### Navigasi & Shell (`src/components/navigation/` & `src/layouts/`)
+*   `Navbar`: Navigasi desktop atas dengan backdrop blur lengket.
+*   `MobileNavigation`: Menu laci (*drawer*) seluler aksesibel yang mendukung penguncian gulir, penutupan otomatis via Escape, dan pemicu perubahan rute.
+*   `Footer`: Panel bawah terstruktur.
+*   `BrandWordmark`: Representasi logo teks sementara (wordmark teks murni, bukan logo resmi gambar).
+*   `MainLayout`: Struktur shell utama pembungkus aplikasi.
+
 ## Stack Teknologi Terpasang
 - **Core Library:** React
 - **Client Routing:** React Router (Declarative Mode)
@@ -55,6 +74,6 @@ Aplikasi mengonfigurasi jalur navigasi berikut:
 *   Halaman Error 404 (`*`): Tampilan rute tidak ditemukan.
 
 ## Status Implementasi Saat Ini
-- **Halaman:** Masih berupa placeholder fungsional dasar untuk memverifikasi alur navigasi dan router. Desain visual akhir belum diimplementasikan.
+- **Desain Halaman:** Halaman-halaman utama masih menggunakan format placeholder terstruktur dasar. Desain konten halaman final (hero khusus, card rute/paket, form isian) belum diimplementasikan.
 - **Backend/API:** Belum dihubungkan/digunakan pada tahap MVP ini.
 - **Data Bisnis:** Semua harga, nomor kontak, detail rute operasional, dan info driver masih berstatus TBD (menunggu konfirmasi pemilik proyek).

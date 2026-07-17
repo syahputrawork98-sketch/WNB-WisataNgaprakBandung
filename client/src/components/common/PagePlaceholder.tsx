@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { Container } from "./Container";
+import { PageHeader } from "./PageHeader";
 
 type PagePlaceholderProps = {
   eyebrow: string;
@@ -14,19 +16,19 @@ export function PagePlaceholder({
   children,
 }: PagePlaceholderProps) {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="border border-wnb-border bg-wnb-surface rounded-lg p-8 shadow-lg">
-        <span className="text-sm font-semibold tracking-wider uppercase text-wnb-muted">
-          {eyebrow}
-        </span>
-        <h1 className="text-3xl font-bold mt-2 mb-4 uppercase text-wnb-white">
-          {title}
-        </h1>
-        <p className="text-wnb-muted leading-relaxed mb-6">
-          {description}
-        </p>
-        {children}
-      </div>
+    <div className="flex flex-col min-h-[40vh]">
+      <PageHeader eyebrow={eyebrow} title={title} description={description} />
+      
+      <Container as="section" className="py-12 flex-1">
+        <div className="border border-wnb-border bg-wnb-surface rounded-wnb-lg p-8 shadow-wnb-card">
+          <div className="flex flex-col gap-6">
+            <h2 className="text-xl font-bold font-display uppercase tracking-wider text-wnb-white border-b border-wnb-border pb-3">
+              Informasi Fondasi MVP
+            </h2>
+            {children}
+          </div>
+        </div>
+      </Container>
     </div>
   );
 }

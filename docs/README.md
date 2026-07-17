@@ -20,6 +20,7 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 *   [User Roles](requirements/user-roles.md): Pembagian peran Pengunjung dan Administrator WNB.
 
 ### Dokumen Desain (Design)
+*   [Design System](design/design-system.md): Dokumentasi sistem desain dasar, token visual, dan panduan aksesibilitas.
 *   [Page Map](design/page-map.md): Sitemap, rute navigasi, dan peta komponen React konseptual.
 *   [User Flow](design/user-flow.md): Alur eksplorasi paket, rute, dan booking menggunakan diagram Mermaid.
 *   [Visual Direction](design/visual-direction.md): Karakter desain visual, palet warna, tipografi, dan prinsip panduan mockup.
@@ -34,4 +35,5 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 Setiap dokumen rencana implementasi di dalam folder `plans/` menggunakan penomoran berurutan tiga digit:
 *   [001-project-structure-setup.md](plans/001-project-structure-setup.md): Tahap inisialisasi struktur monorepo.
 *   [002-product-requirements-and-page-map.md](plans/002-product-requirements-and-page-map.md): Tahap dokumentasi kebutuhan produk dan peta halaman.
-*   [003-client-foundation-setup.md](plans/003-client-foundation-setup.md): Inisialisasi fondasi frontend React (rencana saat ini).
+*   [003-client-foundation-setup.md](plans/003-client-foundation-setup.md): Inisialisasi fondasi frontend React.
+*   [004-design-system-and-responsive-shell.md](plans/004-design-system-and-responsive-shell.md): Design system dan application shell responsif (rencana saat ini).

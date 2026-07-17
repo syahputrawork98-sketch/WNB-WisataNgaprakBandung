@@ -5,7 +5,11 @@ export function BookingPage() {
     <PagePlaceholder
       eyebrow="Reservasi"
       title="Booking Perjalanan"
-      description="Formulir booking dan alur pengalihan pemesanan via WhatsApp Click-to-Chat akan diimplementasikan setelah pilihan rute, paket, serta nomor WhatsApp tujuan resmi telah dikonfirmasi oleh pemilik proyek."
-    />
+      description="Form booking dan WhatsApp Click-to-Chat akan dibangun setelah nomor resmi dan data paket dikonfirmasi."
+    >
+      <p className="text-sm text-wnb-muted leading-relaxed">
+        Formulir isian nama pemesan, nomor kontak, tanggal rencana perjalanan, paket wisata yang dipilih, dan pengalihan ke WhatsApp Click-to-Chat akan diintegrasikan pada langkah berikutnya.
+      </p>
+    </PagePlaceholder>
   );
 }
