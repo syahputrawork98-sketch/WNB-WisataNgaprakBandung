@@ -49,3 +49,4 @@ Setiap dokumen rencana implementasi di dalam folder `plans/` menggunakan penomor
 *   [004-design-system-and-responsive-shell.md](plans/004-design-system-and-responsive-shell.md): Design system dan application shell responsif.
 *   [005-home-page-implementation.md](plans/005-home-page-implementation.md): Implementasi halaman Home.
 *   [005A-project-context-and-handoff-documentation.md](plans/005A-project-context-and-handoff-documentation.md): Dokumentasi konteks dan handoff room baru.
+*   [006-home-page-visual-enhancement.md](plans/006-home-page-visual-enhancement.md): Peningkatan visual Home menggunakan aset ilustrasi sementara, layout editorial, dan perbaikan aksesibilitas. **Approved, pending implementation.**
