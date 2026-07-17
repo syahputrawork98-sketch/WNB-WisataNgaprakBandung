@@ -1,0 +1,10 @@
+{
+  "name": "@wnb/client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Frontend aplikasi Wisata Ngaprak Bandung",
+  "scripts": {
+    "dev": "echo \"Client belum diinisialisasi\"",
+    "build": "echo \"Client belum diinisialisasi\""
+  }
+}
