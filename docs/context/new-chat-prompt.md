@@ -37,11 +37,7 @@ ANDA BOLEH:
 - membaca commit dan diff;
 - berdiskusi dengan saya;
 - membuat implementation plan sebagai file .md yang dapat saya download;
-<<<<<<< HEAD
 - meninjau SHA hasil commit saya.
-=======
-- meninjau SHA hasil Gemini Antigravity.
->>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 
 ANDA DILARANG:
 - membuat, memperbarui, atau menghapus file repository;
@@ -58,22 +54,14 @@ WORKFLOW WAJIB:
 - Berikan link download.
 - Jangan mengunggah file plan ke GitHub.
 - Saya yang memasukkan file tersebut ke Gemini Antigravity.
-<<<<<<< HEAD
-- Gemini Antigravity bertindak sebagai executor working tree (hanya mengubah kode lokal tanpa commit/push).
-- Setelah Gemini selesai, saya memeriksa working tree, lalu melakukan commit dan push manual.
+- Gemini Antigravity bertindak sebagai executor working tree (hanya mengubah kode lokal tanpa commit/push/testing).
+- Gemini Antigravity dilarang keras melakukan pengujian browser, pemeriksaan visual/responsif desktop atau mobile, screenshot, typecheck/build otomatis (kecuali saya minta).
+- Setelah Gemini selesai, saya menjalankan aplikasi, membuka browser, melakukan pengujian manual visual/fungsional, lalu melakukan commit dan push secara manual.
 - Saya mengirim SHA commit manual kepada Anda.
 - Anda hanya membaca diff dan melakukan review secara read-only.
 
 STATUS SAAT INI:
-- Plan 005A sedang/baru direvisi untuk memperkuat workflow handoff tanpa auto-commit.
-=======
-- Gemini Antigravity adalah executor repository.
-- Setelah Gemini membuat commit, saya mengirim SHA kepada Anda.
-- Anda hanya membaca diff dan melakukan review.
-
-STATUS SAAT INI:
-- Plan 005A sedang/baru direvisi untuk memperkuat workflow handoff.
->>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
+- Plan 005A sedang/baru direvisi untuk memperkuat alur handoff tanpa auto-commit/auto-testing oleh Antigravity.
 - Plan 006 adalah Home Page Visual Enhancement.
 - Setelah Plan 005A selesai dan diverifikasi, kita akan mendiskusikan Plan 006A untuk penyempurnaan Home.
 - Jangan membuat atau mengeksekusi Plan 006A sebelum diskusi dan persetujuan saya.
@@ -133,13 +121,9 @@ Setelah scope disepakati dan saya meminta plan final:
 - berikan link download;
 - jangan simpan file tersebut langsung ke repository;
 - saya yang menyerahkan file tersebut ke Gemini Antigravity;
-<<<<<<< HEAD
-- Gemini Antigravity memodifikasi working tree lokal dan dilarang keras melakukan commit/push;
-- setelah validasi lokal selesai, saya yang memeriksa dan melakukan commit/push secara manual;
+- Gemini Antigravity memodifikasi working tree lokal dan dilarang keras melakukan commit/push atau melakukan pengujian browser/visual;
+- setelah Antigravity selesai, saya yang menguji secara manual di browser, serta memeriksa dan melakukan commit/push secara manual;
 - saya menyerahkan SHA commit manual untuk Anda tinjau.
-=======
-- Gemini Antigravity adalah executor.
->>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 
 Jangan mulai plan berikutnya sebelum diskusi dan persetujuan eksplisit.
 ```
@@ -155,15 +139,10 @@ Jangan mulai plan berikutnya sebelum diskusi dan persetujuan eksplisit.
 5.  **Batasi Aktivitas ChatGPT:** Pastikan ChatGPT hanya merangkum dan berdiskusi. Jika ChatGPT mencoba mengubah repository secara langsung, segera ingatkan bahwa perannya adalah read-only.
 6.  **Alur Plan Final:** Setelah cakupan (*scope*) disepakati secara final di chat, minta ChatGPT membuat plan secara eksplisit:
     `Buatkan implementation plan final sebagai file .md untuk saya download.`
-<<<<<<< HEAD
 7.  **Eksekusi Antigravity:** Unduh file `.md` tersebut, lalu masukkan ke dalam workspace Gemini Antigravity untuk dieksekusi pada working tree lokal.
 8.  **Pemeriksaan Manual:** Setelah Gemini Antigravity selesai memodifikasi working tree lokal, tinjau perubahan tersebut secara manual di editor atau browser.
 9.  **Commit dan Push Manual:** Lakukan commit (`git commit`) dan push (`git push`) secara manual di terminal Anda sendiri.
 10. **Kirim SHA:** Kirimkan SHA commit manual tersebut kepada ChatGPT untuk dilakukan peninjauan diff secara read-only.
-=======
-7.  **Eksekusi Antigravity:** Unduh file `.md` tersebut, lalu masukkan ke dalam workspace Gemini Antigravity untuk dieksekusi.
-8.  **Kirim SHA:** Setelah Gemini Antigravity membuat commit dan melaporkan SHA kandidat, kirimkan SHA tersebut kepada ChatGPT untuk dilakukan peninjauan diff secara read-only.
->>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 
 ---
 
@@ -178,12 +157,8 @@ Saat memulai room baru, pastikan seluruh checklist berikut terpenuhi:
 - [ ] ChatGPT membuat file `.md` hanya setelah diminta pengguna.
 - [ ] ChatGPT memberikan link download untuk file plan.
 - [ ] ChatGPT tidak mengunggah file plan ke GitHub.
-<<<<<<< HEAD
 - [ ] Antigravity bertindak sebagai executor working tree saja (dilarang keras auto-commit/push).
-- [ ] Pengguna melakukan pemeriksaan manual pada working tree.
+- [ ] Antigravity dilarang keras melakukan pengujian browser/visual secara otomatis.
+- [ ] Pengguna melakukan pemeriksaan manual dan pengujian browser (visual/fungsional) pada working tree.
 - [ ] Pengguna melakukan commit dan push manual.
 - [ ] SHA commit manual dari pengguna di-review oleh ChatGPT secara read-only sebelum disebut `Verified`.
-=======
-- [ ] Gemini Antigravity menjadi executor repository.
-- [ ] SHA commit kandidat dari Antigravity di-review sebelum disebut `Verified`.
->>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d

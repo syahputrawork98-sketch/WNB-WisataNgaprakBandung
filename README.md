@@ -50,7 +50,7 @@ Semua perintah dijalankan dari **root repository**:
    ```
 
 ## Handoff & Dokumentasi Proyek
-Untuk melanjutkan proyek di room ChatGPT baru, baca [Current Project State](docs/context/current-state.md) dan gunakan [New Chat Handoff Prompt](docs/context/new-chat-prompt.md).
+Untuk melanjutkan proyek di room ChatGPT baru, gunakan [New Chat Handoff Prompt](docs/context/new-chat-prompt.md). ChatGPT hanya bertugas sebagai planner/reviewer read-only dan menyerahkan plan sebagai file .md; perubahan working tree dieksekusi melalui Gemini Antigravity (tanpa commit/push/testing otomatis), sedangkan pengujian manual serta commit dan push wajib dijalankan secara manual oleh pengguna.
 
 Seluruh dokumentasi detail mengenai kebutuhan, arsitektur, desain, dan rencana implementasi dapat diakses pada tautan berikut:
 - [Dokumentasi Utama WNB (docs/README.md)](docs/README.md)

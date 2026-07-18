@@ -12,11 +12,7 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 > [!NOTE]
 > Perubahan visual Home pada Plan 006 merupakan commit kandidat (*candidate commit*). Karena SHA commit tidak dapat dituliskan di dalam commit itu sendiri, room ChatGPT baru wajib membaca repository HEAD terkini dan membandingkannya dengan baseline terverifikasi di atas.
 >
-<<<<<<< HEAD
 > Plan 005A merupakan perubahan dokumentasi konteks pada working tree. SHA Plan 005A baru dapat dicantumkan setelah pengguna melakukan commit secara manual. Room baru harus membaca repository HEAD dan memeriksa status verifikasinya.
-=======
-> Plan 005A merupakan commit dokumentasi konteks. SHA Plan 005A tidak dapat dicantumkan di dalam commit itu sendiri. Room baru harus membaca repository HEAD dan memeriksa status verifikasinya.
->>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 
 ---
 
@@ -26,11 +22,7 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 *   `003` — Client foundation setup: **Complete** (Inisialisasi React, Vite, Tailwind CSS v4, dan React Router).
 *   `004` — Design system and responsive shell: **Complete** (Design tokens monokrom, common components, dan navigasi mobile aksesibel).
 *   `005` — Home page implementation: **Complete** (Implementasi section Beranda statis dengan visual pattern placeholder).
-<<<<<<< HEAD
-*   `005A` — Project context and handoff documentation: **Revised and current**. Menetapkan workflow ChatGPT read-only → downloadable .md plan → pengguna → Gemini Antigravity executor working tree (no commit/push) → pengguna commit manual → SHA review.
-=======
-*   `005A` — Project context and handoff documentation: **Revised and current**. Menetapkan workflow ChatGPT read-only → downloadable .md plan → pengguna → Gemini Antigravity executor → SHA review.
->>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
+*   `005A` — Project context and handoff documentation: **Revised and current**. Menetapkan alur kerja ChatGPT read-only → downloadable .md plan → pengguna → Gemini Antigravity executor working tree (no commit/push/testing) → pengguna testing manual & commit manual → SHA review.
 *   `006` — Home page visual enhancement: **Complete / candidate implementation according to current repository state**. (Peningkatan visual halaman Home menggunakan aset ilustrasi lokal WebP, layout editorial, dan accessibility).
 
 ---
@@ -71,11 +63,7 @@ Tidak ada masalah terbuka yang tertunda. Koreksi minor dari fase sebelumnya (typ
 ## 6. Status Diskusi Terkini (Active Discussion State)
 -   **Revisi Plan 005A menjadi prioritas dokumentasi saat ini.**
 -   Plan 006 tetap merupakan Home Page Visual Enhancement.
-<<<<<<< HEAD
 -   Setelah revisi Plan 005A selesai pada working tree dan diverifikasi, proyek akan melanjutkan diskusi Plan 006A.
-=======
--   Setelah revisi Plan 005A selesai dan commit dokumentasinya diperiksa, proyek akan melanjutkan diskusi Plan 006A.
->>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 -   Plan 006A akan membahas penyempurnaan atau perbaikan lanjutan halaman Home.
 -   Scope Plan 006A belum ditentukan dan tidak boleh dibuat atau dieksekusi otomatis.
 -   **Plan 007 belum dimulai.**
