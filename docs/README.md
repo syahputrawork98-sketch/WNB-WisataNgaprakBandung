@@ -20,8 +20,8 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 *   [Current State (context/current-state.md)](context/current-state.md): Status implementasi terbaru, kontribusi rencana, dan masalah terbuka yang sedang ditangani.
 *   [Business Facts (context/business-facts.md)](context/business-facts.md): Kumpulan fakta bisnis resmi yang telah dikonfirmasi dan daftar asumsi yang dilarang keras.
 *   [Project Context (context/project-context.md)](context/project-context.md): Identitas proyek, cakupan MVP, alamat rute URL, dan gambaran umum arsitektur.
-*   [Workflow Rules (context/workflow-rules.md)](context/workflow-rules.md): Aturan pembagian peran (ChatGPT, Antigravity, Pengguna), siklus kerja, dan verifikasi status commit.
-*   [New Chat Prompt (context/new-chat-prompt.md)](context/new-chat-prompt.md): Templat instruksi pembuka (*handoff prompt*) yang dapat langsung disalin ke room percakapan baru.
+*   [Workflow Rules (context/workflow-rules.md)](context/workflow-rules.md): Aturan pembagian peran (ChatGPT, Antigravity, Pengguna), siklus kerja, dan verifikasi status commit. Berisi batas read-only ChatGPT dan larangan auto-commit bagi Antigravity.
+*   [New Chat Prompt (context/new-chat-prompt.md)](context/new-chat-prompt.md): Templat instruksi pembuka (*handoff prompt*) yang wajib digunakan ketika membuka room percakapan baru.
 
 ### Dokumen Kebutuhan (Requirements)
 *   [Product Requirements](requirements/product-requirements.md): Ringkasan produk, ruang lingkup MVP, dan batasan produk.
@@ -45,10 +45,10 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 ## Daftar Rencana Implementasi (Plans)
 
 Setiap dokumen rencana implementasi di dalam folder `plans/` menggunakan penomoran tiga digit, dengan suffix huruf untuk plan sisipan:
-*   [001-project-structure-setup.md](plans/001-project-structure-setup.md): Tahap inisialisasi struktur monorepo.
-*   [002-product-requirements-and-page-map.md](plans/002-product-requirements-and-page-map.md): Tahap dokumentasi kebutuhan produk dan peta halaman.
-*   [003-client-foundation-setup.md](plans/003-client-foundation-setup.md): Inisialisasi fondasi frontend React.
-*   [004-design-system-and-responsive-shell.md](plans/004-design-system-and-responsive-shell.md): Design system dan application shell responsif.
-*   [005-home-page-implementation.md](plans/005-home-page-implementation.md): Implementasi halaman Home.
-*   [005A-project-context-and-handoff-documentation.md](plans/005A-project-context-and-handoff-documentation.md): Dokumentasi konteks dan handoff room baru.
-*   [006-home-page-visual-enhancement.md](plans/006-home-page-visual-enhancement.md): Peningkatan visual halaman Home.
+*   [001-project-structure-setup.md](plans/001-project-structure-setup.md): Tahap inisialisasi struktur monorepo (selesai).
+*   [002-product-requirements-and-page-map.md](plans/002-product-requirements-and-page-map.md): Tahap dokumentasi kebutuhan produk dan peta halaman (selesai).
+*   [003-client-foundation-setup.md](plans/003-client-foundation-setup.md): Inisialisasi fondasi frontend React (selesai).
+*   [004-design-system-and-responsive-shell.md](plans/004-design-system-and-responsive-shell.md): Design system dan application shell responsif (selesai).
+*   [005-home-page-implementation.md](plans/005-home-page-implementation.md): Implementasi halaman Home (selesai).
+*   [005A-project-context-and-handoff-documentation.md](plans/005A-project-context-and-handoff-documentation.md): Sumber workflow terbaru untuk handoff ChatGPT read-only, file plan unduhan, eksekusi Antigravity di working tree (tanpa commit otomatis), commit manual oleh pengguna, dan review SHA.
+*   [006-home-page-visual-enhancement.md](plans/006-home-page-visual-enhancement.md): Peningkatan visual halaman Home (selesai / kandidat).
