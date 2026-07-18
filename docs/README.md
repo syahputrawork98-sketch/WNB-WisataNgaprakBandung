@@ -20,7 +20,11 @@ Folder ini berisi seluruh dokumentasi teknis dan rencana untuk pengembangan apli
 *   [Current State (context/current-state.md)](context/current-state.md): Status implementasi terbaru, kontribusi rencana, dan masalah terbuka yang sedang ditangani.
 *   [Business Facts (context/business-facts.md)](context/business-facts.md): Kumpulan fakta bisnis resmi yang telah dikonfirmasi dan daftar asumsi yang dilarang keras.
 *   [Project Context (context/project-context.md)](context/project-context.md): Identitas proyek, cakupan MVP, alamat rute URL, dan gambaran umum arsitektur.
+<<<<<<< HEAD
 *   [Workflow Rules (context/workflow-rules.md)](context/workflow-rules.md): Aturan pembagian peran (ChatGPT, Antigravity, Pengguna), siklus kerja, dan verifikasi status commit. Berisi batas read-only ChatGPT dan larangan auto-commit bagi Antigravity.
+=======
+*   [Workflow Rules (context/workflow-rules.md)](context/workflow-rules.md): Aturan pembagian peran (ChatGPT, Antigravity, Pengguna), siklus kerja, dan verifikasi status commit. Berisi batas read-only ChatGPT dan aturan delivery file plan.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 *   [New Chat Prompt (context/new-chat-prompt.md)](context/new-chat-prompt.md): Templat instruksi pembuka (*handoff prompt*) yang wajib digunakan ketika membuka room percakapan baru.
 
 ### Dokumen Kebutuhan (Requirements)
@@ -50,5 +54,9 @@ Setiap dokumen rencana implementasi di dalam folder `plans/` menggunakan penomor
 *   [003-client-foundation-setup.md](plans/003-client-foundation-setup.md): Inisialisasi fondasi frontend React (selesai).
 *   [004-design-system-and-responsive-shell.md](plans/004-design-system-and-responsive-shell.md): Design system dan application shell responsif (selesai).
 *   [005-home-page-implementation.md](plans/005-home-page-implementation.md): Implementasi halaman Home (selesai).
+<<<<<<< HEAD
 *   [005A-project-context-and-handoff-documentation.md](plans/005A-project-context-and-handoff-documentation.md): Sumber workflow terbaru untuk handoff ChatGPT read-only, file plan unduhan, eksekusi Antigravity di working tree (tanpa commit otomatis), commit manual oleh pengguna, dan review SHA.
+=======
+*   [005A-project-context-and-handoff-documentation.md](plans/005A-project-context-and-handoff-documentation.md): Sumber workflow terbaru untuk handoff ChatGPT read-only, file plan unduhan, eksekusi Antigravity, dan review SHA.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 *   [006-home-page-visual-enhancement.md](plans/006-home-page-visual-enhancement.md): Peningkatan visual halaman Home (selesai / kandidat).

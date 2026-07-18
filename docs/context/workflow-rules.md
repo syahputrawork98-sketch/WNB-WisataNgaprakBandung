@@ -14,10 +14,16 @@ Dokumen ini mendefinisikan pembagian peran, siklus pengembangan, status verifika
 - Men-download file plan `.md` yang dihasilkan oleh ChatGPT.
 - Meninjau file plan tersebut secara mandiri.
 - Memasukkan file plan `.md` ke dalam workspace Gemini Antigravity.
+<<<<<<< HEAD
 - Meminta Gemini Antigravity membaca dan mengeksekusi file plan tersebut pada working tree lokal.
 - Melakukan pemeriksaan dan review mandiri terhadap perubahan di working tree secara langsung di browser atau editor.
 - Melakukan commit dan push secara manual ke repository Git setelah menyetujui perubahan di working tree.
 - Mengirimkan SHA commit manual dari Git ke ChatGPT untuk di-review.
+=======
+- Meminta Gemini Antigravity membaca dan mengeksekusi file plan tersebut.
+- Melakukan pengujian visual/manual secara langsung di web browser.
+- Mengirimkan SHA commit kandidat dari Antigravity ke ChatGPT untuk di-review.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 - Memutuskan apakah akan melanjutkan ke rencana/tahap berikutnya.
 
 ### 1.2 ChatGPT — Planner & Reviewer Read-Only
@@ -31,7 +37,11 @@ Dokumen ini mendefinisikan pembagian peran, siklus pengembangan, status verifika
 - Menjelaskan status terkini dan risiko repository.
 - Menyusun rencana implementasi (*implementation plan*) sebagai satu file `.md` di lingkungan percakapan.
 - Menyediakan tautan (link) download untuk file plan `.md` tersebut.
+<<<<<<< HEAD
 - Meninjau SHA commit manual dan diff perubahan yang dikirim oleh pengguna.
+=======
+- Meninjau SHA commit kandidat dan diff perubahan yang dibuat oleh Gemini Antigravity.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 - Menilai kepatuhan commit dan merekomendasikan status `Candidate`, `Verified`, atau `Needs Correction`.
 - Memberikan instruksi koreksi kecil langsung di chat jika perubahan bersifat lokal dan sederhana.
 
@@ -48,6 +58,7 @@ Dokumen ini mendefinisikan pembagian peran, siklus pengembangan, status verifika
 
 > Bila ChatGPT memiliki kemampuan teknis untuk melakukan write action pada repository, aturan proyek tetap melarang penggunaan kemampuan tersebut.
 
+<<<<<<< HEAD
 ### 1.3 Gemini Antigravity — Executor Working Tree
 - Membaca file plan `.md` yang diberikan oleh pengguna.
 - Memeriksa kondisi repository terkini sebelum memodifikasi file.
@@ -61,6 +72,20 @@ Dokumen ini mendefinisikan pembagian peran, siklus pengembangan, status verifika
 - **Dilarang keras** menjalankan `git add`, `git commit`, `git push`, atau sinkronisasi otomatis ke remote repository.
 - Melaporkan status pekerjaan sebagai `Uncommitted / Pending User Review`.
 - Menunggu hasil review mandiri pengguna dan proses commit/push manual oleh pengguna.
+=======
+### 1.3 Gemini Antigravity — Executor
+- Membaca file plan `.md` yang diberikan oleh pengguna.
+- Memeriksa kondisi repository terkini sebelum memodifikasi file.
+- Menyimpan salinan file plan yang sama persis ke lokasi `docs/plans/` yang ditentukan di repository.
+- Mengubah file repository secara hati-hati dan hanya sesuai ruang lingkup yang diperbolehkan plan.
+- Tidak membuat keputusan bisnis baru secara mandiri.
+- Tidak memperluas cakupan pekerjaan (*scope creep*).
+- Menjalankan pengujian validasi (misalnya typecheck atau build jika ada perubahan kode).
+- Membuat satu commit Git dengan pesan commit yang ditentukan di dalam plan.
+- Melaporkan daftar file yang berubah, hasil validasi, status git, dan SHA commit kepada pengguna.
+- **Dilarang** menyebut commit buatannya sendiri sebagai `Verified`.
+- Menunggu hasil review dari ChatGPT yang diteruskan oleh pengguna.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 
 ---
 
@@ -80,6 +105,7 @@ Setiap penambahan fitur, perubahan dokumentasi, atau perbaikan sistem mengikuti 
   → Pengguna menyerahkan file plan ke Gemini Antigravity
   → Gemini Antigravity membaca file plan tersebut
   → Gemini menyimpan file plan ke docs/plans/
+<<<<<<< HEAD
   → Gemini mengimplementasikan perubahan pada working tree lokal
   → Gemini menjalankan pengujian validasi
   → Gemini menampilkan status git, diff check, dan menyarankan perintah commit manual
@@ -87,6 +113,13 @@ Setiap penambahan fitur, perubahan dokumentasi, atau perbaikan sistem mengikuti 
   → Pengguna membaca dan memeriksa perubahan pada working tree secara langsung
   → Pengguna melakukan commit dan push secara manual, lalu mendapatkan SHA commit
   → Pengguna mengirimkan SHA commit manual ke ChatGPT
+=======
+  → Gemini mengimplementasikan perubahan di repository
+  → Gemini menjalankan pengujian validasi
+  → Gemini membuat satu commit dan melaporkan SHA commit kandidat
+  → Pengguna melakukan pengujian visual/manual di browser
+  → Pengguna mengirimkan SHA commit kandidat ke ChatGPT
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
   → ChatGPT membaca diff commit secara read-only untuk memverifikasi kepatuhan
   → Commit dinilai Verified atau Rejected / Needs Correction
   → Dokumentasi current-state.md diperbarui pada siklus dokumentasi berikutnya
@@ -100,10 +133,17 @@ Setiap penambahan fitur, perubahan dokumentasi, atau perbaikan sistem mengikuti 
 ### Rencana Implementasi Final (Implementation Plan)
 - Hanya dibuat setelah scope pekerjaan disepakati sepenuhnya.
 - Hanya dibuat setelah pengguna meminta plan secara eksplisit.
+<<<<<<< HEAD
 - Dihassan oleh ChatGPT sebagai **satu file `.md` terpisah yang dapat di-download** (bukan ditulis langsung ke GitHub).
 - Penamaan file harus menggunakan nomor rencana yang telah disepakati (contoh: `005A-project-context-and-handoff-documentation.md`).
 - File plan tersebut menjadi satu-satunya instruksi resmi bagi Gemini Antigravity.
 - Gemini Antigravity wajib menyalin file plan tersebut ke folder `docs/plans/` sebagai bagian dari modifikasi working tree lokalnya.
+=======
+- Dihasilkan oleh ChatGPT sebagai **satu file `.md` terpisah yang dapat di-download** (bukan ditulis langsung ke GitHub).
+- Penamaan file harus menggunakan nomor rencana yang telah disepakati (contoh: `005A-project-context-and-handoff-documentation.md`).
+- File plan tersebut menjadi satu-satunya instruksi resmi bagi Gemini Antigravity.
+- Gemini Antigravity wajib menyalin file plan tersebut ke folder `docs/plans/` sebagai bagian dari commit eksekusinya.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 - ChatGPT dilarang mengeksekusi isi file plan tersebut ke repository.
 
 ---
@@ -125,10 +165,15 @@ Setiap penambahan fitur, perubahan dokumentasi, atau perbaikan sistem mengikuti 
 - **Alur Koreksi Kecil:**
   1. ChatGPT memberikan instruksi perubahan langsung di chat.
   2. Pengguna menyalin instruksi tersebut ke Gemini Antigravity.
+<<<<<<< HEAD
   3. Gemini Antigravity mengubah working tree lokal dan melakukan validasi.
   4. Gemini Antigravity berhenti tanpa commit/push (status: Uncommitted / Pending User Review).
   5. Pengguna meninjau working tree, melakukan commit dan push secara manual.
   6. Pengguna mengirimkan SHA commit manual kepada ChatGPT untuk di-review.
+=======
+  3. Gemini Antigravity melakukan modifikasi lokal dan membuat commit perbaikan.
+  4. Pengguna mengirimkan SHA commit perbaikan kepada ChatGPT untuk di-review.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 
 ### 4.4 Pengecualian Dampak Besar
 Perubahan dengan jumlah baris yang sedikit tetap wajib didokumentasikan dalam file plan baru jika memengaruhi:
@@ -144,21 +189,36 @@ Perubahan dengan jumlah baris yang sedikit tetap wajib didokumentasikan dalam fi
 ## 5. Status Verifikasi Commit (Commit Verification)
 
 Setiap commit Git hasil eksekusi diklasifikasikan ke dalam tiga status berikut:
+<<<<<<< HEAD
 1.  **Candidate (Kandidat):** Status awal ketika commit manual dibuat oleh pengguna setelah eksekusi Antigravity. Commit belum divalidasi oleh ChatGPT.
 2.  **Verified (Terverifikasi):** Status yang diberikan oleh ChatGPT setelah meninjau diff commit secara read-only dan memastikan kepatuhan penuh terhadap plan. Commit terverifikasi terakhir menjadi baseline baru.
 3.  **Rejected / Needs Correction:** Status jika commit mengandung deviasi, error kompilasi, data bisnis palsu, atau melanggar plan. Antigravity wajib memperbaiki perubahan tersebut pada working tree lokal.
 
 > Berkas `current-state.md` dilarang mencatat SHA kandidat sebagai *latest verified implementation commit* sebelum ChatGPT memberikan keputusan verifikasi secara eksplisit.
+=======
+1.  **Candidate (Kandidat):** Status awal saat Gemini Antigravity selesai membuat commit. Commit belum divalidasi oleh ChatGPT.
+2.  **Verified (Terverifikasi):** Status yang diberikan oleh ChatGPT setelah meninjau diff commit secara read-only dan memastikan kepatuhan penuh terhadap plan. Commit terverifikasi terakhir menjadi baseline baru.
+3.  **Rejected / Needs Correction:** Status jika commit mengandung deviasi, error kompilasi, data bisnis palsu, atau melanggar plan. Antigravity wajib memperbaiki perubahan tersebut.
+
+> Berkas `current-state.md` dilarang mencatat candidate commit sebagai *latest verified implementation commit* sebelum ChatGPT memberikan keputusan verifikasi secara eksplisit.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 
 ---
 
 ## 6. Aturan Kontrol Perubahan (Change Control)
 
+<<<<<<< HEAD
 - **Minimal Scope:** Ubah hanya file dan baris yang benar-benar ditargetkan oleh plan. Dilarang merapikan kode atau refactor file lain secara ad-hoc.
+=======
+- **Minimal Scope:** Ubah hanya baris/file yang benar-benar ditargetkan oleh plan. Dilarang merapikan kode atau refactor file lain secara ad-hoc.
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 - **Lockfile Protection:** `package-lock.json` tidak boleh berubah tanpa perintah instalasi dependensi baru yang disepakati di plan.
 - **No Code on Documentation Plans:** Rencana berjenis *documentation-only* (seperti `005A`) dilarang keras mengubah baris kode apa pun di folder `client/` atau `server/`.
 - **No file:/// Scheme Links:** Dokumentasi wajib menggunakan tautan relatif (relative path), dilarang menggunakan tautan absolut lokal (`file:///`).
 - **No Urgency Copy:** Dilarang keras menggunakan copy/teks yang mengarang urgensi komersial palsu (misalnya diskon terbatas, slot terbatas) demi menjaga identitas brand WNB yang premium.
 - **No Write Action by ChatGPT:** ChatGPT dilarang melakukan modifikasi repository secara langsung dalam kondisi apa pun.
+<<<<<<< HEAD
 - **No Commit/Push by Antigravity:** Gemini Antigravity dilarang keras melakukan commit atau push otomatis. Semua commit wajib dilakukan secara manual oleh pengguna.
+=======
+>>>>>>> 48c1f0327a44c827b82513b497f48a442f10017d
 - **No Automatic Next Steps:** Gemini Antigravity dilarang melanjutkan ke plan berikutnya secara otomatis setelah menyelesaikan tugas aktif.
