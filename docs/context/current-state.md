@@ -12,7 +12,7 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 > [!NOTE]
 > Perubahan visual Home pada Plan 006 merupakan commit kandidat (*candidate commit*). Karena SHA commit tidak dapat dituliskan di dalam commit itu sendiri, room ChatGPT baru wajib membaca repository HEAD terkini dan membandingkannya dengan baseline terverifikasi di atas.
 >
-> Plan 005A merupakan perubahan dokumentasi konteks pada working tree. SHA Plan 005A baru dapat dicantumkan setelah pengguna melakukan commit secara manual. Room baru harus membaca repository HEAD dan memeriksa status verifikasinya.
+> Revisi workflow Plan 005A telah diterapkan pada dokumentasi repository. Commit dokumentasi terbaru tetap berstatus Candidate sampai diff-nya diperiksa oleh ChatGPT.
 
 ---
 
@@ -61,12 +61,13 @@ Tidak ada masalah terbuka yang tertunda. Koreksi minor dari fase sebelumnya (typ
 ---
 
 ## 6. Status Diskusi Terkini (Active Discussion State)
--   **Revisi Plan 005A menjadi prioritas dokumentasi saat ini.**
+-   Revisi Plan 005A telah diterapkan.
+-   Commit koreksi dokumentasi terbaru menunggu review ChatGPT.
 -   Plan 006 tetap merupakan Home Page Visual Enhancement.
--   Setelah revisi Plan 005A selesai pada working tree dan diverifikasi, proyek akan melanjutkan diskusi Plan 006A.
--   Plan 006A akan membahas penyempurnaan atau perbaikan lanjutan halaman Home.
--   Scope Plan 006A belum ditentukan dan tidak boleh dibuat atau dieksekusi otomatis.
--   **Plan 007 belum dimulai.**
+-   Setelah koreksi Plan 005A dinyatakan Verified, proyek melanjutkan diskusi Plan 006A.
+-   Plan 006A akan membahas penyempurnaan halaman Home.
+-   Scope Plan 006A belum ditentukan.
+-   Plan 007 belum dimulai.
 
 ---
 

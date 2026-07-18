@@ -19,10 +19,10 @@ Riwayat versi lama tetap tersedia melalui Git history. Tidak perlu membuat Plan 
 
 ## Recommended Antigravity Model
 
-- **Primary model:** Gemini 3.5 Flash (Low/Medium)
+- **Primary model:** Gemini 3.5 Flash (Medium)
 - **Fallback model:** Gemini 3.1 Pro (High)
 - **Reason:** Pekerjaan hanya memperbarui dan menyelaraskan dokumentasi lintas beberapa file. Tidak ada perubahan kode aplikasi, dependency, konfigurasi build, atau refactor frontend.
-- **Token-efficiency rule:** Gunakan Flash Low/Medium untuk eksekusi awal. Gunakan Pro High hanya jika ditemukan konflik nyata antardokumen yang tidak dapat diselesaikan dari instruksi plan dan repository.
+- **Token-efficiency rule:** Gunakan Flash Medium untuk eksekusi awal. Gunakan Pro High hanya jika ditemukan konflik nyata antardokumen yang tidak dapat diselesaikan dari instruksi plan dan repository.
 - **Mode kerja:** Planning/agent mode yang mampu membaca beberapa file, mengedit dokumentasi, memeriksa diff, dan melaporkan perubahan.
 - **Dilarang:** Menggunakan model untuk mengambil keputusan bisnis atau memperluas scope di luar plan.
 

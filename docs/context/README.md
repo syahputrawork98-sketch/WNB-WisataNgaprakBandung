@@ -4,18 +4,19 @@ Folder ini merupakan titik masuk (*entry point*) utama untuk mendokumentasikan k
 
 Dokumen-dokumen di bawah ini berfungsi sebagai sumber utama bagi:
 1.  **ChatGPT (Planner & Reviewer Read-Only):** Membaca repository dan dokumen konteks secara read-only untuk merencanakan tugas tanpa mengubah repository.
-2.  **Gemini Antigravity (Executor):** Membaca dokumen rencana implementasi (.md) yang disetujui, menyalinnya ke repository, mengeksekusi perubahan, dan membuat commit.
-3.  **Pemilik Proyek / Pengguna:** Meninjau plan, bertindak sebagai penghubung workflow, melakukan pengujian manual, dan memberikan keputusan.
-4.  **Reviewer:** Memeriksa commit Git hasil eksekusi dan memvalidasi kepatuhan terhadap plan.
+2.  **Gemini Antigravity (Executor Working Tree):** Membaca file plan yang disetujui, menyalinnya ke repository, dan mengubah working tree sesuai scope tanpa testing, commit, atau push.
+3.  **Pemilik Proyek / Pengguna:** Meninjau plan dan working tree, melakukan seluruh pengujian manual, serta menjalankan commit dan push secara manual.
+4.  **Reviewer:** Memeriksa SHA dan diff commit manual pengguna untuk menilai kepatuhan terhadap plan.
 
 ---
 
 ## Ringkasan Alur Kerja (Workflow Summary)
-- ChatGPT membaca repository dan merencanakan tugas secara read-only.
-- ChatGPT membuat plan final sebagai file `.md` yang dapat di-download.
-- Pengguna meninjau plan dan menyerahkan file tersebut kepada Gemini Antigravity.
-- Gemini Antigravity menyimpan plan ke `docs/plans/` di repository, mengeksekusi perubahan, dan membuat commit.
-- ChatGPT meninjau SHA commit kandidat dan diff secara read-only untuk verifikasi.
+- ChatGPT membaca repository dan membuat plan secara read-only.
+- Pengguna menyerahkan file plan kepada Gemini Antigravity.
+- Gemini mengubah working tree dan berhenti tanpa testing, commit, atau push.
+- Pengguna membaca perubahan dan melakukan pengujian manual.
+- Pengguna melakukan commit dan push secara manual.
+- ChatGPT meninjau SHA dan diff commit manual secara read-only.
 
 ---
 
@@ -24,7 +25,7 @@ Dokumen-dokumen di bawah ini berfungsi sebagai sumber utama bagi:
 - Mention `@GitHub` di chat bukan merupakan izin menulis repository.
 - Kemampuan teknis model untuk menulis atau mengubah repository tidak berarti tindakan tersebut diizinkan dalam workflow proyek ini.
 - Instruksi pengguna yang meminta diskusi atau pembuatan plan tidak boleh ditafsirkan oleh ChatGPT sebagai izin implementasi langsung ke repository.
-- Hanya Gemini Antigravity yang menjadi executor repository dalam workflow proyek ini.
+- Gemini Antigravity hanya menjadi executor working tree. Pengguna merupakan satu-satunya pihak yang melakukan commit dan push.
 
 ---
 
