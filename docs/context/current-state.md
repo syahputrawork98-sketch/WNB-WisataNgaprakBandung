@@ -5,9 +5,9 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 ---
 
 ## 1. Posisi Baseline Repository
-*   **Tanggal Peninjauan Konteks Terakhir:** 2026-07-20
-*   **Konteks Baseline Proyek:** `ea0c8e100e923401018b93bfdd7f2653a3ad6874`
-*   **Latest Verified Implementation Commit:** `ea0c8e100e923401018b93bfdd7f2653a3ad6874`
+*   **Tanggal Peninjauan Konteks Terakhir:** 2026-07-21
+*   **Konteks Baseline Proyek:** `f208d2cae8554ade28e22517169d35a3677d3804`
+*   **Latest Verified Implementation Commit:** `f208d2cae8554ade28e22517169d35a3677d3804`
 
 ---
 
@@ -19,9 +19,9 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 *   `005` — Home page implementation: **Complete** (Implementasi section Beranda statis dengan visual pattern placeholder).
 *   `005A` — Project context and handoff documentation: **Revised and current**. Menetapkan alur kerja ChatGPT read-only → downloadable .md plan → pengguna → Gemini Antigravity executor working tree (no commit/push/testing) → pengguna testing manual & commit manual → SHA review.
 *   `006` — Home page visual enhancement: **Complete** (Peningkatan visual halaman Home menggunakan aset ilustrasi lokal WebP, layout editorial, dan accessibility).
-*   `006A` — Aktualisasi konteks bisnis dan penyempurnaan Beranda: **Complete** (Penghapusan bahasa TBD, perapian struktur Beranda, dan penambahan ExperienceSection. Logo resmi berstatus deferred karena aset belum tersedia).
-*   `007` — Penyelarasan Homepage dan Implementasi Halaman Tentang Kami WNB: **Complete** (Halaman About diimplementasikan dengan layout modular dan narasi editorial. Placeholder visual dihapus dan diganti ilustrasi lokal. Koreksi diselesaikan secara terpadu).
-*   `008` — Implementasi Logo Resmi dan Identitas Global WNB: **Implementation Candidate** (Penerapan logo resmi pada header, footer, hero About, dan perbaikan identitas navigasi. Menunggu review manual).
+*   `006A` — Aktualisasi konteks bisnis dan penyempurnaan Beranda: **Complete** (Penghapusan bahasa TBD, perapian struktur Beranda, dan penyempurnaan halaman Beranda).
+*   `007` — Penyelarasan Homepage dan Implementasi Halaman Tentang Kami WNB: **Complete** (Halaman About diimplementasikan dengan layout modular dan narasi editorial. Placeholder visual dihapus dan diganti ilustrasi lokal).
+*   `008` — Implementasi Logo Resmi dan Identitas Global WNB: **Complete (Commit SHA: `f208d2cae8554ade28e22517169d35a3677d3804`)** (Logo resmi WNB telah tersedia dan diterapkan pada header, footer, hero About, favicon, serta perbaikan identitas navigasi Bahasa Indonesia).
 
 ---
 
@@ -29,8 +29,8 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 
 | Rute URL | Halaman (Page) | Status | Keterangan |
 | :--- | :--- | :--- | :--- |
-| `/` | Home | **Implemented** | Selesai dengan aset ilustrasi sementara WebP dan narasi yang selaras. |
-| `/about` | About | **Implemented** | Halaman cerita WNB, sejarah, karakter, janji pengalaman, dan CTA lengkap (koreksi pasca-review diterapkan pada working tree, menunggu verifikasi commit berikutnya). |
+| `/` | Home | **Implemented** | Selesai disempurnakan dengan aset ilustrasi sementara WebP dan narasi yang selaras. |
+| `/about` | About | **Implemented** | Halaman cerita WNB, sejarah, karakter, janji pengalaman, logo resmi, dan CTA lengkap. |
 | `/paket` | Package list | **Placeholder** | Menampilkan info daftar paket dengan typed local data kelak. |
 | `/paket/:slug` | Package detail | **Placeholder** | Menampilkan technical preview parameter slug paket terpilih. |
 | `/rute` | Route list | **Placeholder** | Menampilkan info sebaran rute fisik menunggu konfirmasi. |
@@ -44,23 +44,23 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 ## 4. Gambaran Teknis Frontend Saat Ini (Frontend Status)
 -   Monorepo berbasis npm workspaces terkonfigurasi untuk `client` dan `server`.
 -   Gaya desain monokromatik tangguh (*rugged & monokrom*) diterapkan secara konsisten melalui `@theme` Tailwind CSS v4.
--   Kerangka navigasi (*responsive shell*) desktop navbar, mobile menu drawer (dengan body scroll lock & Escape listener), dan semantic footer sudah aktif.
--   Seluruh halaman internal terhubung secara aman menggunakan React Router Declarative Mode.
+-   Kerangka navigasi (*responsive shell*) desktop navbar, mobile menu drawer (dengan body scroll lock & Escape listener), dan semantic footer menggunakan logo resmi WNB.
+-   Seluruh halaman internal terhubung secara aman menggunakan React Router Declarative Mode dengan navigasi Bahasa Indonesia (Beranda, Tentang Kami, Paket, Rute, Galeri).
 -   Pengguliran halaman otomatis (`ScrollToTop`) di bawah browser router telah berjalan dengan sukses saat transisi rute.
--   Halaman Beranda & About menggunakan aset stock photo lokal WebP sebagai ilustrasi berlisensi bebas dengan notice keterangan.
+-   Halaman Beranda & About menggunakan aset stock photo lokal WebP sebagai ilustrasi berlisensi bebas dengan notice keterangan. Logo resmi diimplementasikan dari aset lokal `wnb-logo.png` dan `favicon.png`.
 -   Nomor WhatsApp tujuan, rute resmi, spesifikasi armada, dan paket wisata komersial belum dimasukkan karena berstatus TBD.
 -   Backend server (`server/`), sistem database, autentikasi admin, dan unit testing dinonaktifkan pada MVP ini.
 
 ---
 
 ## 5. Masalah Terbuka Menunggu Koreksi (Open Corrections)
-Koreksi pasca-review Plan 007 telah diterapkan pada working tree dan menunggu verifikasi commit berikutnya.
+Koreksi kecil pascaimplementasi Plan 008 sedang dilakukan pada working tree (penyesuaian posisi panel navigasi mobile `top-16 sm:top-[73px]`, optimasi favicon PNG 128x128, perapian komentar kode Navbar, dan sinkronisasi dokumentasi status).
 
 ---
 
 ## 6. Status Diskusi Terkini (Active Discussion State)
--   Commit baseline terverifikasi: `ea0c8e100e923401018b93bfdd7f2653a3ad6874`.
--   Plan 008 (Implementasi Logo Resmi dan Identitas Global WNB): Implemented; logo resmi telah diunduh, navigasi disesuaikan, dan dokumentasi terkait diperbarui. Menunggu pengguna melakukan testing manual dan commit SHA.
+-   Commit baseline terverifikasi: `f208d2cae8554ade28e22517169d35a3677d3804`.
+-   Plan 008 (Implementasi Logo Resmi dan Identitas Global WNB): Selesai di-commit pada SHA `f208d2cae8554ade28e22517169d35a3677d3804`. Koreksi kecil pascaimplementasi Plan 008 sedang berlangsung di working tree.
 -   Halaman paket, rute, galeri, dan booking tetap menjadi placeholder.
 
 ---
@@ -69,3 +69,4 @@ Koreksi pasca-review Plan 007 telah diterapkan pada working tree dan menunggu ve
 *   **Likely next milestone:** Plan 009 — Implementasi Data Paket / Rute (TBD)
 *   **Status:** Proposed, not approved
 *   *Final scope must be discussed and approved first*
+

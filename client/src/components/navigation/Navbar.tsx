@@ -25,7 +25,7 @@ export function Navbar({
   return (
     <header className="border-b border-wnb-border sticky top-0 bg-wnb-black/95 backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
-        {/* Logo Wordmark */}
+        {/* Official Brand Logo */}
         <BrandLogo />
 
         {/* Desktop Navigation */}

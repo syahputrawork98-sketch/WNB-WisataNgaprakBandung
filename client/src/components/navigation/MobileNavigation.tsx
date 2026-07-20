@@ -78,7 +78,7 @@ export function MobileNavigation({
   return (
     <div
       id="mobile-navigation"
-      className="md:hidden fixed inset-x-0 bottom-0 top-[73px] bg-wnb-black/98 border-t border-wnb-border z-45 flex flex-col justify-between py-8 px-6 overflow-y-auto"
+      className="md:hidden fixed inset-x-0 bottom-0 top-16 sm:top-[73px] bg-wnb-black/98 border-t border-wnb-border z-45 flex flex-col justify-between py-8 px-6 overflow-y-auto"
     >
       <nav aria-label="Navigasi utama mobile" className="flex flex-col gap-2">
         {NAVIGATION_ITEMS.map((item) => (
