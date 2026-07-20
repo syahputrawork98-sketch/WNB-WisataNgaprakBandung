@@ -4,23 +4,23 @@ import { Users, Map, CarFront, Camera } from "lucide-react";
 
 const EXPERIENCE_PILLARS = [
   {
-    title: "Disesuaikan dengan Peserta",
-    description: "Karakter perjalanan disesuaikan dengan kelompok dan kebutuhan.",
+    title: "Petualangan Berkarakter",
+    description: "Land Rover klasik, alam, jalur, dan suasana hangat menjadi identitas pengalaman WNB.",
     icon: Users,
   },
   {
-    title: "Rute Dipertimbangkan",
-    description: "Kondisi jalur dan cuaca menjadi bagian penting dari persiapan.",
+    title: "Dipersiapkan secara Bertanggung Jawab",
+    description: "Perjalanan dipertimbangkan berdasarkan kesiapan operasional dan kondisi yang dihadapi.",
     icon: Map,
   },
   {
-    title: "Land Rover Berkarakter",
-    description: "Kendaraan off-road klasik menjadi inti sensasi perjalanan Anda.",
+    title: "Disesuaikan dengan Peserta",
+    description: "Tingkat petualangan mempertimbangkan pengalaman, kebutuhan, dan karakter peserta.",
     icon: CarFront,
   },
   {
-    title: "Momen yang Berkesan",
-    description: "Pengalaman dirancang untuk kebersamaan dan cerita perjalanan.",
+    title: "Dirancang Menjadi Cerita",
+    description: "Adrenalin, kebersamaan, dan perjalanan dirangkai menjadi pengalaman yang berkesan.",
     icon: Camera,
   },
 ];
@@ -31,9 +31,9 @@ export function ExperienceSection() {
       <Container className="flex flex-col gap-12">
         <SectionHeading
           id="experience-section-title"
-          eyebrow="Standar Kami"
+          eyebrow="Janji Pengalaman"
           title="Standar Pengalaman WNB"
-          description="Kami menyusun setiap perjalanan untuk memastikan petualangan yang terarah, berkesan, dan sesuai dengan karakter Anda."
+          description="Petualangan Land Rover klasik yang dipersiapkan secara bertanggung jawab, disesuaikan dengan peserta, dan dirancang menjadi cerita yang berkesan."
           align="center"
           headingLevel="h2"
         />

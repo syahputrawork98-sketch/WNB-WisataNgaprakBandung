@@ -32,20 +32,20 @@ export function HeroSection() {
             </span>
             <h1
               id="hero-heading"
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display uppercase tracking-wide text-wnb-white leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold font-display uppercase tracking-wider text-wnb-white leading-tight"
             >
-              Lebih dari perjalanan. Ini cerita.
+              Rasakan Bandung dari Jalur yang Berbeda.
             </h1>
           </div>
           <p className="text-base sm:text-lg text-wnb-muted leading-relaxed">
-            WNB mengajak Anda menjelajahi sisi berbeda alam Bandung bersama Land Rover klasik, melalui pengalaman yang dapat disesuaikan dengan karakter perjalanan Anda.
+            Jelajahi alam Bandung bersama Land Rover klasik melalui petualangan yang dapat disesuaikan, dari perjalanan pertama hingga tantangan berikutnya.
           </p>
           <div className="flex flex-wrap gap-4 mt-2">
             <LinkButton to={ROUTE_PATHS.packages} variant="primary" size="md">
-              Jelajahi Pengalaman
+              Pilih Petualangan
             </LinkButton>
             <LinkButton to={ROUTE_PATHS.routes} variant="secondary" size="md">
-              Kenali Rute
+              Jelajahi Rute
             </LinkButton>
           </div>
         </div>

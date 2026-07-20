@@ -24,7 +24,8 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 *   `005` — Home page implementation: **Complete** (Implementasi section Beranda statis dengan visual pattern placeholder).
 *   `005A` — Project context and handoff documentation: **Revised and current**. Menetapkan alur kerja ChatGPT read-only → downloadable .md plan → pengguna → Gemini Antigravity executor working tree (no commit/push/testing) → pengguna testing manual & commit manual → SHA review.
 *   `006` — Home page visual enhancement: **Complete / candidate implementation according to current repository state**. (Peningkatan visual halaman Home menggunakan aset ilustrasi lokal WebP, layout editorial, dan accessibility).
-*   `006A` — Aktualisasi konteks bisnis dan penyempurnaan Beranda: **Implemented / Candidate / Pending User Review and Manual Testing** (Penghapusan bahasa TBD, perapian struktur Beranda, dan penambahan ExperienceSection. Halaman lain tetap berstatus placeholder. Logo resmi berstatus deferred karena aset belum tersedia).
+*   `006A` — Aktualisasi konteks bisnis dan penyempurnaan Beranda: **Complete**. (Penghapusan bahasa TBD, perapian struktur Beranda, dan penambahan ExperienceSection. Logo resmi berstatus deferred karena aset belum tersedia).
+*   `007` — Penyelarasan Homepage dan Implementasi Halaman Tentang Kami WNB: **Implemented / Candidate / Pending User Review and Manual Testing** (Memperbarui narasi hero dan section lainnya di Beranda, serta membangun halaman `/about` secara utuh secara modular).
 
 ---
 
@@ -32,8 +33,8 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 
 | Rute URL | Halaman (Page) | Status | Keterangan |
 | :--- | :--- | :--- | :--- |
-| `/` | Home | **Implemented** | Selesai dengan aset ilustrasi sementara WebP. |
-| `/about` | About | **Placeholder** | Menampilkan info dasar menunggu konfirmasi tim/keselamatan. |
+| `/` | Home | **Implemented** | Selesai dengan aset ilustrasi sementara WebP dan narasi yang selaras. |
+| `/about` | About | **Implemented** | Halaman cerita WNB, sejarah, karakter, janji pengalaman, dan CTA lengkap. |
 | `/paket` | Package list | **Placeholder** | Menampilkan info daftar paket dengan typed local data kelak. |
 | `/paket/:slug` | Package detail | **Placeholder** | Menampilkan technical preview parameter slug paket terpilih. |
 | `/rute` | Route list | **Placeholder** | Menampilkan info sebaran rute fisik menunggu konfirmasi. |
@@ -63,16 +64,13 @@ Tidak ada masalah terbuka yang tertunda. Koreksi minor dari fase sebelumnya (typ
 
 ## 6. Status Diskusi Terkini (Active Discussion State)
 -   Revisi Plan 005A telah diterapkan.
--   Commit koreksi dokumentasi terbaru menunggu review ChatGPT.
--   Plan 006 tetap merupakan Home Page Visual Enhancement.
--   Plan 006A telah diimplementasikan di working tree dan berstatus `Candidate / Pending User Review and Manual Testing`.
--   Halaman selain Beranda tetap menjadi placeholder.
--   Logo resmi WNB berstatus deferred.
--   Plan 007 belum dimulai.
+-   Plan 006A telah diimplementasikan dan dikonfirmasi melalui commit manual.
+-   Plan 007 (Penyelarasan Homepage dan Halaman Tentang WNB) telah diimplementasikan di working tree dan berstatus `Candidate / Pending User Review and Manual Testing`.
+-   Halaman paket, rute, galeri, dan booking tetap menjadi placeholder.
 
 ---
 
 ## 7. Kemungkinan Milestone Berikutnya (Next Likely Milestone)
-*   **Likely next milestone:** Plan 007 — (TBD)
+*   **Likely next milestone:** Plan 008 — Implementasi Data Paket / Rute (TBD)
 *   **Status:** Proposed, not approved
 *   *Final scope must be discussed and approved first*

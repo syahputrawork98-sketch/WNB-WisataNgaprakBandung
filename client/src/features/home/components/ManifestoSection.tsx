@@ -1,5 +1,7 @@
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import { LinkButton } from "@/components/common/LinkButton";
+import { ROUTE_PATHS } from "@/routes/routePaths";
 import { EditorialImage } from "./EditorialImage";
 
 export function ManifestoSection() {
@@ -43,9 +45,16 @@ export function ManifestoSection() {
             headingLevel="h2"
           />
 
-          <p className="text-sm sm:text-base text-wnb-muted leading-relaxed">
-            Bagi kami, perjalanan bukan hanya tentang mencapai tujuan. Land Rover klasik yang menemani Anda bukanlah sekadar alat transportasi, melainkan bagian tak terpisahkan dari karakter petualangan, sensasi penjelajahan, dan kenangan yang tercipta di sepanjang jalur.
-          </p>
+          <div className="flex flex-col gap-6">
+            <p className="text-sm sm:text-base text-wnb-muted leading-relaxed">
+              Bagi kami, perjalanan bukan hanya tentang mencapai tujuan. Land Rover klasik yang menemani Anda bukanlah sekadar alat transportasi, melainkan bagian tak terpisahkan dari karakter petualangan, sensasi penjelajahan, dan kenangan yang tercipta di sepanjang jalur.
+            </p>
+            <div className="mt-2">
+              <LinkButton to={ROUTE_PATHS.about} variant="secondary" size="md">
+                Baca Cerita WNB
+              </LinkButton>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

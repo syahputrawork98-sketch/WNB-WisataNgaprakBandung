@@ -50,12 +50,12 @@ Komponen diletakkan secara modular di dalam folder fitur `client/src/features/ho
 ## 5. Salinan Isi (*Copywriting*) Terpilih & Hubungan Rute
 Semua salinan bahasa menggunakan Bahasa Indonesia yang netral, ramah SEO, berorientasi pengalaman, dan evergreen tanpa menggunakan klaim operasional yang belum terverifikasi atau menyebut ketiadaan data.
 
-*   **Hero Heading:** `LEBIH DARI PERJALANAN. INI CERITA.`
+*   **Hero Heading:** `RASAKAN BANDUNG DARI JALUR YANG BERBEDA.`
     *   Eyebrow: `Land Rover Classic Adventure — Bandung`
-    *   *Jelajahi Pengalaman* mengarah ke `/paket`
-    *   *Kenali Rute* mengarah ke `/rute`
+    *   *Pilih Petualangan* mengarah ke `/paket`
+    *   *Jelajahi Rute* mengarah ke `/rute`
 *   **Manifesto Heading:** `PETUALANGAN DENGAN KARAKTER KLASIK`
-    *   Menjabarkan cerita operasi sejak 2019, makna Ngaprak, dan Land Rover klasik sebagai inti sensasi.
+    *   Menjabarkan cerita operasi sejak 2019, makna Ngaprak, dan Land Rover klasik sebagai inti sensasi. Terdapat CTA *Baca Cerita WNB* yang mengarah ke `/about`.
 *   **Explore Heading:** `PILIH INFORMASI YANG ANDA BUTUHKAN`
     *   Copy *evergreen* menjelaskan fungsi masing-masing halaman.
     *   *Lihat Paket* mengarah ke `/paket`
@@ -64,11 +64,9 @@ Semua salinan bahasa menggunakan Bahasa Indonesia yang netral, ramah SEO, berori
 *   **Vehicle Heading:** `LAND ROVER SHORT DAN LONG`
     *   Mencantumkan peran varian Short dan Long dalam pengalaman tanpa spesifikasi numerik. Label fakta menggunakan `Karakter Utama`.
 *   **Experience Heading:** `STANDAR PENGALAMAN WNB`
-    *   Pilar pengalaman: Disesuaikan dengan Peserta, Rute Dipertimbangkan, Land Rover Berkarakter, dan Momen yang Berkesan.
-*   **Final CTA Heading:** `SIAPKAN PETUALANGAN ANDA BERSAMA WNB`
-    *   Fokus pada konsultasi perjalanan.
-    *   *Rencanakan Perjalanan* mengarah ke `/booking`
-    *   *Kenali WNB* mengarah ke `/about`
+    *   Berisi 4 janji pengalaman: Petualangan Berkarakter, Dipersiapkan secara Bertanggung Jawab, Disesuaikan dengan Peserta, Dirancang Menjadi Cerita.
+*   **Final CTA:** `MULAI DARI PERJALANAN PERTAMA. KEMBALI UNTUK TANTANGAN BERIKUTNYA.`
+    *   Mengarah ke `/booking` (Rencanakan Perjalanan) dan `/about` (Kenali WNB).
 
 ---
 

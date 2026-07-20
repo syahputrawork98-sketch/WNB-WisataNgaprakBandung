@@ -30,10 +30,10 @@ export function FinalCtaSection() {
           id="cta-section-title"
           className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display uppercase tracking-wide text-wnb-white leading-tight"
         >
-          Siapkan petualangan Anda bersama WNB
+          Mulai dari perjalanan pertama. Kembali untuk tantangan berikutnya.
         </h2>
         <p className="text-sm sm:text-base text-wnb-muted leading-relaxed max-w-2xl">
-          Detail perjalanan akan disesuaikan berdasarkan kebutuhan peserta, pilihan pengalaman, dan kondisi jalur perjalanan.
+          Pilihan pengalaman akan disesuaikan dengan kebutuhan Anda dan mengikuti kondisi perjalanan secara aktual.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
           <LinkButton to={ROUTE_PATHS.booking} variant="primary" size="md">
