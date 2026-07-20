@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { LinkButton } from "@/components/common/LinkButton";
-import { EditorialImage } from "@/components/common/EditorialImage";
+import { EditorialImage } from "@/features/home/components/EditorialImage";
 import { ROUTE_PATHS } from "@/routes/routePaths";
 import {
   getPackageBySlug,
@@ -99,8 +99,7 @@ export function PackageDetailPage() {
                 <EditorialImage
                   src={pkg.image}
                   alt={`Suasana ilustrasi ${pkg.name}`}
-                  aspectRatio="video"
-                  showNotice={true}
+                  illustrationNotice={true}
                 />
               </div>
             )}
