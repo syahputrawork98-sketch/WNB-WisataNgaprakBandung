@@ -13,7 +13,7 @@ export function AboutHeroSection() {
 
       <Container className="relative z-10 flex flex-col items-center text-center max-w-4xl gap-6">
         <div className="flex items-center justify-center mb-4">
-          <BrandLogo isLink={false} className="h-16 sm:h-20 w-auto" />
+          <BrandLogo isLink={false} className="h-28 sm:h-36 md:h-40 w-auto" />
         </div>
 
         <h1 
