@@ -7,9 +7,12 @@
 - **Branch target:** branch aktif pengguna yang berbasis pada `main`
 - **Nomor plan:** `006A`
 - **Jenis pekerjaan:** sinkronisasi konteks terpilih + penyempurnaan konten dan presentasi Beranda
-- **Executor:** Gemini Antigravity
-- **Model yang disarankan:** Gemini 3.1 Pro
-- **Status awal:** Approved for working-tree execution
+- **Model yang disarankan:**
+  - **Model utama:** Gemini 3.1 Pro — High
+  - **Alasan:** Plan menyentuh beberapa dokumen sumber kebenaran, copy publik, struktur komponen Beranda, dan batas fakta yang membutuhkan penalaran serta kepatuhan instruksi ketat.
+  - **Fallback:** Gemini 3.5 non-Flash — High dengan tingkat reasoning tertinggi yang tersedia.
+  - **Flash High:** Hanya digunakan untuk koreksi kecil yang terlokalisasi setelah implementasi utama diperiksa pengguna.
+  - **Flash Low/Medium:** Tidak disarankan untuk eksekusi utama.
 - **Status akhir yang wajib dilaporkan Gemini:** `Uncommitted / Pending User Review and Manual Testing`
 
 ## 2. Tujuan

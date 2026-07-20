@@ -21,7 +21,7 @@ Dokumen ini memetakan fakta bisnis resmi, terminologi wajib, dan daftar asumsi y
     -   *Paket* = layanan atau produk perjalanan yang ditawarkan WNB.
     -   *Rute* = jalur perjalanan yang digunakan dalam suatu kegiatan.
 *   **Integrasi Reservasi:** Booking MVP direncanakan menggunakan form singkat yang menghasilkan WhatsApp Click-to-Chat setelah nomor resmi dikonfirmasi.
-*   **Status Visual:** Halaman Beranda menggunakan foto stock berlisensi bebas pakai sebagai **aset ilustrasi sementara** yang disimpan secara lokal. Foto stock tersebut tidak boleh diklaim sebagai dokumentasi armada WNB dan wajib menyertakan keterangan notice ilustrasi.
+*   **Status Visual:** Halaman Beranda menggunakan foto stock berlisensi bebas pakai sebagai **aset ilustrasi sementara** yang disimpan secara lokal. Foto stock yang memperlihatkan kendaraan wajib menyertakan keterangan bahwa foto tersebut merupakan ilustrasi dan bukan dokumentasi armada WNB. Aset foto resmi WNB masih menunggu ketersediaan.
 *   **Mockup:** Arah mockup/desain grafis yang diberikan bersifat panduan visual saja (*visual direction*), bukan blueprint struktur halaman final yang wajib ditiru 100%.
 
 ---

@@ -34,7 +34,7 @@ Komponen diletakkan secara modular di dalam folder fitur `client/src/features/ho
 - `components/ManifestoSection.tsx`: Cerita brand dan makna Ngaprak WNB.
 - `components/ExploreCard.tsx` & `ExploreSection.tsx`: Katalog navigasi interaktif berbasis gambar latar.
 - `components/VehicleCard.tsx` & `VehicleSection.tsx`: Informasi peran armada WNB bertema tipografis bersih.
-- `components/ExperienceSection.tsx` & `components/ExperienceCard.tsx`: Standar pengalaman WNB.
+- `components/ExperienceSection.tsx`: Section standar pengalaman WNB yang berisi empat pilar pengalaman.
 - `components/FinalCtaSection.tsx`: CTA penutup halaman untuk merencanakan perjalanan.
 
 ---
@@ -52,8 +52,8 @@ Semua salinan bahasa menggunakan Bahasa Indonesia yang netral, ramah SEO, berori
 
 *   **Hero Heading:** `LEBIH DARI PERJALANAN. INI CERITA.`
     *   Eyebrow: `Land Rover Classic Adventure — Bandung`
-    *   *Jelajahi Paket* mengarah ke `/paket`
-    *   *Lihat Rute* mengarah ke `/rute`
+    *   *Jelajahi Pengalaman* mengarah ke `/paket`
+    *   *Kenali Rute* mengarah ke `/rute`
 *   **Manifesto Heading:** `PETUALANGAN DENGAN KARAKTER KLASIK`
     *   Menjabarkan cerita operasi sejak 2019, makna Ngaprak, dan Land Rover klasik sebagai inti sensasi.
 *   **Explore Heading:** `PILIH INFORMASI YANG ANDA BUTUHKAN`
