@@ -33,7 +33,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     priceUnit: "per peserta",
     inclusions: [
       "Kendaraan Land Rover Classic",
-      "Driver & Helper profesional",
+      "Driver & Helper",
       "BBM & operasional armada",
       "Tiket masuk kawasan wisata",
       "Makan siang",
@@ -65,7 +65,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     shortDescription:
       "Perjalanan off-road singkat untuk keluarga, pemula, pasangan, atau kelompok kecil yang ingin mengenal pengalaman WNB dengan ritme lebih ringan.",
     longDescription:
-      "Pilihan ideal bagi keluarga, pasangan, maupun pemula yang ingin merasakan sensasi menaiki Land Rover klasik menyusuri alam Bandung dalam durasi yang lebih ringkas. Didesain dengan ritme yang ramah dan aman tanpa mengurangi kesan petualangan.",
+      "Pilihan ideal bagi keluarga, pasangan, maupun pemula yang ingin merasakan sensasi menaiki Land Rover klasik menyusuri alam Bandung dalam durasi yang lebih ringkas. Didesain dengan ritme yang lebih ringan dan terarah tanpa mengurangi kesan petualangan.",
     audience: ["Keluarga", "Pemula", "Pasangan", "Kelompok kecil"],
     duration: "3–4 jam",
     capacity: "Maksimal 6 pelanggan per unit",
@@ -74,7 +74,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     priceUnit: "per unit",
     inclusions: [
       "Kendaraan Land Rover Classic Long",
-      "Driver & Helper berpengalaman",
+      "Driver & Helper",
       "BBM & operasional",
       "Tiket kawasan wisata",
       "Snack",
@@ -88,7 +88,6 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     ],
     publicNotes: [
       "Rute ringan dipilih berdasarkan kondisi lapangan dan kebutuhan peserta",
-      "Waktu keberangkatan disarankan pada pagi hari untuk kenyamanan suasana",
     ],
     image: "/images/home/hero-adventure.webp",
   },
@@ -110,7 +109,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     priceUnit: "per unit",
     inclusions: [
       "Kendaraan Land Rover Classic Long",
-      "Driver & Helper berpengalaman",
+      "Driver & Helper",
       "BBM & operasional",
       "Tiket kawasan wisata",
       "Makan siang khas Sunda",
@@ -128,7 +127,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     ],
     publicNotes: [
       "Durasi perjalanan mengikuti perkembangan cuaca dan kondisi lintasan pada hari keberangkatan",
-      "Variasi rute dapat disesuaikan dengan tingkat keberanian peserta",
+      "Rute dan aktivitas disesuaikan dengan kebutuhan serta kondisi lapangan",
     ],
     image: "/images/home/explore-route.webp",
   },
@@ -164,7 +163,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     meetingPoint: "Fleksibel di area Cikole atau Lembang berdasarkan kesepakatan",
     specialTerms: [
       "Tema dekorasi dan kebutuhan kue perayaan dikonfirmasi paling lambat H-3",
-      "Skema waktu kejutan dikordinasikan secara terarah bersama pemesan",
+      "Skema waktu kejutan dikoordinasikan secara terarah bersama pemesan",
     ],
     publicNotes: [
       "Penambahan dekorasi khusus atau paket dokumentasi premium dapat memengaruhi harga akhir",
@@ -203,7 +202,6 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     meetingPoint: "Fleksibel di area Cikole atau Lembang berdasarkan kesepakatan",
     specialTerms: [
       "Konsep perayaan dan kebutuhan piknik dikonfirmasi paling lambat H-3",
-      "Disarankan memilih waktu pagi atau sore untuk mendapatkan pencahayaan terbaik",
     ],
     publicNotes: [
       "Menu dan perlengkapan piknik dapat disesuaikan dengan preferensi pasangan",
@@ -220,7 +218,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     shortDescription:
       "Paket kejutan yang menggabungkan perjalanan off-road, koordinasi rahasia, dan momen perayaan yang disusun bersama tim WNB.",
     longDescription:
-      "Paket khusus untuk Anda yang ingin memberikan kejutan istimewa kepada orang terdekat. Tim WNB akan berkoordinasi secara rahasia untuk mengatur skenario perjalanan hingga momen puncak kejutan terjadi di lokasi tersembunyi.",
+      "Paket khusus untuk Anda yang ingin memberikan kejutan istimewa kepada orang terdekat. Tim WNB akan berkoordinasi secara rahasia untuk mengatur skenario perjalanan hingga momen puncak kejutan terjadi di lokasi perayaan.",
     audience: ["Pasangan", "Keluarga", "Kelompok kecil"],
     duration: "5–6 jam",
     capacity: "Maksimal 6 pelanggan per unit",
@@ -277,7 +275,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
       "Air mineral",
     ],
     optionalActivities: [
-      "Api Unggun & Api Jelajah",
+      "Api unggun sesuai aturan lokasi",
       "Dokumentasi Foto/Video Opsional",
     ],
     meetingPoint: "Fleksibel di Sukawana, Cikole, atau lokasi kesepakatan",
@@ -309,7 +307,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     priceUnit: "per peserta",
     inclusions: [
       "Berbagi kendaraan Land Rover Classic",
-      "Driver & Helper berpengalaman",
+      "Driver & Helper",
       "BBM & operasional",
       "Tiket kawasan wisata",
       "Snack",
@@ -323,7 +321,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     ],
     publicNotes: [
       "Rute, aktivitas pendamping, dan titik kumpul tepat ditetapkan pada setiap pengumuman jadwal",
-      "Jika kuota minimal tidak terpenuhi, tanggal keberangkatan akan dijadwal ulang",
+      "Keberangkatan mengikuti pemenuhan kuota dan jadwal WNB",
     ],
     image: "/images/home/hero-adventure.webp",
   },
@@ -344,9 +342,9 @@ export const TRAIL_EXPLORATION: SpecialExperience = {
   vehicle: "Land Rover Classic Short / Long sesuai karakter rute",
   inclusions: [
     "Kendaraan Land Rover Classic pendukung",
-    "Driver & Helper spesialis off-road",
+    "Driver & Helper",
     "BBM & operasional",
-    "P3K & peralatan navigasi",
+    "P3K",
     "Winch, snatch block, tali penarik, & perlengkapan recovery",
   ],
   priceText: "Disusun berdasarkan kebutuhan",
@@ -393,7 +391,6 @@ export function getRelatedPackages(
     return others.slice(0, count);
   }
 
-  // Prioritize same category, then other packages
   const sameCategory = others.filter(
     (pkg) => pkg.category === currentPkg.category
   );

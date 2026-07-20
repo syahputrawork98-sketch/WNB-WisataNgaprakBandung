@@ -30,7 +30,7 @@ export function PackageProcessSection() {
     >
       <div className="flex flex-col gap-2 max-w-2xl">
         <span className="text-xs font-semibold uppercase tracking-widest text-wnb-accent">
-          Alur Pemesanan Mudah
+          Alur Merencanakan Perjalanan
         </span>
         <h2
           id="package-process-heading"

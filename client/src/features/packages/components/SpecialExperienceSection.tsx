@@ -49,7 +49,7 @@ export function SpecialExperienceSection() {
             </div>
             <div>
               <span className="text-xs font-semibold text-wnb-subtle uppercase tracking-wider block">
-                Kapasitas & Armasi:
+                Kapasitas & Armada:
               </span>
               <span className="text-xs text-wnb-white font-medium">
                 {TRAIL_EXPLORATION.capacity} ({TRAIL_EXPLORATION.vehicle})

@@ -54,9 +54,6 @@ Dilarang keras menuliskan istilah berikut untuk armada atau booking WNB:
 ## 4. Informasi Belum Terkonfirmasi (TBD Facts)
 Detail-detail di bawah ini berstatus **TBD (To Be Determined / Menunggu Konfirmasi)** dan dilarang disajikan sebagai fakta di UI web publik:
 -   Nomor WhatsApp resmi tujuan admin WNB.
--   Daftar harga paket wisata.
--   Durasi paket wisata, dan detail paket komersial final.
--   Kapasitas penumpang numerik per kendaraan (Short/Long).
 -   Seri Land Rover (Series I, II, III, Defender, dsb.).
 -   Tahun produksi kendaraan.
 -   Jenis mesin (diesel/bensin) dan spesifikasi modifikasi mesin Land Rover.
