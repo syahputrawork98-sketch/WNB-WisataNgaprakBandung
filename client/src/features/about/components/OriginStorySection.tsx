@@ -1,5 +1,6 @@
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import { EditorialImage } from "@/features/home/components/EditorialImage";
 
 export function OriginStorySection() {
   return (
@@ -28,10 +29,13 @@ export function OriginStorySection() {
           </div>
         </div>
 
-        <div className="w-full md:w-5/12 aspect-[4/5] bg-wnb-black border border-wnb-border/50 rounded-wnb-lg p-2 overflow-hidden shadow-2xl relative">
-            <div className="absolute inset-0 bg-wnb-surface opacity-50 flex items-center justify-center">
-                <span className="text-wnb-muted/50 text-xs font-mono">Placeholder Visual</span>
-            </div>
+        <div className="w-full md:w-5/12 aspect-[4/5] relative">
+          <EditorialImage
+            src="/images/home/explore-gallery.webp"
+            alt="Jalan tanah melintasi pemandangan alam pegunungan dan pepohonan"
+            className="w-full h-full object-cover rounded-wnb-lg"
+            illustrationNotice={false}
+          />
         </div>
       </Container>
     </section>

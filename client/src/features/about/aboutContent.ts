@@ -1,4 +1,4 @@
-import { ShieldCheck, Target, HeartHandshake, Zap, MapPin, CarFront, Users, Camera } from "lucide-react";
+import { ShieldCheck, Target, HeartHandshake, Zap, CarFront, Users, Camera } from "lucide-react";
 
 export const TIMELINE_EVENTS = [
   {
@@ -14,7 +14,7 @@ export const TIMELINE_EVENTS = [
   {
     period: "Masa Perlambatan",
     title: "Menjaga Semangat",
-    description: "Aktivitas melambat akibat pandemi dan kondisi ekonomi; namun semangat perjalanan tetap dijaga.",
+    description: "Aktivitas WNB melambat akibat pandemi dan kondisi ekonomi.",
   },
   {
     period: "2026",

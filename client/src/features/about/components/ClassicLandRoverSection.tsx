@@ -1,5 +1,6 @@
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import { EditorialImage } from "@/features/home/components/EditorialImage";
 
 export function ClassicLandRoverSection() {
   return (
@@ -21,7 +22,7 @@ export function ClassicLandRoverSection() {
               Land Rover klasik merupakan inti dari setiap pengalaman WNB. Kendaraan ini bukan sekadar pajangan atau alat transportasi biasa.
             </p>
             <p>
-              Bentuk, karakter mesin, kemampuan menjelajah, dan sensasi perjalanannya membantu membentuk identitas petualangan WNB. 
+              Bentuk, karakter, kemampuan menjelajah, dan sensasi perjalanannya membantu membentuk identitas petualangan WNB. 
             </p>
             <blockquote className="border-l-2 border-wnb-accent pl-4 italic mt-2 text-wnb-white">
               "Land Rover klasik, jalur yang berbeda, dan petualangan yang menjadi cerita."
@@ -29,10 +30,13 @@ export function ClassicLandRoverSection() {
           </div>
         </div>
 
-        <div className="w-full md:w-5/12 aspect-square bg-wnb-surface border border-wnb-border/50 rounded-wnb-lg p-2 overflow-hidden shadow-2xl relative">
-            <div className="absolute inset-0 bg-wnb-black opacity-50 flex items-center justify-center">
-                <span className="text-wnb-muted/50 text-xs font-mono">Placeholder Visual Kendaraan</span>
-            </div>
+        <div className="w-full md:w-5/12 aspect-square relative">
+          <EditorialImage
+            src="/images/home/explore-package.webp"
+            alt="Foto ilustrasi kendaraan off-road klasik di jalan pedesaan"
+            className="w-full h-full object-cover rounded-wnb-lg"
+            illustrationNotice={true}
+          />
         </div>
       </Container>
     </section>

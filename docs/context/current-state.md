@@ -5,14 +5,9 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 ---
 
 ## 1. Posisi Baseline Repository
-*   **Tanggal Peninjauan Konteks Terakhir:** 2026-07-18
-*   **Konteks Baseline Proyek:** `c30d027bc33113412b3f596685cb43990888ee48`
-*   **Latest Verified Implementation Commit:** `c30d027bc33113412b3f596685cb43990888ee48`
-
-> [!NOTE]
-> Perubahan visual Home pada Plan 006 merupakan commit kandidat (*candidate commit*). Karena SHA commit tidak dapat dituliskan di dalam commit itu sendiri, room ChatGPT baru wajib membaca repository HEAD terkini dan membandingkannya dengan baseline terverifikasi di atas.
->
-> Revisi workflow Plan 005A telah diterapkan pada dokumentasi repository. Commit dokumentasi terbaru tetap berstatus Candidate sampai diff-nya diperiksa oleh ChatGPT.
+*   **Tanggal Peninjauan Konteks Terakhir:** 2026-07-20
+*   **Konteks Baseline Proyek:** `ea0c8e100e923401018b93bfdd7f2653a3ad6874`
+*   **Latest Verified Implementation Commit:** `ea0c8e100e923401018b93bfdd7f2653a3ad6874`
 
 ---
 
@@ -23,9 +18,9 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 *   `004` — Design system and responsive shell: **Complete** (Design tokens monokrom, common components, dan navigasi mobile aksesibel).
 *   `005` — Home page implementation: **Complete** (Implementasi section Beranda statis dengan visual pattern placeholder).
 *   `005A` — Project context and handoff documentation: **Revised and current**. Menetapkan alur kerja ChatGPT read-only → downloadable .md plan → pengguna → Gemini Antigravity executor working tree (no commit/push/testing) → pengguna testing manual & commit manual → SHA review.
-*   `006` — Home page visual enhancement: **Complete / candidate implementation according to current repository state**. (Peningkatan visual halaman Home menggunakan aset ilustrasi lokal WebP, layout editorial, dan accessibility).
-*   `006A` — Aktualisasi konteks bisnis dan penyempurnaan Beranda: **Complete**. (Penghapusan bahasa TBD, perapian struktur Beranda, dan penambahan ExperienceSection. Logo resmi berstatus deferred karena aset belum tersedia).
-*   `007` — Penyelarasan Homepage dan Implementasi Halaman Tentang Kami WNB: **Implemented / Candidate / Pending User Review and Manual Testing** (Memperbarui narasi hero dan section lainnya di Beranda, serta membangun halaman `/about` secara utuh secara modular).
+*   `006` — Home page visual enhancement: **Complete** (Peningkatan visual halaman Home menggunakan aset ilustrasi lokal WebP, layout editorial, dan accessibility).
+*   `006A` — Aktualisasi konteks bisnis dan penyempurnaan Beranda: **Complete** (Penghapusan bahasa TBD, perapian struktur Beranda, dan penambahan ExperienceSection. Logo resmi berstatus deferred karena aset belum tersedia).
+*   `007` — Penyelarasan Homepage dan Implementasi Halaman Tentang Kami WNB: **Implemented; koreksi pasca-review diterapkan pada working tree dan menunggu commit serta pemeriksaan SHA berikutnya.**
 
 ---
 
@@ -34,7 +29,7 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 | Rute URL | Halaman (Page) | Status | Keterangan |
 | :--- | :--- | :--- | :--- |
 | `/` | Home | **Implemented** | Selesai dengan aset ilustrasi sementara WebP dan narasi yang selaras. |
-| `/about` | About | **Implemented** | Halaman cerita WNB, sejarah, karakter, janji pengalaman, dan CTA lengkap. |
+| `/about` | About | **Implemented** | Halaman cerita WNB, sejarah, karakter, janji pengalaman, dan CTA lengkap (koreksi pasca-review diterapkan pada working tree, menunggu verifikasi commit berikutnya). |
 | `/paket` | Package list | **Placeholder** | Menampilkan info daftar paket dengan typed local data kelak. |
 | `/paket/:slug` | Package detail | **Placeholder** | Menampilkan technical preview parameter slug paket terpilih. |
 | `/rute` | Route list | **Placeholder** | Menampilkan info sebaran rute fisik menunggu konfirmasi. |
@@ -51,21 +46,20 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 -   Kerangka navigasi (*responsive shell*) desktop navbar, mobile menu drawer (dengan body scroll lock & Escape listener), dan semantic footer sudah aktif.
 -   Seluruh halaman internal terhubung secara aman menggunakan React Router Declarative Mode.
 -   Pengguliran halaman otomatis (`ScrollToTop`) di bawah browser router telah berjalan dengan sukses saat transisi rute.
--   Halaman Beranda menggunakan 6 aset stock photo lokal WebP sebagai ilustrasi berlisensi bebas dengan notice keterangan.
+-   Halaman Beranda & About menggunakan aset stock photo lokal WebP sebagai ilustrasi berlisensi bebas dengan notice keterangan.
 -   Nomor WhatsApp tujuan, rute resmi, spesifikasi armada, dan paket wisata komersial belum dimasukkan karena berstatus TBD.
 -   Backend server (`server/`), sistem database, autentikasi admin, dan unit testing dinonaktifkan pada MVP ini.
 
 ---
 
 ## 5. Masalah Terbuka Menunggu Koreksi (Open Corrections)
-Tidak ada masalah terbuka yang tertunda. Koreksi minor dari fase sebelumnya (typo `nama and detail rute`, heading `Informasi Terkonfirmasi`, dan `aria-labelledby` pada section Beranda) telah diselesaikan pada Plan 006.
+Koreksi pasca-review Plan 007 telah diterapkan pada working tree dan menunggu verifikasi commit berikutnya.
 
 ---
 
 ## 6. Status Diskusi Terkini (Active Discussion State)
--   Revisi Plan 005A telah diterapkan.
--   Plan 006A telah diimplementasikan dan dikonfirmasi melalui commit manual.
--   Plan 007 (Penyelarasan Homepage dan Halaman Tentang WNB) telah diimplementasikan di working tree dan berstatus `Candidate / Pending User Review and Manual Testing`.
+-   Commit baseline terverifikasi: `ea0c8e100e923401018b93bfdd7f2653a3ad6874`.
+-   Plan 007 (Penyelarasan Homepage dan Halaman Tentang WNB): Implemented; koreksi pasca-review diterapkan pada working tree dan menunggu commit serta pemeriksaan SHA berikutnya.
 -   Halaman paket, rute, galeri, dan booking tetap menjadi placeholder.
 
 ---
