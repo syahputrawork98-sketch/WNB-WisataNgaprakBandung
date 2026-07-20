@@ -11,7 +11,7 @@ export function VehicleSection() {
           id="vehicle-section-title"
           eyebrow="Armada Klasik"
           title="Land Rover Short dan Long"
-          description="WNB menggunakan dua kategori varian kendaraan klasik. Spesifikasi teknis dan kapasitas akan ditampilkan setelah dikonfirmasi."
+          description="WNB menggunakan dua kategori varian kendaraan klasik. Pemilihan armada mempertimbangkan jumlah peserta, karakter rute, dan kebutuhan perjalanan Anda."
           align="center"
           headingLevel="h2"
         />

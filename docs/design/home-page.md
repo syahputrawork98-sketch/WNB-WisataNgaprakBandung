@@ -16,10 +16,11 @@ Home Page (`/`) berfungsi sebagai pintu gerbang utama aplikasi WNB untuk:
 ## 2. Urutan Bagian Halaman (Section Sequence) & Warna
 Untuk menjaga kedalaman dan kontras visual, diterapkan pola berselang-seling (*alternating background*) berikut:
 1.  **Hero Section** (`bg-wnb-black`): Introduksi utama headline petualangan dengan background visual full-bleed dan tombol aksi utama.
-2.  **Manifesto Section** (`bg-wnb-surface`): Penjabaran karakter petualangan klasik WNB dengan layout editorial majalah asimetris.
+2.  **Manifesto Section** (`bg-wnb-surface`): Pengantar brand WNB, makna Ngaprak, dan cerita singkat berbasis layout asimetris.
 3.  **Explore Section** (`bg-wnb-black`): Navigasi taktis berupa grid card berbasis foto yang menghubungkan Paket, Rute, dan Galeri.
-4.  **Vehicle Section** (`bg-wnb-surface`): Ulasan dua varian armada Land Rover (Short SWB dan Long LWB) menggunakan card editorial bertipografi kuat (tanpa foto stock kendaraan SWB/LWB palsu).
-5.  **Final CTA Section** (`bg-wnb-surface-elevated`): Ajakan bertindak penutup dengan background lanskap pegunungan dan garis pembatas di atas dan bawah.
+4.  **Vehicle Section** (`bg-wnb-surface`): Ulasan peran armada Land Rover (Short SWB dan Long LWB) dalam pengalaman menggunakan card editorial.
+5.  **Experience Section** (`bg-wnb-black`): Ringkasan standar pengalaman WNB yang berfokus pada personalisasi, rute, karakter armada, dan momen.
+6.  **Final CTA Section** (`bg-wnb-surface-elevated`): Ajakan bertindak penutup untuk konsultasi perjalanan dengan background lanskap pegunungan.
 
 ---
 
@@ -30,10 +31,11 @@ Komponen diletakkan secara modular di dalam folder fitur `client/src/features/ho
 - `components/HomeMediaPlaceholder.tsx`: Komponen visual abu-abu bermotif garis (*media pattern*) sebagai fallback.
 - `components/EditorialImage.tsx`: Komponen wrapper gambar stok dengan caption sumber dan label notice ilustrasi otomatis.
 - `components/HeroSection.tsx`: Section pendaratan awal dengan background penuh.
-- `components/ManifestoSection.tsx`: Manifesto konsep WNB dengan layout asimetris.
+- `components/ManifestoSection.tsx`: Cerita brand dan makna Ngaprak WNB.
 - `components/ExploreCard.tsx` & `ExploreSection.tsx`: Katalog navigasi interaktif berbasis gambar latar.
-- `components/VehicleCard.tsx` & `VehicleSection.tsx`: Informasi armada WNB bertema tipografis bersih.
-- `components/FinalCtaSection.tsx`: CTA penutup halaman berlatar foto lanskap pegunungan.
+- `components/VehicleCard.tsx` & `VehicleSection.tsx`: Informasi peran armada WNB bertema tipografis bersih.
+- `components/ExperienceSection.tsx` & `components/ExperienceCard.tsx`: Standar pengalaman WNB.
+- `components/FinalCtaSection.tsx`: CTA penutup halaman untuk merencanakan perjalanan.
 
 ---
 
@@ -46,22 +48,27 @@ Komponen diletakkan secara modular di dalam folder fitur `client/src/features/ho
 ---
 
 ## 5. Salinan Isi (*Copywriting*) Terpilih & Hubungan Rute
-Semua salinan bahasa menggunakan Bahasa Indonesia yang netral, ramah SEO, dan tidak menggunakan klaim operasional yang belum terverifikasi:
+Semua salinan bahasa menggunakan Bahasa Indonesia yang netral, ramah SEO, berorientasi pengalaman, dan evergreen tanpa menggunakan klaim operasional yang belum terverifikasi atau menyebut ketiadaan data.
 
 *   **Hero Heading:** `LEBIH DARI PERJALANAN. INI CERITA.`
+    *   Eyebrow: `Land Rover Classic Adventure — Bandung`
     *   *Jelajahi Paket* mengarah ke `/paket`
     *   *Lihat Rute* mengarah ke `/rute`
 *   **Manifesto Heading:** `PETUALANGAN DENGAN KARAKTER KLASIK`
-    *   Menjabarkan Land Rover klasik berbodi besi/logam varian Short dan Long di Bandung tanpa menyebut area operasional Lembang, Ciwidey, atau Pangalengan.
+    *   Menjabarkan cerita operasi sejak 2019, makna Ngaprak, dan Land Rover klasik sebagai inti sensasi.
 *   **Explore Heading:** `PILIH INFORMASI YANG ANDA BUTUHKAN`
+    *   Copy *evergreen* menjelaskan fungsi masing-masing halaman.
     *   *Lihat Paket* mengarah ke `/paket`
     *   *Lihat Rute* mengarah ke `/rute`
     *   *Buka Galeri* mengarah ke `/gallery`
 *   **Vehicle Heading:** `LAND ROVER SHORT DAN LONG`
-    *   Mencantumkan fakta bahwa armada terbuat dari besi/logam dan merupakan kendaraan off-road klasik. Spesifikasi performa lainnya ditandai TBD.
+    *   Mencantumkan peran varian Short dan Long dalam pengalaman tanpa spesifikasi numerik. Label fakta menggunakan `Karakter Utama`.
+*   **Experience Heading:** `STANDAR PENGALAMAN WNB`
+    *   Pilar pengalaman: Disesuaikan dengan Peserta, Rute Dipertimbangkan, Land Rover Berkarakter, dan Momen yang Berkesan.
 *   **Final CTA Heading:** `SIAPKAN PETUALANGAN ANDA BERSAMA WNB`
-    *   *Buka Halaman Booking* mengarah ke `/booking`
-    *   *Pelajari WNB* mengarah ke `/about`
+    *   Fokus pada konsultasi perjalanan.
+    *   *Rencanakan Perjalanan* mengarah ke `/booking`
+    *   *Kenali WNB* mengarah ke `/about`
 
 ---
 

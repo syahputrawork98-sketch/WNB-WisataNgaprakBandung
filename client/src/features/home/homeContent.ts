@@ -6,7 +6,7 @@ export const EXPLORE_ITEMS: readonly ExploreItem[] = [
   {
     title: "Paket Perjalanan",
     description:
-      "Temukan pilihan perjalanan WNB setelah informasi paket resmi tersedia.",
+      "Pilihan bentuk pengalaman perjalanan yang disesuaikan dengan kebutuhan Anda.",
     path: ROUTE_PATHS.packages,
     linkLabel: "Lihat Paket",
     icon: Compass,
@@ -19,7 +19,7 @@ export const EXPLORE_ITEMS: readonly ExploreItem[] = [
   {
     title: "Rute Petualangan",
     description:
-      "Pelajari jalur perjalanan setelah nama dan detail rute dikonfirmasi.",
+      "Gambaran karakter jalur dan tingkat petualangan yang dapat Anda pilih.",
     path: ROUTE_PATHS.routes,
     linkLabel: "Lihat Rute",
     icon: Map,
@@ -32,7 +32,7 @@ export const EXPLORE_ITEMS: readonly ExploreItem[] = [
   {
     title: "Galeri Perjalanan",
     description:
-      "Lihat dokumentasi kegiatan setelah aset foto resmi WNB tersedia.",
+      "Ruang dokumentasi suasana, kebersamaan, dan cerita perjalanan WNB.",
     path: ROUTE_PATHS.gallery,
     linkLabel: "Buka Galeri",
     icon: Images,
@@ -50,11 +50,11 @@ export const VEHICLE_ITEMS: readonly VehicleItem[] = [
     variant: "short",
     technicalLabel: "SWB",
     description:
-      "Varian Land Rover klasik dengan konfigurasi bodi lebih pendek.",
+      "Varian Land Rover klasik dengan konfigurasi bodi lebih pendek, disesuaikan dengan kebutuhan perjalanan dan jumlah peserta.",
     confirmedFacts: [
       "Kendaraan off-road klasik",
       "Varian Short / Short Wheelbase",
-      "Bodi berbahan besi atau logam",
+      "Pemilihan unit menyesuaikan rute",
     ],
   },
   {
@@ -62,11 +62,11 @@ export const VEHICLE_ITEMS: readonly VehicleItem[] = [
     variant: "long",
     technicalLabel: "LWB",
     description:
-      "Varian Land Rover klasik dengan konfigurasi bodi lebih panjang.",
+      "Varian Land Rover klasik dengan konfigurasi bodi lebih panjang, disesuaikan dengan kebutuhan perjalanan dan jumlah peserta.",
     confirmedFacts: [
       "Kendaraan off-road klasik",
       "Varian Long / Long Wheelbase",
-      "Bodi berbahan besi atau logam",
+      "Pemilihan unit menyesuaikan rute",
     ],
   },
 ] as const;

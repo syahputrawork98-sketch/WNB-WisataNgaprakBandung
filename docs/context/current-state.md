@@ -24,6 +24,7 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 *   `005` — Home page implementation: **Complete** (Implementasi section Beranda statis dengan visual pattern placeholder).
 *   `005A` — Project context and handoff documentation: **Revised and current**. Menetapkan alur kerja ChatGPT read-only → downloadable .md plan → pengguna → Gemini Antigravity executor working tree (no commit/push/testing) → pengguna testing manual & commit manual → SHA review.
 *   `006` — Home page visual enhancement: **Complete / candidate implementation according to current repository state**. (Peningkatan visual halaman Home menggunakan aset ilustrasi lokal WebP, layout editorial, dan accessibility).
+*   `006A` — Aktualisasi konteks bisnis dan penyempurnaan Beranda: **Implemented / Candidate / Pending User Review and Manual Testing** (Penghapusan bahasa TBD, perapian struktur Beranda, dan penambahan ExperienceSection. Halaman lain tetap berstatus placeholder. Logo resmi berstatus deferred karena aset belum tersedia).
 
 ---
 
@@ -64,14 +65,14 @@ Tidak ada masalah terbuka yang tertunda. Koreksi minor dari fase sebelumnya (typ
 -   Revisi Plan 005A telah diterapkan.
 -   Commit koreksi dokumentasi terbaru menunggu review ChatGPT.
 -   Plan 006 tetap merupakan Home Page Visual Enhancement.
--   Setelah koreksi Plan 005A dinyatakan Verified, proyek melanjutkan diskusi Plan 006A.
--   Plan 006A akan membahas penyempurnaan halaman Home.
--   Scope Plan 006A belum ditentukan.
+-   Plan 006A telah diimplementasikan di working tree dan berstatus `Candidate / Pending User Review and Manual Testing`.
+-   Halaman selain Beranda tetap menjadi placeholder.
+-   Logo resmi WNB berstatus deferred.
 -   Plan 007 belum dimulai.
 
 ---
 
 ## 7. Kemungkinan Milestone Berikutnya (Next Likely Milestone)
-*   **Likely next milestone:** Plan 006A — Home Page Refinement
+*   **Likely next milestone:** Plan 007 — (TBD)
 *   **Status:** Proposed, not approved
 *   *Final scope must be discussed and approved first*

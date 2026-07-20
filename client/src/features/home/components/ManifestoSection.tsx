@@ -33,18 +33,18 @@ export function ManifestoSection() {
           <div className="flex items-center gap-2 text-xs font-mono text-wnb-subtle tracking-widest uppercase">
             <span>01</span>
             <span className="w-6 h-px bg-wnb-border" />
-            <span>Tentang Pengalaman</span>
+            <span>Cerita WNB</span>
           </div>
 
           <SectionHeading
             id="manifesto-heading"
             title="Petualangan dengan karakter klasik"
-            description="WNB dibangun untuk menyajikan informasi perjalanan, pilihan rute, dokumentasi kegiatan, dan alur booking dalam satu aplikasi yang mudah digunakan."
+            description="Beroperasi sejak 2019 dan kini dikembangkan kembali, WNB membawa semangat 'Ngaprak'—menyusuri jalur dan menemukan sisi alam Bandung yang tidak biasa."
             headingLevel="h2"
           />
 
           <p className="text-sm sm:text-base text-wnb-muted leading-relaxed">
-            Kendaraan yang digunakan merupakan Land Rover klasik berbodi besi atau logam dengan varian Short dan Long. Detail armada dan operasional akan ditampilkan setelah dikonfirmasi.
+            Bagi kami, perjalanan bukan hanya tentang mencapai tujuan. Land Rover klasik yang menemani Anda bukanlah sekadar alat transportasi, melainkan bagian tak terpisahkan dari karakter petualangan, sensasi penjelajahan, dan kenangan yang tercipta di sepanjang jalur.
           </p>
         </div>
       </Container>

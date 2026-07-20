@@ -15,7 +15,7 @@ Dokumen ini mendefinisikan sistem desain dasar (*design system foundation*) awal
 
 ## 2. Token Desain (Design Tokens)
 
-Seluruh token didefinisikan menggunakan variabel kustom Tailwind CSS v4 di dalam berkas [globals.css](file:///i:/Workspace/Workspace-Syahputrawork/WNB-WisataNgaprakBandung/client/src/styles/globals.css):
+Seluruh token didefinisikan menggunakan variabel kustom Tailwind CSS v4 di dalam berkas [globals.css](../../client/src/styles/globals.css):
 
 ### Warna (Colors)
 *   `--color-wnb-black` (`#0a0a0a`): Latar belakang utama aplikasi (*pitch black*).

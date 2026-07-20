@@ -20,7 +20,7 @@ WNB (Wisata Ngaprak Bandung) adalah aplikasi web yang dirancang untuk memperkena
 
 ## 5. Ruang Lingkup MVP (Minimum Viable Product)
 Aplikasi WNB tahap awal berfokus sebagai platform informasi interaktif (katalog) yang responsif dengan integrasi pemesanan langsung ke WhatsApp:
-1.  **Halaman Utama (Beranda):** Ringkasan layanan, paket unggulan, rute pilihan, testimoni, dan ajakan bertindak (CTA).
+1.  **Halaman Utama (Beranda):** Ringkasan layanan, cerita brand, standar pengalaman WNB, dan ajakan bertindak (CTA).
 2.  **Halaman Tentang Kami (About):** Cerita WNB, nilai utama, armada kendaraan, dan standar keselamatan.
 3.  **Katalog Paket Wisata:** Daftar pilihan paket petualangan.
 4.  **Detail Paket Wisata:** Informasi komprehensif mengenai fasilitas, durasi, harga mulai, serta rute yang dilewati paket terkait.
@@ -65,13 +65,13 @@ Fitur-fitur berikut **tidak diimplementasikan** pada tahap MVP ini:
 Informasi berikut belum ditentukan secara resmi dan memerlukan konfirmasi lebih lanjut dari pemilik proyek:
 *   Nomor WhatsApp resmi WNB (`TBD — membutuhkan konfirmasi pemilik proyek`).
 *   Harga resmi dan detail pembagian harga setiap paket (`TBD — membutuhkan konfirmasi pemilik proyek`).
-*   Alamat kantor operasional, jam kerja, dan legalitas usaha (`TBD — membutuhkan konfirmasi pemilik proyek`).
-*   Profil resmi tim manajemen dan daftar driver berlisensi (`TBD — membutuhkan konfirmasi pemilik proyek`).
-*   Nama badan hukum dan detail hak cipta aplikasi (`TBD — membutuhkan konfirmasi pemilik proyek`).
-*   Spesifikasi armada kendaraan WNB, termasuk seri Land Rover, tahun produksi, kapasitas penumpang, jenis mesin, spesifikasi modifikasi, material teknis bodi, dan jumlah unit kendaraan (`TBD — membutuhkan konfirmasi pemilik proyek`).
+*   Nama badan hukum, legalitas usaha, dan profil pendiri/tim (`TBD — membutuhkan konfirmasi pemilik proyek`).
+*   Kapasitas penumpang numerik per kendaraan, seri, tahun produksi, spesifikasi modifikasi teknis mesin Land Rover (`TBD — membutuhkan konfirmasi pemilik proyek`).
+*   Nama rute perjalanan, lokasi titik start/finish presisi (`TBD — membutuhkan konfirmasi pemilik proyek`).
+*   Standar atau prosedur keselamatan darurat terperinci, batas usia peserta, batasan kesehatan (`TBD — membutuhkan konfirmasi pemilik proyek`).
 
 ## 11. Dokumentasi Kendaraan Konseptual
-Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik berbodi besi/logam dengan varian Short dan Long. Rincian teknis mengenai bodi, konstruksi, dan spesifikasi armada sepenuhnya berstatus TBD (memerlukan konfirmasi pemilik proyek). Berikut adalah dokumentasi konseptual dua varian kendaraan tersebut:
+Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik dengan varian Short dan Long. Rincian teknis mendalam armada masih berstatus TBD (memerlukan konfirmasi pemilik proyek). Berikut adalah dokumentasi konseptual dua varian kendaraan tersebut:
 
 ### Varian Kendaraan
 1. **Land Rover Short / Short Wheelbase (SWB)**
@@ -80,7 +80,6 @@ Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik berbo
    - Kapasitas Penumpang: `TBD — membutuhkan konfirmasi pemilik proyek`
    - Jenis Mesin: `TBD — membutuhkan konfirmasi pemilik proyek`
    - Spesifikasi Modifikasi: `TBD — membutuhkan konfirmasi pemilik proyek`
-   - Konstruksi & Detail Material Bodi (Ketebalan/Tipe): `TBD — membutuhkan konfirmasi pemilik proyek`
    - Jumlah Unit Kendaraan: `TBD — membutuhkan konfirmasi pemilik proyek`
 
 2. **Land Rover Long / Long Wheelbase (LWB)**
@@ -89,7 +88,6 @@ Kendaraan operasional WNB menggunakan kendaraan off-road Land Rover klasik berbo
    - Kapasitas Penumpang: `TBD — membutuhkan konfirmasi pemilik proyek`
    - Jenis Mesin: `TBD — membutuhkan konfirmasi pemilik proyek`
    - Spesifikasi Modifikasi: `TBD — membutuhkan konfirmasi pemilik proyek`
-   - Konstruksi & Detail Material Bodi (Ketebalan/Tipe): `TBD — membutuhkan konfirmasi pemilik proyek`
    - Jumlah Unit Kendaraan: `TBD — membutuhkan konfirmasi pemilik proyek`
 
 ### Model Data Konseptual Kendaraan

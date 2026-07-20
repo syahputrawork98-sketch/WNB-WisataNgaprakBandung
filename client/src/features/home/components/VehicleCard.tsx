@@ -42,7 +42,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
       {/* Confirmed facts */}
       <div className="pt-6 border-t border-wnb-border/50 relative z-10">
         <h4 className="text-xs font-bold uppercase tracking-widest text-wnb-white mb-4">
-          Informasi Terkonfirmasi
+          Karakter Utama
         </h4>
         <ul className="flex flex-col gap-3">
           {vehicle.confirmedFacts.map((fact) => (

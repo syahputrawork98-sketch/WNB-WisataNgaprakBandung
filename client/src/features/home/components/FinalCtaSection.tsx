@@ -33,14 +33,14 @@ export function FinalCtaSection() {
           Siapkan petualangan Anda bersama WNB
         </h2>
         <p className="text-sm sm:text-base text-wnb-muted leading-relaxed max-w-2xl">
-          Buka halaman booking untuk menyiapkan informasi perjalanan. Pengiriman melalui WhatsApp Click-to-Chat akan diaktifkan setelah nomor resmi dikonfirmasi.
+          Detail perjalanan akan disesuaikan berdasarkan kebutuhan peserta, pilihan pengalaman, dan kondisi jalur perjalanan.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
           <LinkButton to={ROUTE_PATHS.booking} variant="primary" size="md">
-            Buka Halaman Booking
+            Rencanakan Perjalanan
           </LinkButton>
           <LinkButton to={ROUTE_PATHS.about} variant="secondary" size="md">
-            Pelajari WNB
+            Kenali WNB
           </LinkButton>
         </div>
       </Container>
