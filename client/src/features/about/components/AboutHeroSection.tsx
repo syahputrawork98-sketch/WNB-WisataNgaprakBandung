@@ -1,4 +1,5 @@
 import { Container } from "@/components/common/Container";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 export function AboutHeroSection() {
   return (
@@ -11,12 +12,8 @@ export function AboutHeroSection() {
       </div>
 
       <Container className="relative z-10 flex flex-col items-center text-center max-w-4xl gap-6">
-        <div className="flex items-center gap-3">
-          <span className="w-8 sm:w-12 h-px bg-wnb-accent" />
-          <span className="text-xs sm:text-sm font-semibold tracking-widest text-wnb-accent uppercase">
-            Tentang WNB
-          </span>
-          <span className="w-8 sm:w-12 h-px bg-wnb-accent" />
+        <div className="flex items-center justify-center mb-4">
+          <BrandLogo isLink={false} className="h-16 sm:h-20 w-auto" />
         </div>
 
         <h1 

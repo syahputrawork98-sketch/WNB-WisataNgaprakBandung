@@ -59,9 +59,11 @@ Tombol menggunakan tag HTML asli `<button>` dan memiliki 3 varian utama:
 ### LinkButton (`client/src/components/common/LinkButton.tsx`)
 - Komponen pembungkus React Router `Link` yang menggunakan gaya visual yang sama persis dengan `Button` melalui fungsi pengekstraksi class terpadu `getButtonClassName`.
 
-### BrandWordmark (`client/src/components/brand/BrandWordmark.tsx`)
-- Wordmark berbasis teks sementara untuk menampilkan logo teks `WNB` di pojok kiri atas aplikasi. Pada layar desktop, ditambahkan sub-teks kecil `"Wisata Ngaprak Bandung"`.
-- Dilengkapi dengan properti aksesibilitas `aria-label="WNB — kembali ke Beranda"`.
+### BrandLogo (`client/src/components/brand/BrandLogo.tsx`)
+- Komponen gambar untuk menampilkan logo resmi WNB. Aset logo disimpan secara lokal pada `client/public/images/brand/wnb-logo.png`.
+- Favicon WNB menggunakan aset yang sama dan didefinisikan pada `client/index.html`.
+- Mendukung dua mode: sebagai tautan ke Beranda (dengan aksesibilitas `aria-label`) pada header/footer, atau sebagai gambar statis murni (dengan `alt` text) pada Hero section halaman Tentang Kami.
+- Berjalan secara proporsional melalui utility classes tanpa menggunakan crop atau filter perusak identitas.
 
 ### SkipLink (`client/src/components/common/SkipLink.tsx`)
 - Tautan aksesibilitas tersembunyi yang hanya muncul saat pengguna keyboard menekan tombol `Tab` pertama kali. Menghubungkan langsung ke target ID `#main-content`.
@@ -79,7 +81,7 @@ Tombol menggunakan tag HTML asli `<button>` dan memiliki 3 varian utama:
 
 ### Navbar Desktop (`client/src/components/navigation/Navbar.tsx`)
 - Bersifat lengket (*sticky*) di bagian atas layar dengan efek backdrop blur semi-transparan.
-- Menampilkan logo teks, daftar menu dari navigasi terpusat, dan tombol CTA booking.
+- Menampilkan logo gambar resmi, daftar menu dari navigasi terpusat (Beranda, Tentang Kami, dsb.), dan tombol CTA Rencanakan Perjalanan.
 
 ### Mobile Navigation (`client/src/components/navigation/MobileNavigation.tsx`)
 - Muncul di bawah breakpoint `md` (`768px`) dalam bentuk drawer layar penuh.
@@ -91,21 +93,20 @@ Tombol menggunakan tag HTML asli `<button>` dan memiliki 3 varian utama:
 
 ### Footer (`client/src/components/navigation/Footer.tsx`)
 - footer statis dengan format grid 3-kolom (Brand, Navigasi internal, dan Info Reservasi).
-- Dilengkapi kalimat status netral: *"Informasi kontak resmi akan ditambahkan setelah dikonfirmasi."*
+- Dilengkapi CTA Rencanakan Perjalanan dan kalimat narasi: *"Diskusikan karakter peserta dan pengalaman yang ingin direncanakan bersama WNB."*
 
 ---
 
 ## 5. Panduan Aksesibilitas (Accessibility Rules)
 1.  **Semantic Elements:** Wajib menggunakan `<nav>`, `<footer>`, `<header>`, dan `<main>` pada struktur shell.
 2.  **Keyboard Navigation:** Fokus visual harus jelas melalui gaya `focus-visible` (outline putih tebal dengan offset).
-3.  **Screen Reader:** Tombol ikonik / menu toggle wajib menyertakan `aria-label`, `aria-controls`, dan `aria-expanded`.
+3.  **Screen Reader:** Tombol ikonik / menu toggle wajib menyertakan `aria-label`, `aria-controls`, dan `aria-expanded`. Link gambar wajib memiliki proporsi aria-label/alt text yang tepat agar tidak berulang.
 4.  **Reduced Motion:** Gaya default meminimalkan durasi transisi dan animasi bila pengguna mengaktifkan preferensi pembatasan gerakan sistem.
 
 ---
 
 ## 6. Daftar Elemen yang Ditunda (*Deferred Items*)
 Beberapa elemen penting berikut ditunda pengembangannya dan akan diimplementasikan pada fase berikutnya setelah detailnya dikonfirmasi:
-*   Aset gambar logo resmi WNB.
 *   Pemasangan file font tipografi resmi via hosting lokal (font sistem digunakan saat ini).
 *   Aset foto dokumentasi asli.
 *   Garis pembatas visual berpola pegunungan / off-road.

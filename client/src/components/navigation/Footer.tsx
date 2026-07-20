@@ -2,18 +2,17 @@ import { Link } from "react-router";
 import { ROUTE_PATHS } from "@/routes/routePaths";
 import { Container } from "../common/Container";
 import { NAVIGATION_ITEMS } from "./navigationItems";
+import { BrandLogo } from "../brand/BrandLogo";
 
 export function Footer() {
   return (
     <footer className="border-t border-wnb-border bg-wnb-surface py-12">
       <Container className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand Column */}
-        <div className="flex flex-col gap-3">
-          <span className="text-xl font-bold font-display uppercase tracking-widest text-wnb-white">
-            WNB
-          </span>
+        <div className="flex flex-col gap-4 items-start">
+          <BrandLogo className="h-7 sm:h-8 w-auto" />
           <p className="text-sm text-wnb-muted leading-relaxed">
-            Fondasi aplikasi wisata petualangan Land Rover klasik di Bandung.
+            Petualangan Land Rover klasik untuk menjelajahi sisi berbeda Bandung.
           </p>
         </div>
 
@@ -47,8 +46,8 @@ export function Footer() {
             >
               Rencanakan Perjalanan
             </Link>
-            <p className="text-xs text-wnb-subtle italic">
-              Informasi kontak resmi akan ditambahkan setelah dikonfirmasi.
+            <p className="text-xs text-wnb-subtle italic max-w-xs">
+              Diskusikan karakter peserta dan pengalaman yang ingin direncanakan bersama WNB.
             </p>
           </div>
         </div>

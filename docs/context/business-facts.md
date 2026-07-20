@@ -69,7 +69,14 @@ Detail-detail di bawah ini berstatus **TBD (To Be Determined / Menunggu Konfirma
 -   Standar keselamatan absolut, prosedur darurat, batas usia, batasan kesehatan peserta, dan nama/kontak fasilitas kesehatan yang belum diverifikasi.
 -   Grid ulasan/testimoni pelanggan, statistik rating, jumlah pelanggan, atau angka kepuasan.
 -   Diskon, slot terbatas, urgensi palsu, atau klaim promosi yang tidak memiliki sumber resmi.
--   Aset foto dokumentasi asli dan logo gambar resmi.
+-   Aset foto dokumentasi asli masih menunggu ketersediaan. (Logo resmi WNB telah tersedia dan diimplementasikan).
+
+---
+
+## 4.5. Status Logo Resmi
+- Logo resmi WNB telah tersedia (sumber file: `Logo Utama WNB.png`).
+- Logo diterapkan sebagai aset lokal website, bukan external hotlink.
+- Penggunaan logo harus mempertahankan bentuk, warna, isi, dan proporsi aslinya.
 
 ---
 

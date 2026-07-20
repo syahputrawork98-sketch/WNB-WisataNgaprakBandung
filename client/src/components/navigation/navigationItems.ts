@@ -8,12 +8,12 @@ export type NavigationItem = {
 
 export const NAVIGATION_ITEMS: readonly NavigationItem[] = [
   {
-    label: "Home",
+    label: "Beranda",
     path: ROUTE_PATHS.home,
     end: true,
   },
   {
-    label: "About",
+    label: "Tentang Kami",
     path: ROUTE_PATHS.about,
   },
   {

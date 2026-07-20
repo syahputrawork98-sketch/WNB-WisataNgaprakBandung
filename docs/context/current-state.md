@@ -20,7 +20,8 @@ Dokumen ini mencatat status implementasi terkini, daftar halaman yang sudah sele
 *   `005A` — Project context and handoff documentation: **Revised and current**. Menetapkan alur kerja ChatGPT read-only → downloadable .md plan → pengguna → Gemini Antigravity executor working tree (no commit/push/testing) → pengguna testing manual & commit manual → SHA review.
 *   `006` — Home page visual enhancement: **Complete** (Peningkatan visual halaman Home menggunakan aset ilustrasi lokal WebP, layout editorial, dan accessibility).
 *   `006A` — Aktualisasi konteks bisnis dan penyempurnaan Beranda: **Complete** (Penghapusan bahasa TBD, perapian struktur Beranda, dan penambahan ExperienceSection. Logo resmi berstatus deferred karena aset belum tersedia).
-*   `007` — Penyelarasan Homepage dan Implementasi Halaman Tentang Kami WNB: **Implemented; koreksi pasca-review diterapkan pada working tree dan menunggu commit serta pemeriksaan SHA berikutnya.**
+*   `007` — Penyelarasan Homepage dan Implementasi Halaman Tentang Kami WNB: **Complete** (Halaman About diimplementasikan dengan layout modular dan narasi editorial. Placeholder visual dihapus dan diganti ilustrasi lokal. Koreksi diselesaikan secara terpadu).
+*   `008` — Implementasi Logo Resmi dan Identitas Global WNB: **Implementation Candidate** (Penerapan logo resmi pada header, footer, hero About, dan perbaikan identitas navigasi. Menunggu review manual).
 
 ---
 
@@ -59,12 +60,12 @@ Koreksi pasca-review Plan 007 telah diterapkan pada working tree dan menunggu ve
 
 ## 6. Status Diskusi Terkini (Active Discussion State)
 -   Commit baseline terverifikasi: `ea0c8e100e923401018b93bfdd7f2653a3ad6874`.
--   Plan 007 (Penyelarasan Homepage dan Halaman Tentang WNB): Implemented; koreksi pasca-review diterapkan pada working tree dan menunggu commit serta pemeriksaan SHA berikutnya.
+-   Plan 008 (Implementasi Logo Resmi dan Identitas Global WNB): Implemented; logo resmi telah diunduh, navigasi disesuaikan, dan dokumentasi terkait diperbarui. Menunggu pengguna melakukan testing manual dan commit SHA.
 -   Halaman paket, rute, galeri, dan booking tetap menjadi placeholder.
 
 ---
 
 ## 7. Kemungkinan Milestone Berikutnya (Next Likely Milestone)
-*   **Likely next milestone:** Plan 008 — Implementasi Data Paket / Rute (TBD)
+*   **Likely next milestone:** Plan 009 — Implementasi Data Paket / Rute (TBD)
 *   **Status:** Proposed, not approved
 *   *Final scope must be discussed and approved first*

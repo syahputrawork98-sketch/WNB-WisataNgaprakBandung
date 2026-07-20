@@ -20,3 +20,11 @@ Dokumen ini mendokumentasikan seluruh sumber gambar stock yang digunakan secara 
 | `explore-route.webp` | Explore — Rute (Background) | Antares 1111 | [Link](https://www.pexels.com/photo/dirt-road-through-scenic-mountain-landscape-30389857/) | Pexels Free License | Temporary stock illustration | Tidak |
 | `explore-gallery.webp` | Explore — Galeri (Background) | Jacob Moore | [Link](https://www.pexels.com/photo/mountains-behind-trees-and-dirt-road-15852669/) | Pexels Free License | Temporary stock illustration | Tidak |
 | `final-cta-road.webp` | Final CTA (Background) | Ahmet | [Link](https://www.pexels.com/photo/scenic-mountain-road-with-car-in-forest-landscape-33484194/) | Pexels Free License | Temporary stock illustration | Tidak |
+
+---
+
+## Daftar Aset Identitas Resmi (Brand Assets)
+
+| Nama File | Path Lokal | Penggunaan | Sumber | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| `Logo Utama WNB.png` | `client/public/images/brand/wnb-logo.png` | Header, Footer, About Hero, Favicon | [Google Drive](https://drive.google.com/file/d/1VyrULLpz-xU1gIMAlv62pXcJj7K5vD2F/view?usp=drive_link) | Logo resmi milik WNB |

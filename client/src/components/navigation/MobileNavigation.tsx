@@ -102,7 +102,7 @@ export function MobileNavigation({
           className="w-full text-center"
           onClick={() => onClose(false)}
         >
-          Booking Sekarang
+          Rencanakan Perjalanan
         </LinkButton>
       </div>
     </div>
