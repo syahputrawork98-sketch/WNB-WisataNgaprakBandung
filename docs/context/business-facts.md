@@ -80,6 +80,13 @@ Detail-detail di bawah ini berstatus **TBD (To Be Determined / Menunggu Konfirma
 
 ---
 
+## 4.6. Status Data Paket Wisata (Plan 009)
+- Delapan paket reguler dan satu pengalaman khusus (Trail Exploration — Buka Jalur) telah disetujui sebagai data publik resmi dan diimplementasikan melalui `typed local data` pada `client/src/features/packages/packagesData.ts`.
+- Harga publik disajikan dalam format "Mulai dari" dengan satuan Rupiah Indonesia yang jelas (per unit / per peserta).
+- Rincian biaya internal, margin, honor driver, dan kode administrasi internal dilarang keras ditampilkan di antarmuka publik.
+
+---
+
 ## 5. Asumsi Dilarang Keras (Prohibited Assumptions)
 Model AI pelaksana (Antigravity) atau pengembang dilarang keras mengarang informasi berikut:
 *   Mengklaim area operasional di Bandung Barat, Bandung Selatan, Ciwidey, Lembang, Pangalengan, atau wilayah spesifik lainnya sebelum ada konfirmasi resmi.

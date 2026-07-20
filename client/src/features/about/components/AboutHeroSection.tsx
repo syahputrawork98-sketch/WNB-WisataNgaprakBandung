@@ -3,7 +3,7 @@ import { BrandLogo } from "@/components/brand/BrandLogo";
 
 export function AboutHeroSection() {
   return (
-    <section 
+    <section
       className="relative w-full pt-32 pb-16 sm:pt-40 sm:pb-24 flex items-center justify-center border-b border-wnb-border"
       aria-labelledby="about-hero-heading"
     >
@@ -11,12 +11,12 @@ export function AboutHeroSection() {
         <div className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-wnb-surface to-wnb-black opacity-80" />
       </div>
 
-      <Container className="relative z-10 flex flex-col items-center text-center max-w-4xl gap-6">
+      <Container className="relative z-10 flex flex-col items-center text-center max-w-4xl gap-4">
         <div className="flex items-center justify-center mb-4">
-          <BrandLogo isLink={false} className="h-28 sm:h-36 md:h-40 w-auto" />
+          <BrandLogo isLink={false} className="h-40 sm:h-48 md:h-56 w-auto" />
         </div>
 
-        <h1 
+        <h1
           id="about-hero-heading"
           className="text-4xl sm:text-5xl md:text-6xl font-bold font-display uppercase tracking-wider text-wnb-white leading-tight"
         >
