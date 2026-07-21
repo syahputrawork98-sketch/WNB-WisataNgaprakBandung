@@ -14,7 +14,7 @@ export function RouteListPage() {
   const displayedRoutes = getRoutesByRegion(activeFilter);
 
   return (
-    <main id="main-content" className="py-12 sm:py-16">
+    <div id="main-content" className="py-12 sm:py-16">
       <Container className="flex flex-col gap-16">
         
         {/* 12.1 Hero Daftar Rute */}
@@ -110,7 +110,7 @@ export function RouteListPage() {
              <LinkButton to={ROUTE_PATHS.packages} variant="secondary" size="md">
                Lihat Daftar Paket
              </LinkButton>
-             <LinkButton to="/booking" variant="primary" size="md">
+             <LinkButton to={ROUTE_PATHS.booking} variant="primary" size="md">
                Rencanakan Perjalanan
              </LinkButton>
           </div>
@@ -155,7 +155,7 @@ export function RouteListPage() {
             Ceritakan kebutuhan perjalanan Anda. Tim WNB akan membantu menyesuaikan Paket, Rute, kendaraan, dan susunan pengalaman.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-4 w-full sm:w-auto">
-             <LinkButton to="/booking" variant="primary" size="lg" className="w-full sm:w-auto text-center">
+             <LinkButton to={ROUTE_PATHS.booking} variant="primary" size="lg" className="w-full sm:w-auto text-center">
                Rencanakan Perjalanan
              </LinkButton>
              <LinkButton to={ROUTE_PATHS.packages} variant="secondary" size="lg" className="w-full sm:w-auto text-center">
@@ -165,6 +165,6 @@ export function RouteListPage() {
         </section>
 
       </Container>
-    </main>
+    </div>
   );
 }
