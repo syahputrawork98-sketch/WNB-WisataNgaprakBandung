@@ -5,21 +5,21 @@ export function PackageProcessSection() {
   const steps = [
     {
       number: "01",
-      title: "Pilih Pengalaman",
+      title: "Pilih Petualangan Dasar",
       description:
-        "Tentukan karakter perjalanan yang paling sesuai dengan ritme Anda, keluarga, rombongan perusahaan, atau momen perayaan.",
+        "Tentukan karakter perjalanan awal yang paling mendekati keinginan Anda, baik dari durasi, rute, maupun teman seperjalanan.",
     },
     {
       number: "02",
       title: "Diskusikan Kebutuhan",
       description:
-        "Sampaikan jumlah peserta, preferensi tanggal, titik kumpul, serta opsi aktivitas pendamping kepada tim WNB.",
+        "Sampaikan ide kustomisasi Anda, seperti tanggal, titik kumpul, hingga tambahan kegiatan seperti piknik atau dokumentasi.",
     },
     {
       number: "03",
-      title: "Penyesuaian & Keberangkatan",
+      title: "Penyesuaian & Finalisasi",
       description:
-        "Tim WNB menyusun ketersediaan unit Land Rover, rute lintasan yang sesuai, serta konfirmasi rincian perjalanan Anda.",
+        "Kami menyusun rincian penawaran, menyesuaikan armada Land Rover, serta memastikan ketersediaan jalur pada jadwal Anda.",
     },
   ];
 
@@ -39,7 +39,7 @@ export function PackageProcessSection() {
           Proses Memilih & Merencanakan Paket
         </h2>
         <p className="text-sm text-wnb-muted leading-relaxed">
-          Setiap paket WNB dirancang fleksibel agar dapat memberikan pengalaman terbaik sesuai karakter dan harapan perjalanan Anda.
+          WNB mengutamakan kustomisasi pengalaman. Kami merancang perjalanan off-road yang menyesuaikan dengan ritme dan harapan spesifik rombongan Anda.
         </p>
       </div>
 
@@ -62,9 +62,13 @@ export function PackageProcessSection() {
         ))}
       </div>
 
+      <div className="bg-wnb-black/50 border border-wnb-border p-4 rounded-wnb-md text-sm text-wnb-muted text-left max-w-3xl w-full mx-auto">
+        <strong>Catatan Ketersediaan & Harga:</strong> Seluruh harga paket yang dicantumkan bersifat acuan dasar (Mulai dari). Harga akhir bergantung pada tingkat kustomisasi, jumlah kendaraan, rute akhir, dan opsi tambahan. Khusus paket Open Trip, ketersediaan mengikuti jadwal terpublikasi WNB.
+      </div>
+
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
         <LinkButton to={ROUTE_PATHS.booking} size="lg" variant="primary">
-          Rencanakan Perjalanan
+          Diskusikan Perjalanan Anda
         </LinkButton>
       </div>
     </section>

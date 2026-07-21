@@ -12,14 +12,15 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { LinkButton } from "@/components/common/LinkButton";
-import { EditorialImage } from "@/features/home/components/EditorialImage";
 import { ROUTE_PATHS } from "@/routes/routePaths";
 import {
   getPackageBySlug,
   getFormattedPriceText,
   getRelatedPackages,
+  buildPackageBookingPath,
 } from "@/features/packages/packagesData";
 import { RelatedPackagesSection } from "@/features/packages/components/RelatedPackagesSection";
+import { PackageMediaView } from "@/features/packages/components/PackageMediaView";
 
 export function PackageDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -54,6 +55,8 @@ export function PackageDetailPage() {
   }
 
   const relatedPackages = getRelatedPackages(pkg.slug, 3);
+  const formattedPrice = getFormattedPriceText(pkg.priceModel);
+  const isScheduleRequired = pkg.availabilityStatus === "schedule-required";
 
   return (
     <main id="main-content" className="py-12 sm:py-16">
@@ -93,13 +96,12 @@ export function PackageDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Main Left Content Column */}
           <div className="lg:col-span-2 flex flex-col gap-10">
-            {/* Editorial Image Header (if available) */}
-            {pkg.image && (
-              <div className="rounded-wnb-lg overflow-hidden border border-wnb-border">
-                <EditorialImage
-                  src={pkg.image}
-                  alt={`Suasana ilustrasi ${pkg.name}`}
-                  illustrationNotice={true}
+            {/* Editorial Image Header */}
+            {pkg.media && (
+              <div className="rounded-wnb-lg overflow-hidden border border-wnb-border h-64 sm:h-96">
+                <PackageMediaView
+                  media={pkg.media}
+                  className="w-full h-full"
                 />
               </div>
             )}
@@ -284,7 +286,7 @@ export function PackageDetailPage() {
                   Harga Publik
                 </span>
                 <span className="text-2xl font-extrabold text-wnb-white font-display">
-                  {getFormattedPriceText(pkg)}
+                  {formattedPrice || "Tersedia sesuai permintaan"}
                 </span>
                 <span className="text-[11px] text-wnb-subtle mt-1 leading-normal">
                   *Harga menyesuaikan ketersediaan unit, rute, dan kebutuhan tambahan.
@@ -292,14 +294,23 @@ export function PackageDetailPage() {
               </div>
 
               <div className="flex flex-col gap-3">
-                <LinkButton
-                  to={ROUTE_PATHS.booking}
-                  size="lg"
-                  variant="primary"
-                  className="w-full text-center"
-                >
-                  Rencanakan Paket Ini
-                </LinkButton>
+                {isScheduleRequired ? (
+                  <button
+                    className="w-full text-center px-4 py-3 rounded text-sm font-semibold bg-wnb-surface border border-wnb-border text-wnb-subtle cursor-not-allowed opacity-70"
+                    disabled
+                  >
+                    Jadwal Belum Tersedia
+                  </button>
+                ) : (
+                  <LinkButton
+                    to={buildPackageBookingPath(pkg.slug)}
+                    size="lg"
+                    variant="primary"
+                    className="w-full text-center"
+                  >
+                    Diskusikan Perjalanan Ini
+                  </LinkButton>
+                )}
 
                 <LinkButton
                   to={ROUTE_PATHS.packages}
@@ -324,7 +335,9 @@ export function PackageDetailPage() {
         </div>
 
         {/* Related Packages Section */}
-        <RelatedPackagesSection packages={relatedPackages} />
+        {relatedPackages.length > 0 && (
+          <RelatedPackagesSection packages={relatedPackages} />
+        )}
       </Container>
     </main>
   );

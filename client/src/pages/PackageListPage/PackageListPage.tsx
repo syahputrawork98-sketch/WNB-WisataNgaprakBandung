@@ -7,7 +7,7 @@ import {
 } from "@/features/packages/packagesData";
 import { PackageFilter } from "@/features/packages/components/PackageFilter";
 import { PackageCard } from "@/features/packages/components/PackageCard";
-import { SpecialExperienceSection } from "@/features/packages/components/SpecialExperienceSection";
+import { PackageSelectionGuide } from "@/features/packages/components/PackageSelectionGuide";
 import { PackageProcessSection } from "@/features/packages/components/PackageProcessSection";
 
 export function PackageListPage() {
@@ -59,12 +59,14 @@ export function PackageListPage() {
           </div>
         ) : (
           <div className="text-center py-12 text-wnb-muted">
-            Tidak ada paket pada kategori ini.
+            {activeCategory === "open-trip" 
+              ? "Jadwal Open Trip belum tersedia saat ini." 
+              : "Tidak ada paket pada kategori ini."}
           </div>
         )}
 
-        {/* Special Experience Teaser (Buka Jalur) */}
-        <SpecialExperienceSection />
+        {/* Package Selection Guide */}
+        <PackageSelectionGuide />
 
         {/* Process & Closing Section */}
         <PackageProcessSection />

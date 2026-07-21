@@ -1,4 +1,4 @@
-import type {
+import type {\n  PackagePrice,
   TravelPackage,
   SpecialExperience,
   CategoryFilterItem,
@@ -16,8 +16,11 @@ export const CATEGORY_FILTERS: readonly CategoryFilterItem[] = [
 
 export const REGULAR_PACKAGES: readonly TravelPackage[] = [
   {
+    id: "PK-01",
     slug: "corporate-adventure",
     name: "Corporate Adventure",
+    publicationStatus: "published-updating",
+    availabilityStatus: "available-by-confirmation",
     category: "perusahaan",
     categoryLabel: "Perusahaan & Komunitas",
     variant: "Perjalanan yang Disesuaikan Rombongan",
@@ -29,8 +32,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     duration: "8–10 jam",
     capacity: "Mulai 10 peserta; jumlah unit menyesuaikan rombongan",
     vehicle: "Land Rover Classic Short atau Long sesuai jumlah peserta",
-    price: 450000,
-    priceUnit: "per peserta",
+    priceModel: { amount: 450000, unit: "per peserta", displayMode: "exact" },
     inclusions: [
       "Kendaraan Land Rover Classic",
       "Driver & Helper",
@@ -54,11 +56,21 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
       "Rute, jumlah unit, pilihan aktivitas, dan harga akhir disesuaikan dengan kebutuhan rombongan",
       "Penggunaan drone untuk dokumentasi menyesuaikan aturan kawasan dan faktor cuaca",
     ],
-    image: "/images/home/explore-package.webp",
+    media: {
+      src: "https://drive.google.com/uc?export=view&id=1FHDa0Q1WooLLIWXvNlQzJxakoE_BLuZP",
+      fallbackSrc: "/images/home/explore-package.webp",
+      alt: "Ilustrasi kelompok perusahaan menikmati perjalanan bersama Land Rover klasik di alam Bandung",
+      illustrationNotice: true,
+    },
+    relatedPackageSlugs: [],
+    routeSlugs: [],
   },
   {
+    id: "PK-02",
     slug: "family-adventure-short-trip",
     name: "Family Adventure — Short Trip",
+    publicationStatus: "published-updating",
+    availabilityStatus: "available-by-confirmation",
     category: "keluarga",
     categoryLabel: "Keluarga & Pemula",
     variant: "Short Trip",
@@ -70,8 +82,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     duration: "3–4 jam",
     capacity: "Maksimal 6 pelanggan per unit",
     vehicle: "Land Rover Classic Long",
-    price: 1500000,
-    priceUnit: "per unit",
+    priceModel: { amount: 1500000, unit: "per unit", displayMode: "exact" },
     inclusions: [
       "Kendaraan Land Rover Classic Long",
       "Driver & Helper",
@@ -89,11 +100,21 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     publicNotes: [
       "Rute ringan dipilih berdasarkan kondisi lapangan dan kebutuhan peserta",
     ],
-    image: "/images/home/hero-adventure.webp",
+    media: {
+      src: "https://drive.google.com/uc?export=view&id=10mUGyrc8ifCTJJzrneaD0OoTd-34hCn0",
+      fallbackSrc: "/images/home/hero-adventure.webp",
+      alt: "Ilustrasi keluarga menikmati perjalanan singkat bersama Land Rover klasik",
+      illustrationNotice: true,
+    },
+    relatedPackageSlugs: [],
+    routeSlugs: [],
   },
   {
+    id: "PK-03",
     slug: "family-adventure-full-experience",
     name: "Family Adventure — Full Experience",
+    publicationStatus: "published-updating",
+    availabilityStatus: "available-by-confirmation",
     category: "keluarga",
     categoryLabel: "Keluarga & Petualangan",
     variant: "Full Experience",
@@ -105,8 +126,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     duration: "5–7 jam (menyesuaikan cuaca dan kondisi jalur)",
     capacity: "Maksimal 6 pelanggan per unit",
     vehicle: "Land Rover Classic Long",
-    price: 2200000,
-    priceUnit: "per unit",
+    priceModel: { amount: 2200000, unit: "per unit", displayMode: "exact" },
     inclusions: [
       "Kendaraan Land Rover Classic Long",
       "Driver & Helper",
@@ -129,11 +149,21 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
       "Durasi perjalanan mengikuti perkembangan cuaca dan kondisi lintasan pada hari keberangkatan",
       "Rute dan aktivitas disesuaikan dengan kebutuhan serta kondisi lapangan",
     ],
-    image: "/images/home/explore-route.webp",
+    media: {
+      src: "https://drive.google.com/uc?export=view&id=1feY62AuvecJg4ESqodAaBHbzmQ0BvywS",
+      fallbackSrc: "/images/home/explore-route.webp",
+      alt: "Ilustrasi keluarga dalam perjalanan Land Rover klasik berdurasi lebih panjang",
+      illustrationNotice: true,
+    },
+    relatedPackageSlugs: [],
+    routeSlugs: [],
   },
   {
+    id: "PK-04",
     slug: "birthday-adventure",
     name: "Birthday Adventure",
+    publicationStatus: "published-updating",
+    availabilityStatus: "available-by-confirmation",
     category: "perayaan",
     categoryLabel: "Perayaan",
     variant: "Birthday Adventure",
@@ -145,8 +175,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     duration: "4–5 jam",
     capacity: "Maksimal 6 pelanggan per unit",
     vehicle: "Land Rover Classic Long",
-    price: 1850000,
-    priceUnit: "per unit",
+    priceModel: { amount: 1850000, unit: "per unit", displayMode: "exact" },
     inclusions: [
       "Kendaraan Land Rover Classic Long",
       "Driver & Helper",
@@ -169,11 +198,21 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
       "Penambahan dekorasi khusus atau paket dokumentasi premium dapat memengaruhi harga akhir",
       "Lokasi seremonial momen ulang tahun disesuaikan dengan kondisi jalur alam",
     ],
-    image: "/images/home/manifesto-forest-road.webp",
+    media: {
+      src: "https://drive.google.com/uc?export=view&id=1v8sUzybgf7c4JubuDkeXfgBGGWtswsxr",
+      fallbackSrc: "/images/home/manifesto-forest-road.webp",
+      alt: "Ilustrasi suasana ulang tahun dalam perjalanan bersama Land Rover klasik",
+      illustrationNotice: true,
+    },
+    relatedPackageSlugs: [],
+    routeSlugs: [],
   },
   {
+    id: "PK-05",
     slug: "anniversary-adventure",
     name: "Anniversary Adventure",
+    publicationStatus: "published-updating",
+    availabilityStatus: "available-by-confirmation",
     category: "perayaan",
     categoryLabel: "Perayaan",
     variant: "Anniversary Adventure",
@@ -207,11 +246,21 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
       "Menu dan perlengkapan piknik dapat disesuaikan dengan preferensi pasangan",
       "Lokasi penghentian piknik mengikuti faktor cuaca dan ketersediaan lahan nyaman",
     ],
-    image: "/images/home/explore-gallery.webp",
+    media: {
+      src: "https://drive.google.com/uc?export=view&id=1WOJG-jdfSvsVMNted74UghM0ofIMME5N",
+      fallbackSrc: "/images/home/explore-gallery.webp",
+      alt: "Ilustrasi pasangan merayakan hari jadi dalam perjalanan Land Rover klasik",
+      illustrationNotice: true,
+    },
+    relatedPackageSlugs: [],
+    routeSlugs: [],
   },
   {
+    id: "PK-06",
     slug: "surprise-adventure",
     name: "Surprise Adventure",
+    publicationStatus: "published-updating",
+    availabilityStatus: "available-by-confirmation",
     category: "perayaan",
     categoryLabel: "Perayaan",
     variant: "Surprise Adventure",
@@ -223,8 +272,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     duration: "5–6 jam",
     capacity: "Maksimal 6 pelanggan per unit",
     vehicle: "Land Rover Classic Long",
-    price: 1950000,
-    priceUnit: "per unit",
+    priceModel: { amount: 1950000, unit: "per unit", displayMode: "exact" },
     inclusions: [
       "Kendaraan Land Rover Classic Long",
       "Driver & Helper",
@@ -247,11 +295,21 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
       "Titik penjemputan awal dapat disesuaikan agar alur kejutan berjalan alami",
       "Rincian elemen kejutan disusun fleksibel mengikuti karakter peserta",
     ],
-    image: "/images/home/final-cta-road.webp",
+    media: {
+      src: "https://drive.google.com/uc?export=view&id=1XK4_bb2E7JO5uzEo6cbqSQ3E3MYllBBq",
+      fallbackSrc: "/images/home/final-cta-road.webp",
+      alt: "Ilustrasi momen kejutan dalam perjalanan bersama Land Rover klasik",
+      illustrationNotice: true,
+    },
+    relatedPackageSlugs: [],
+    routeSlugs: [],
   },
   {
+    id: "PK-07",
     slug: "adventure-camping",
     name: "Adventure Camping",
+    publicationStatus: "published-updating",
+    availabilityStatus: "available-by-confirmation",
     category: "camping",
     categoryLabel: "Camping",
     variant: "Off-road & Camping",
@@ -263,8 +321,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     duration: "2 Hari 1 Malam",
     capacity: "2 sampai maksimal 4 pelanggan per unit (demi kenyamanan muatan logistik)",
     vehicle: "Land Rover Classic Long dengan rak atap",
-    price: 2500000,
-    priceUnit: "per unit",
+    priceModel: { amount: 2500000, unit: "per unit", displayMode: "exact" },
     inclusions: [
       "Kendaraan Land Rover Classic Long",
       "Driver & Helper",
@@ -287,11 +344,21 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
       "Lokasi camping ground, prakiraan cuaca, serta kapasitas logistik dikonfirmasi pada tiap tanggal",
       "Penambahan unit kendaraan dapat dilakukan untuk kelompok lebih dari 4 orang",
     ],
-    image: "/images/home/explore-package.webp",
+    media: {
+      src: "https://drive.google.com/uc?export=view&id=1bc0-hkEuwOfcxTt4vroDtRRJXo48JgVX",
+      fallbackSrc: "/images/home/explore-package.webp",
+      alt: "Ilustrasi Land Rover klasik dan suasana camping di kawasan pegunungan",
+      illustrationNotice: true,
+    },
+    relatedPackageSlugs: [],
+    routeSlugs: [],
   },
   {
+    id: "PK-08",
     slug: "open-trip-adventure",
     name: "Open Trip Adventure",
+    publicationStatus: "published-updating",
+    availabilityStatus: "schedule-required",
     category: "open-trip",
     categoryLabel: "Open Trip",
     variant: "Jadwal Terjadwal & Kuota",
@@ -303,8 +370,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     duration: "4–5 jam",
     capacity: "Minimal 4 peserta dan maksimal 6 pelanggan per unit",
     vehicle: "Land Rover Classic Long",
-    price: 350000,
-    priceUnit: "per peserta",
+    priceModel: { amount: 350000, unit: "per peserta", displayMode: "exact" },
     inclusions: [
       "Berbagi kendaraan Land Rover Classic",
       "Driver & Helper",
@@ -323,7 +389,14 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
       "Rute, aktivitas pendamping, dan titik kumpul tepat ditetapkan pada setiap pengumuman jadwal",
       "Keberangkatan mengikuti pemenuhan kuota dan jadwal WNB",
     ],
-    image: "/images/home/hero-adventure.webp",
+    media: {
+      src: "https://drive.google.com/uc?export=view&id=1BLYerjJQMOK9mgM-Hs-yrjUWHhvOgxtZ",
+      fallbackSrc: "/images/home/hero-adventure.webp",
+      alt: "Ilustrasi peserta open trip berbagi perjalanan bersama Land Rover klasik",
+      illustrationNotice: true,
+    },
+    relatedPackageSlugs: [],
+    routeSlugs: [],
   },
 ] as const;
 
@@ -362,8 +435,19 @@ export function formatRupiah(amount: number): string {
   }).format(amount);
 }
 
-export function getFormattedPriceText(pkg: TravelPackage): string {
-  return `Mulai dari ${formatRupiah(pkg.price)} ${pkg.priceUnit}`;
+export function getFormattedPriceText(priceModel: PackagePrice): string | null {
+  if (priceModel.displayMode === "hidden") return null;
+  if (priceModel.displayMode === "custom" && priceModel.customText) return priceModel.customText;
+  
+  if (priceModel.amount === undefined || priceModel.unit === undefined) return null;
+  
+  const formattedAmount = formatRupiah(priceModel.amount);
+  
+  if (priceModel.displayMode === "starting-from") {
+    return `Mulai dari ${formattedAmount} ${priceModel.unit}`;
+  }
+  
+  return `${formattedAmount} ${priceModel.unit}`;
 }
 
 export function getPackageBySlug(slug?: string): TravelPackage | undefined {
@@ -374,10 +458,14 @@ export function getPackageBySlug(slug?: string): TravelPackage | undefined {
 export function getPackagesByCategory(
   category: PackageCategory
 ): TravelPackage[] {
+  const visiblePackages = REGULAR_PACKAGES.filter(
+    (pkg) => pkg.publicationStatus !== "unpublished" && pkg.availabilityStatus === "available-by-confirmation"
+  );
+  
   if (category === "semua") {
-    return [...REGULAR_PACKAGES];
+    return visiblePackages;
   }
-  return REGULAR_PACKAGES.filter((pkg) => pkg.category === category);
+  return visiblePackages.filter((pkg) => pkg.category === category);
 }
 
 export function getRelatedPackages(
@@ -385,19 +473,17 @@ export function getRelatedPackages(
   count: number = 3
 ): TravelPackage[] {
   const currentPkg = getPackageBySlug(currentSlug);
-  const others = REGULAR_PACKAGES.filter((pkg) => pkg.slug !== currentSlug);
-
-  if (!currentPkg) {
-    return others.slice(0, count);
+  if (!currentPkg || !currentPkg.relatedPackageSlugs || currentPkg.relatedPackageSlugs.length === 0) {
+    return [];
   }
-
-  const sameCategory = others.filter(
-    (pkg) => pkg.category === currentPkg.category
+  
+  const related = REGULAR_PACKAGES.filter(
+    (pkg) => currentPkg.relatedPackageSlugs!.includes(pkg.slug) && pkg.publicationStatus !== "unpublished" && pkg.availabilityStatus === "available-by-confirmation"
   );
-  const differentCategory = others.filter(
-    (pkg) => pkg.category !== currentPkg.category
-  );
+  
+  return related.slice(0, count);
+}
 
-  const combined = [...sameCategory, ...differentCategory];
-  return combined.slice(0, count);
+export function buildPackageBookingPath(slug: string): string {
+  return `/booking?package=${encodeURIComponent(slug)}`;
 }

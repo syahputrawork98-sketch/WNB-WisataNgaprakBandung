@@ -8,9 +8,43 @@ export type PackageCategory =
 
 export type PriceUnit = "per unit" | "per peserta";
 
+export type PackagePublicationStatus =
+  | "published"
+  | "published-updating"
+  | "unpublished";
+
+export type PackageAvailabilityStatus =
+  | "available-by-confirmation"
+  | "schedule-required"
+  | "temporarily-unavailable";
+
+export type PriceDisplayMode =
+  | "exact"
+  | "starting-from"
+  | "custom"
+  | "hidden";
+
+export type PackagePrice = {
+  amount?: number;
+  unit?: PriceUnit;
+  displayMode: PriceDisplayMode;
+  customText?: string;
+  note?: string;
+};
+
+export type PackageMedia = {
+  src: string;
+  fallbackSrc: string;
+  alt: string;
+  illustrationNotice: boolean;
+};
+
 export type TravelPackage = {
+  id: string;
   slug: string;
   name: string;
+  publicationStatus: PackagePublicationStatus;
+  availabilityStatus: PackageAvailabilityStatus;
   category: Exclude<PackageCategory, "semua">;
   categoryLabel: string;
   variant: string;
@@ -20,14 +54,16 @@ export type TravelPackage = {
   duration: string;
   capacity: string;
   vehicle: string;
-  price: number;
-  priceUnit: PriceUnit;
+  priceModel: PackagePrice;
   inclusions: string[];
+  exclusions?: string[];
   optionalActivities: string[];
   meetingPoint: string;
   specialTerms: string[];
   publicNotes: string[];
-  image?: string;
+  media: PackageMedia;
+  relatedPackageSlugs?: string[];
+  routeSlugs?: string[];
 };
 
 export type SpecialExperience = {
