@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { PackageMedia } from "../packagesTypes";
+import { MediaFallback } from "@/components/system/MediaFallback";
 
 type PackageMediaProps = {
   media: PackageMedia;
@@ -29,9 +30,7 @@ export function PackageMediaView({ media, className = "", priority = false }: Pa
   return (
     <div className={`relative overflow-hidden ${className}`}>
       {errorCount === 2 ? (
-        <div className="w-full h-full flex items-center justify-center bg-wnb-surface text-wnb-subtle text-xs p-4 text-center border-none">
-          Ilustrasi belum dapat dimuat
-        </div>
+        <MediaFallback label="Ilustrasi belum dapat dimuat" className="bg-wnb-surface border-none" />
       ) : (
         <img
           src={imgSrc}

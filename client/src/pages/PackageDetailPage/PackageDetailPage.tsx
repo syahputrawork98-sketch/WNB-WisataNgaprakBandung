@@ -5,7 +5,6 @@ import {
   Car,
   MapPin,
   CheckCircle2,
-  AlertCircle,
   HelpCircle,
   Calendar,
 } from "lucide-react";
@@ -20,6 +19,7 @@ import {
 } from "@/features/packages/packagesData";
 import { RelatedPackagesSection } from "@/features/packages/components/RelatedPackagesSection";
 import { PackageMediaView } from "@/features/packages/components/PackageMediaView";
+import { SystemState } from "@/components/system/SystemState";
 
 export function PackageDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -27,29 +27,23 @@ export function PackageDetailPage() {
 
   if (!pkg) {
     return (
-      <main id="main-content" className="py-20">
-        <Container className="max-w-2xl text-center flex flex-col items-center gap-6">
-          <div className="p-4 bg-wnb-surface border border-wnb-border rounded-full text-wnb-accent">
-            <AlertCircle className="w-10 h-10" aria-hidden="true" />
-          </div>
-
-          <span className="text-xs font-semibold uppercase tracking-widest text-wnb-accent">
-            404 — Paket Tidak Ditemukan
-          </span>
-
-          <h1 className="text-3xl sm:text-4xl font-bold font-display uppercase tracking-wider text-wnb-white">
-            Paket Wisata Tidak Ditemukan
-          </h1>
-
-          <p className="text-sm text-wnb-muted leading-relaxed">
-            Maaf, paket wisata yang Anda cari tidak tersedia atau tautan URL yang Anda akses tidak sesuai. Silakan periksa daftar paket wisata resmi WNB.
-          </p>
-
-          <LinkButton to={ROUTE_PATHS.packages} size="md" variant="primary" className="mt-2">
-            Kembali ke Daftar Paket
-          </LinkButton>
-        </Container>
-      </main>
+      <div className="py-20">
+        <SystemState
+          eyebrow="404 — Paket Tidak Ditemukan"
+          title="Paket Wisata Tidak Ditemukan"
+          description="Paket yang Anda cari tidak tersedia atau tautan yang dibuka tidak sesuai. Silakan pilih Paket lain atau sampaikan kebutuhan perjalanan Anda kepada WNB."
+          primaryAction={{
+            label: "Kembali ke Daftar Paket",
+            to: ROUTE_PATHS.packages,
+            variant: "primary"
+          }}
+          secondaryAction={{
+            label: "Rencanakan Perjalanan",
+            to: ROUTE_PATHS.booking,
+            variant: "secondary"
+          }}
+        />
+      </div>
     );
   }
 
@@ -58,7 +52,7 @@ export function PackageDetailPage() {
   const isScheduleRequired = pkg.availabilityStatus === "schedule-required";
 
   return (
-    <main id="main-content" className="py-12 sm:py-16">
+    <div className="py-12 sm:py-16">
       <Container className="flex flex-col gap-10">
         {/* Navigation Breadcrumb */}
         <nav aria-label="Breadcrumb">
@@ -354,6 +348,6 @@ export function PackageDetailPage() {
           <RelatedPackagesSection packages={relatedPackages} />
         )}
       </Container>
-    </main>
+    </div>
   );
 }

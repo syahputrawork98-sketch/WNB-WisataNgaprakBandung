@@ -1,22 +1,32 @@
 import { ROUTE_PATHS } from "@/routes/routePaths";
-import { PagePlaceholder } from "@/components/common/PagePlaceholder";
-import { LinkButton } from "@/components/common/LinkButton";
+import { SystemState } from "@/components/system/SystemState";
+import { Link } from "react-router";
 
 export function NotFoundPage() {
   return (
-    <PagePlaceholder
+    <SystemState
       eyebrow="Error 404"
-      title="Rute Tidak Ditemukan"
-      description="Halaman yang Anda cari tidak tersedia atau telah berpindah."
+      title="Halaman Tidak Ditemukan"
+      description="Halaman yang Anda cari tidak tersedia, telah berpindah, atau alamat yang dibuka tidak sesuai. Anda dapat kembali ke Beranda atau melanjutkan menjelajahi Paket dan Rute WNB."
+      primaryAction={{
+        label: "Kembali ke Beranda",
+        to: ROUTE_PATHS.home,
+        variant: "primary"
+      }}
+      secondaryAction={{
+        label: "Lihat Paket",
+        to: ROUTE_PATHS.packages,
+        variant: "secondary"
+      }}
     >
-      <div className="mt-2 flex flex-col items-start gap-4">
-        <p className="text-sm text-wnb-muted leading-relaxed">
-          Silakan klik tombol di bawah untuk kembali ke jalur utama (halaman Beranda).
-        </p>
-        <LinkButton to={ROUTE_PATHS.home} size="md" variant="primary">
-          Kembali ke Beranda
-        </LinkButton>
+      <div className="mt-6">
+        <Link 
+          to={ROUTE_PATHS.routes} 
+          className="text-wnb-accent hover:text-wnb-white underline-offset-4 hover:underline transition-colors font-medium"
+        >
+          Jelajahi Rute
+        </Link>
       </div>
-    </PagePlaceholder>
+    </SystemState>
   );
 }

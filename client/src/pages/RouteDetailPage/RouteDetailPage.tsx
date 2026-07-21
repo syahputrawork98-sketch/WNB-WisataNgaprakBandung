@@ -4,7 +4,8 @@ import { LinkButton } from "@/components/common/LinkButton";
 import { ROUTE_PATHS, buildBookingPath } from "@/routes/routePaths";
 import { getRouteBySlug } from "@/features/routes/routesData";
 import { RouteMediaView } from "@/features/routes/components/RouteMediaView";
-import { AlertCircle, MapPin, Sun, CloudRain, ShieldAlert, ListChecks, CheckCircle2, CloudFog } from "lucide-react";
+import { SystemState } from "@/components/system/SystemState";
+import { MapPin, Sun, CloudRain, ShieldAlert, ListChecks, CheckCircle2, CloudFog } from "lucide-react";
 
 export function RouteDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -14,23 +15,21 @@ export function RouteDetailPage() {
   if (!route) {
     return (
       <div className="py-20">
-        <Container className="max-w-2xl text-center flex flex-col items-center gap-6">
-          <div className="p-4 bg-wnb-surface border border-wnb-border rounded-full text-wnb-accent">
-            <AlertCircle className="w-10 h-10" aria-hidden="true" />
-          </div>
-          <span className="text-xs font-semibold uppercase tracking-widest text-wnb-accent">
-            404 — Rute Tidak Ditemukan
-          </span>
-          <h1 className="text-3xl sm:text-4xl font-bold font-display uppercase tracking-wider text-wnb-white">
-            Rute Perjalanan Tidak Ditemukan
-          </h1>
-          <p className="text-sm text-wnb-muted leading-relaxed">
-            Maaf, rute perjalanan yang Anda cari tidak tersedia atau URL yang Anda akses tidak sesuai. Silakan periksa daftar rute petualangan resmi WNB.
-          </p>
-          <LinkButton to={ROUTE_PATHS.routes} size="md" variant="primary" className="mt-2">
-            Kembali ke Daftar Rute
-          </LinkButton>
-        </Container>
+        <SystemState
+          eyebrow="404 — Rute Tidak Ditemukan"
+          title="Rute Perjalanan Tidak Ditemukan"
+          description="Rute yang Anda cari tidak tersedia atau tautan yang dibuka tidak sesuai. Silakan periksa daftar Rute WNB untuk melihat pilihan perjalanan lainnya."
+          primaryAction={{
+            label: "Kembali ke Daftar Rute",
+            to: ROUTE_PATHS.routes,
+            variant: "primary"
+          }}
+          secondaryAction={{
+            label: "Lihat Paket",
+            to: ROUTE_PATHS.packages,
+            variant: "secondary"
+          }}
+        />
       </div>
     );
   }

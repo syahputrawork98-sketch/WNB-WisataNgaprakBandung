@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from "react";
-import { Info, Image as ImageIcon } from "lucide-react";
+import { Info } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { LinkButton } from "@/components/common/LinkButton";
 import { ROUTE_PATHS } from "@/routes/routePaths";
@@ -8,6 +8,7 @@ import { GalleryFilter } from "@/features/gallery/components/GalleryFilter";
 import { GalleryCard } from "@/features/gallery/components/GalleryCard";
 import { GalleryLightbox } from "@/features/gallery/components/GalleryLightbox";
 import { getGalleryItemsByCategory } from "@/features/gallery/galleryData";
+import { EmptyState } from "@/components/system/EmptyState";
 import type { GalleryFilterKey, GalleryItem } from "@/features/gallery/galleryTypes";
 
 export function GalleryPage() {
@@ -102,19 +103,13 @@ export function GalleryPage() {
               ))}
             </div>
           ) : (
-            <div className="py-16 flex flex-col items-center justify-center text-center bg-wnb-surface rounded-xl border border-wnb-border border-dashed">
-              <ImageIcon className="w-12 h-12 text-wnb-muted mb-4" aria-hidden="true" />
-              <h3 className="text-lg font-semibold text-white mb-2">Visual Belum Tersedia</h3>
-              <p className="text-sm text-wnb-subtle max-w-md mb-6">
-                Media Galeri untuk kategori ini sedang dipersiapkan.
-              </p>
-              <button
-                type="button"
-                onClick={() => setActiveFilter("semua")}
-                className="px-5 py-2.5 bg-wnb-accent text-wnb-black font-semibold rounded hover:bg-wnb-accent/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-wnb-black focus-visible:ring-wnb-accent"
-              >
-                Tampilkan Semua
-              </button>
+            <div className="py-8">
+              <EmptyState
+                title="Visual Belum Tersedia"
+                description="Media Galeri untuk kategori ini sedang dipersiapkan."
+                actionLabel="Tampilkan Semua"
+                onAction={() => setActiveFilter("semua")}
+              />
             </div>
           )}
         </section>

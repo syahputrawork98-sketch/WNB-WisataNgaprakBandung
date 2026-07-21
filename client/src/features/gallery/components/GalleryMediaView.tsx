@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { GalleryItem } from "../galleryTypes";
+import { MediaFallback } from "@/components/system/MediaFallback";
 
 type GalleryMediaViewProps = {
   item: GalleryItem;
@@ -38,9 +39,7 @@ export function GalleryMediaView({
   return (
     <div className={`relative overflow-hidden ${className}`}>
       {errorCount === 2 ? (
-        <div className="w-full h-full flex flex-col items-center justify-center bg-wnb-surface text-wnb-subtle p-6 text-center border-none">
-          <p className="text-sm font-medium">Visual WNB belum dapat dimuat</p>
-        </div>
+        <MediaFallback label="Visual WNB belum dapat dimuat" className="bg-wnb-surface border-none" />
       ) : (
         <img
           src={imgSrc}

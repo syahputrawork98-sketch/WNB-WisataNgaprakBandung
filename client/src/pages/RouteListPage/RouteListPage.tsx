@@ -7,6 +7,7 @@ import { ROUTE_REGION_FILTERS, getRoutesByRegion } from "@/features/routes/route
 import type { RouteRegion } from "@/features/routes/routesTypes";
 import { RouteFilter } from "@/features/routes/components/RouteFilter";
 import { RouteCard } from "@/features/routes/components/RouteCard";
+import { EmptyState } from "@/components/system/EmptyState";
 
 export function RouteListPage() {
   const [activeFilter, setActiveFilter] = useState<RouteRegion | "semua">("semua");
@@ -79,9 +80,12 @@ export function RouteListPage() {
           </div>
 
           {displayedRoutes.length === 0 && (
-            <div className="p-12 text-center border border-wnb-border rounded-wnb-lg bg-wnb-surface">
-              <p className="text-wnb-muted">Tidak ada rute yang ditemukan untuk wilayah ini.</p>
-            </div>
+            <EmptyState
+              title="Tidak Ada Rute yang Sesuai"
+              description="Tidak ada Rute yang sesuai dengan wilayah pilihan Anda. Tampilkan kembali seluruh Rute untuk melihat pilihan lainnya."
+              actionLabel="Hapus Filter"
+              onAction={() => setActiveFilter("semua")}
+            />
           )}
         </section>
 

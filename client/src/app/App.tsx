@@ -1,5 +1,10 @@
 import { AppRoutes } from "@/routes/AppRoutes";
+import { GlobalErrorBoundaryWithLocation } from "@/components/system/GlobalErrorBoundary";
 
 export function App() {
-  return <AppRoutes />;
+  return (
+    <GlobalErrorBoundaryWithLocation>
+      <AppRoutes />
+    </GlobalErrorBoundaryWithLocation>
+  );
 }
