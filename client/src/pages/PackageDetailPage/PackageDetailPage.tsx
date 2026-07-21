@@ -1,6 +1,5 @@
 import { useParams, Link } from "react-router";
 import {
-  ArrowLeft,
   Clock,
   Users,
   Car,
@@ -324,7 +323,7 @@ export function PackageDetailPage() {
                     variant="primary"
                     className="w-full text-center"
                   >
-                    Diskusikan Perjalanan Ini
+                    Rencanakan Paket Ini
                   </LinkButton>
                 )}
 

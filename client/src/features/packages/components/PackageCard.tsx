@@ -1,10 +1,8 @@
 import { Link } from "react-router";
 import { Clock, Users } from "lucide-react";
 import type { TravelPackage } from "../packagesTypes";
-import {
-  buildPackagePath,
-  getFormattedPriceText,
-} from "../packagesData";
+import { getFormattedPriceText } from "../packagesData";
+import { buildPackageDetailPath } from "@/routes/routePaths";
 import { PackageMediaView } from "./PackageMediaView";
 
 type PackageCardProps = {
@@ -16,7 +14,7 @@ export function PackageCard({ pkg }: PackageCardProps) {
 
   return (
     <Link
-      to={buildPackagePath(pkg.slug)}
+      to={buildPackageDetailPath(pkg.slug)}
       className="group flex flex-col h-full bg-wnb-surface border border-wnb-border rounded-wnb-lg overflow-hidden transition-all duration-300 hover:border-wnb-focus hover:shadow-wnb-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-wnb-focus"
     >
       {/* Media Thumbnail Header */}

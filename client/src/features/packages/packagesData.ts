@@ -369,7 +369,7 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     shortDescription:
       "Perjalanan gabungan dengan peserta lain pada jadwal dan susunan rute yang ditentukan WNB.",
     longDescription:
-      "Pilihan ekonomis dan seru bagi individu maupun pasangan yang ingin menikmati perjalanan off-road Land Rover sekaligus berkenalan dengan kawan baru. Keberangkatan dilaksanakan sesuai jadwal berkala WNB.",
+      "Pilihan perjalanan gabungan bagi individu, pasangan, atau kelompok kecil. Keberangkatan hanya dibuka ketika jadwal dan kuota telah ditetapkan serta diumumkan oleh WNB.",
     audience: ["Individu", "Pasangan", "Kelompok kecil"],
     duration: "4–5 jam",
     capacity: "Minimal 4 peserta dan maksimal 6 pelanggan per unit",
@@ -456,7 +456,11 @@ export function getFormattedPriceText(priceModel: PackagePrice): string | null {
 
 export function getPackageBySlug(slug?: string): TravelPackage | undefined {
   if (!slug) return undefined;
-  return REGULAR_PACKAGES.find((pkg) => pkg.slug === slug);
+  const pkg = REGULAR_PACKAGES.find((pkg) => pkg.slug === slug);
+  if (pkg && pkg.publicationStatus === "unpublished") {
+    return undefined;
+  }
+  return pkg;
 }
 
 export function getPackagesByCategory(
