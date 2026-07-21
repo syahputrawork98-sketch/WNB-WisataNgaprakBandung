@@ -6,7 +6,8 @@ export const ROUTE_PATHS = {
   packageDetail: "/paket/:slug",
   routes: "/rute",
   routeDetail: "/rute/:slug",
-  gallery: "/gallery",
+  gallery: "/galeri",
+  galleryLegacy: "/gallery",
   booking: "/booking",
   notFound: "*",
 } as const;

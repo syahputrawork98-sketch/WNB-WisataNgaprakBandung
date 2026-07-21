@@ -24,6 +24,7 @@ export function AppRoutes() {
         <Route path={ROUTE_PATHS.routes} element={<RouteListPage />} />
         <Route path={ROUTE_PATHS.routeDetail} element={<RouteDetailPage />} />
         <Route path={ROUTE_PATHS.gallery} element={<GalleryPage />} />
+        <Route path={ROUTE_PATHS.galleryLegacy} element={<Navigate to={ROUTE_PATHS.gallery} replace />} />
         <Route path={ROUTE_PATHS.booking} element={<BookingPage />} />
         <Route path={ROUTE_PATHS.notFound} element={<NotFoundPage />} />
       </Route>

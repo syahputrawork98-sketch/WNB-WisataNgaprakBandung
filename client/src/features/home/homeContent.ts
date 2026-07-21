@@ -1,4 +1,4 @@
-import { Compass, Map } from "lucide-react";
+import { Compass, Map, Images } from "lucide-react";
 import { ROUTE_PATHS } from "@/routes/routePaths";
 import type { ExploreItem, VehicleItem } from "./homeTypes";
 
@@ -25,6 +25,18 @@ export const EXPLORE_ITEMS: readonly ExploreItem[] = [
       src: "/images/home/explore-route.webp",
       alt: "Jalan tanah yang melintasi lanskap pegunungan",
       illustrationNotice: false,
+    },
+  },
+  {
+    title: "Galeri WNB",
+    description: "Lihat gambaran visual Paket, kebersamaan, petualangan, dan aktivitas WNB.",
+    path: ROUTE_PATHS.gallery,
+    linkLabel: "Lihat Galeri",
+    icon: Images,
+    media: {
+      src: "/images/home/explore-gallery.webp",
+      alt: "Ilustrasi visual pengalaman perjalanan WNB",
+      illustrationNotice: true,
     },
   },
 ] as const;
