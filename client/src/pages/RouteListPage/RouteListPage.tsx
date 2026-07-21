@@ -14,7 +14,7 @@ export function RouteListPage() {
   const displayedRoutes = getRoutesByRegion(activeFilter);
 
   return (
-    <div id="main-content" className="py-12 sm:py-16">
+    <div className="py-12 sm:py-16">
       <Container className="flex flex-col gap-16">
         
         {/* 12.1 Hero Daftar Rute */}

@@ -13,7 +13,7 @@ export function RouteDetailPage() {
   // 14.1 Kondisi Rute Tidak Ditemukan
   if (!route) {
     return (
-      <div id="main-content" className="py-20">
+      <div className="py-20">
         <Container className="max-w-2xl text-center flex flex-col items-center gap-6">
           <div className="p-4 bg-wnb-surface border border-wnb-border rounded-full text-wnb-accent">
             <AlertCircle className="w-10 h-10" aria-hidden="true" />
@@ -38,7 +38,7 @@ export function RouteDetailPage() {
   const isSpecialRoute = route.availabilityStatus === "special-consultation";
 
   return (
-    <div id="main-content" className="py-12 sm:py-16">
+    <div className="py-12 sm:py-16">
       <Container className="flex flex-col gap-10">
         
         {/* 14.2 Breadcrumb */}
