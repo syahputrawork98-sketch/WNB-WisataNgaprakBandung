@@ -9,8 +9,10 @@ export async function copyToClipboardFallback(text: string): Promise<boolean> {
   }
 
   // Fallback using textarea
+  const activeElement = document.activeElement as HTMLElement | null;
+  const textArea = document.createElement("textarea");
+  
   try {
-    const textArea = document.createElement("textarea");
     textArea.value = text;
     
     // Make the textarea invisible
@@ -23,11 +25,17 @@ export async function copyToClipboardFallback(text: string): Promise<boolean> {
     textArea.select();
     
     const successful = document.execCommand("copy");
-    document.body.removeChild(textArea);
     
     return successful;
   } catch (err) {
     console.error("Fallback clipboard also failed.", err);
     return false;
+  } finally {
+    if (document.body.contains(textArea)) {
+      document.body.removeChild(textArea);
+    }
+    if (activeElement && typeof activeElement.focus === "function") {
+      activeElement.focus();
+    }
   }
 }

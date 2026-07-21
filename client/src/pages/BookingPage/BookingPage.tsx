@@ -120,29 +120,56 @@ export function BookingPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
     
+    // Reset status when form changes
+    setStatus("idle");
+    setFallbackText("");
+    
+    let newValues = { ...values };
+
     if (type === "checkbox") {
       const checked = (e.target as HTMLInputElement).checked;
       if (name === "additionalNeeds") {
         const val = value as AdditionalNeed;
-        setValues(prev => ({
-          ...prev,
-          additionalNeeds: checked 
-            ? [...prev.additionalNeeds, val]
-            : prev.additionalNeeds.filter(n => n !== val)
-        }));
+        newValues.additionalNeeds = checked 
+          ? [...newValues.additionalNeeds, val]
+          : newValues.additionalNeeds.filter(n => n !== val);
       } else {
-        setValues(prev => ({ ...prev, [name]: checked }));
+        (newValues as any)[name] = checked;
         if (name === "dateUndecided" && checked) {
-          setValues(prev => ({ ...prev, plannedDate: "" }));
+          newValues.plannedDate = "";
         }
       }
     } else {
-      setValues(prev => ({ ...prev, [name]: value }));
+      (newValues as any)[name] = value;
+    }
+
+    setValues(newValues);
+    
+    // Clear notices after valid selection
+    if (name === "packageChoice" && newValues.packageChoice !== "") {
+      setPackageNotice(null);
     }
     
-    // Clear error for this field
+    if (name === "routeChoice") {
+      if (newValues.routeChoice) {
+        const route = getRouteBySlug(newValues.routeChoice);
+        if (route && route.availabilityStatus === "special-consultation") {
+          setRouteNotice("route-special");
+        } else {
+          setRouteNotice(null);
+        }
+      } else {
+        setRouteNotice(null);
+      }
+    }
+    
+    // Clear error for this field by deleting the key
     if (errors[name as keyof BookingFormValues]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
+      setErrors(prev => {
+        const next = { ...prev };
+        delete next[name as keyof BookingFormValues];
+        return next;
+      });
     }
   };
 
@@ -171,22 +198,30 @@ export function BookingPage() {
     }
   };
 
+  const validateAndBuildMessage = (): string | null => {
+    const newErrors = validateBookingForm(values);
+    
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      focusFirstError(newErrors);
+      return null;
+    }
+    
+    return buildBookingMessage(values);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("idle");
     setFallbackText("");
     setIsSubmitting(true);
     
-    const newErrors = validateBookingForm(values);
-    
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      focusFirstError(newErrors);
+    const message = validateAndBuildMessage();
+    if (!message) {
       setIsSubmitting(false);
       return;
     }
     
-    const message = buildBookingMessage(values);
     const waNumber = getOfficialWhatsAppNumber();
     
     if (waNumber) {
@@ -215,7 +250,12 @@ export function BookingPage() {
   };
   
   const handleCopySummary = async () => {
-    const message = buildBookingMessage(values);
+    setStatus("idle");
+    setFallbackText("");
+
+    const message = validateAndBuildMessage();
+    if (!message) return;
+
     const success = await copyToClipboardFallback(message);
     if (success) {
       setStatus("success-copy");
@@ -225,22 +265,22 @@ export function BookingPage() {
     }
   };
   
-  const hasErrors = Object.keys(errors).length > 0;
+  const hasErrors = Object.values(errors).some(Boolean);
   const isWaAvailable = !!getOfficialWhatsAppNumber();
 
   return (
     <>
-      <main className="min-h-screen pb-20 pt-28 lg:pt-36">
+      <div className="min-h-screen pb-20 pt-28 lg:pt-36">
         <Container>
           <div className="max-w-4xl mx-auto">
             {/* Hero */}
             <div className="mb-10 lg:mb-12">
               <p className="text-sm font-bold tracking-widest text-wnb-accent uppercase mb-2">Permintaan Perjalanan</p>
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              <h1 className="text-3xl lg:text-4xl font-bold text-wnb-text mb-4">
                 Rencanakan Perjalanan WNB
               </h1>
-              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-2xl">
-                Sampaikan kebutuhan perjalanan Anda. Tim WNB akan memeriksa ketersediaan Paket, kendaraan, Rute, jadwal, dan kebutuhan lainnya sebelum memberikan konfirmasi. Formulir ini <strong className="font-semibold text-gray-900 dark:text-gray-200">bukan</strong> konfirmasi otomatis.
+              <p className="text-wnb-muted text-lg leading-relaxed max-w-2xl">
+                Sampaikan kebutuhan perjalanan Anda. Tim WNB akan memeriksa ketersediaan Paket, kendaraan, Rute, jadwal, dan kebutuhan lainnya sebelum memberikan konfirmasi. Formulir ini <strong className="font-semibold text-wnb-text">bukan</strong> konfirmasi otomatis.
               </p>
             </div>
             
@@ -261,15 +301,15 @@ export function BookingPage() {
                   {hasErrors && (
                     <div 
                       ref={errorSummaryRef}
-                      className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 text-red-800 dark:text-red-200"
+                      className="bg-wnb-surface border border-wnb-border-strong rounded-xl p-4 text-wnb-text"
                       role="alert"
                       aria-live="assertive"
                     >
                       <div className="flex items-start gap-3">
-                        <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                        <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-wnb-danger" />
                         <div>
-                          <h4 className="font-semibold text-sm mb-1">Periksa Kembali Formulir</h4>
-                          <p className="text-sm opacity-90">Beberapa informasi wajib belum dilengkapi dengan benar.</p>
+                          <h4 className="font-semibold text-sm mb-1 text-wnb-danger">Periksa Kembali Formulir</h4>
+                          <p className="text-sm text-wnb-muted">Beberapa informasi wajib belum dilengkapi dengan benar.</p>
                         </div>
                       </div>
                     </div>
@@ -277,11 +317,11 @@ export function BookingPage() {
 
                   {/* Section: Data Pemesan */}
                   <section className="space-y-5">
-                    <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 border-b border-gray-200 dark:border-gray-800 pb-2">1. Data Pemesan</h2>
+                    <h2 className="text-xl font-bold text-wnb-text border-b border-wnb-border pb-2">1. Data Pemesan</h2>
                     
                     <div className="space-y-4">
                       <div>
-                        <label htmlFor="customerName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Nama Lengkap <span className="text-red-500">*</span></label>
+                        <label htmlFor="customerName" className="block text-sm font-medium text-wnb-muted mb-1.5">Nama Lengkap <span className="text-wnb-danger">*</span></label>
                         <input
                           ref={fieldRefs.customerName}
                           type="text"
@@ -292,14 +332,14 @@ export function BookingPage() {
                           onChange={handleChange}
                           aria-invalid={!!errors.customerName}
                           aria-describedby={errors.customerName ? "customerName-error" : undefined}
-                          className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                          className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                           placeholder="Nama Anda atau perwakilan"
                         />
                         <BookingFieldError id="customerName-error" error={errors.customerName} />
                       </div>
 
                       <div>
-                        <label htmlFor="customerWhatsapp" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Nomor WhatsApp <span className="text-red-500">*</span></label>
+                        <label htmlFor="customerWhatsapp" className="block text-sm font-medium text-wnb-muted mb-1.5">Nomor WhatsApp <span className="text-wnb-danger">*</span></label>
                         <input
                           ref={fieldRefs.customerWhatsapp}
                           type="tel"
@@ -310,14 +350,14 @@ export function BookingPage() {
                           onChange={handleChange}
                           aria-invalid={!!errors.customerWhatsapp}
                           aria-describedby={errors.customerWhatsapp ? "customerWhatsapp-error" : undefined}
-                          className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                          className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                           placeholder="08xxxxxxxxxx"
                         />
                         <BookingFieldError id="customerWhatsapp-error" error={errors.customerWhatsapp} />
                       </div>
 
                       <div>
-                        <label htmlFor="organizationName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Instansi atau Organisasi (Opsional)</label>
+                        <label htmlFor="organizationName" className="block text-sm font-medium text-wnb-muted mb-1.5">Instansi atau Organisasi (Opsional)</label>
                         <input
                           type="text"
                           id="organizationName"
@@ -325,7 +365,7 @@ export function BookingPage() {
                           autoComplete="organization"
                           value={values.organizationName}
                           onChange={handleChange}
-                          className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                          className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                           placeholder="Nama perusahaan, komunitas, dll"
                         />
                       </div>
@@ -334,11 +374,11 @@ export function BookingPage() {
 
                   {/* Section: Rencana Perjalanan */}
                   <section className="space-y-5">
-                    <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 border-b border-gray-200 dark:border-gray-800 pb-2">2. Rencana Perjalanan</h2>
+                    <h2 className="text-xl font-bold text-wnb-text border-b border-wnb-border pb-2">2. Rencana Perjalanan</h2>
                     
                     <div className="space-y-4">
                       <div>
-                        <label htmlFor="packageChoice" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Paket Wisata <span className="text-red-500">*</span></label>
+                        <label htmlFor="packageChoice" className="block text-sm font-medium text-wnb-muted mb-1.5">Paket Wisata <span className="text-wnb-danger">*</span></label>
                         <select
                           ref={fieldRefs.packageChoice}
                           id="packageChoice"
@@ -347,7 +387,7 @@ export function BookingPage() {
                           onChange={handleChange}
                           aria-invalid={!!errors.packageChoice}
                           aria-describedby={errors.packageChoice ? "packageChoice-error" : undefined}
-                          className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                          className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                         >
                           {getBookingPackageOptions().map(opt => (
                             <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -358,7 +398,7 @@ export function BookingPage() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="plannedDate" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Tanggal Rencana <span className="text-red-500">*</span></label>
+                          <label htmlFor="plannedDate" className="block text-sm font-medium text-wnb-muted mb-1.5">Tanggal Rencana <span className="text-wnb-danger">*</span></label>
                           <input
                             ref={fieldRefs.plannedDate}
                             type="date"
@@ -369,7 +409,7 @@ export function BookingPage() {
                             disabled={values.dateUndecided}
                             aria-invalid={!!errors.plannedDate}
                             aria-describedby={errors.plannedDate ? "plannedDate-error" : undefined}
-                            className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow disabled:opacity-50 disabled:cursor-not-allowed text-wnb-text"
                           />
                           <div className="mt-2 flex items-center gap-2">
                             <input
@@ -378,21 +418,21 @@ export function BookingPage() {
                               name="dateUndecided"
                               checked={values.dateUndecided}
                               onChange={handleChange}
-                              className="w-4 h-4 rounded border-gray-300 text-wnb-accent focus:ring-wnb-accent"
+                              className="w-4 h-4 rounded border-wnb-border text-wnb-accent focus:ring-wnb-accent"
                             />
-                            <label htmlFor="dateUndecided" className="text-sm text-gray-600 dark:text-gray-400">Tanggal belum ditentukan</label>
+                            <label htmlFor="dateUndecided" className="text-sm text-wnb-muted">Tanggal belum ditentukan</label>
                           </div>
                           <BookingFieldError id="plannedDate-error" error={errors.plannedDate} />
                         </div>
 
                         <div>
-                          <label htmlFor="dateFlexibility" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Fleksibilitas Tanggal</label>
+                          <label htmlFor="dateFlexibility" className="block text-sm font-medium text-wnb-muted mb-1.5">Fleksibilitas Tanggal</label>
                           <select
                             id="dateFlexibility"
                             name="dateFlexibility"
                             value={values.dateFlexibility}
                             onChange={handleChange}
-                            className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                            className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                           >
                             {DATE_FLEXIBILITY_OPTIONS.map(opt => (
                               <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -403,7 +443,7 @@ export function BookingPage() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="participantCount" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Jumlah Peserta <span className="text-red-500">*</span></label>
+                          <label htmlFor="participantCount" className="block text-sm font-medium text-wnb-muted mb-1.5">Jumlah Peserta <span className="text-wnb-danger">*</span></label>
                           <input
                             ref={fieldRefs.participantCount}
                             type="number"
@@ -414,14 +454,14 @@ export function BookingPage() {
                             onChange={handleChange}
                             aria-invalid={!!errors.participantCount}
                             aria-describedby={errors.participantCount ? "participantCount-error participantCount-helper" : "participantCount-helper"}
-                            className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                            className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                           />
-                          <p id="participantCount-helper" className="text-xs text-gray-500 mt-1">Kapasitas unit akan diperiksa oleh WNB.</p>
+                          <p id="participantCount-helper" className="text-xs text-wnb-subtle mt-1">Kapasitas unit akan diperiksa oleh WNB.</p>
                           <BookingFieldError id="participantCount-error" error={errors.participantCount} />
                         </div>
 
                         <div>
-                          <label htmlFor="groupType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Jenis Kelompok <span className="text-red-500">*</span></label>
+                          <label htmlFor="groupType" className="block text-sm font-medium text-wnb-muted mb-1.5">Jenis Kelompok <span className="text-wnb-danger">*</span></label>
                           <select
                             ref={fieldRefs.groupType}
                             id="groupType"
@@ -430,7 +470,7 @@ export function BookingPage() {
                             onChange={handleChange}
                             aria-invalid={!!errors.groupType}
                             aria-describedby={errors.groupType ? "groupType-error" : undefined}
-                            className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                            className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                           >
                             {GROUP_TYPE_OPTIONS.map(opt => (
                               <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -444,18 +484,18 @@ export function BookingPage() {
 
                   {/* Section: Preferensi Opsional */}
                   <section className="space-y-5">
-                    <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 border-b border-gray-200 dark:border-gray-800 pb-2">3. Preferensi & Kebutuhan Tambahan</h2>
+                    <h2 className="text-xl font-bold text-wnb-text border-b border-wnb-border pb-2">3. Preferensi & Kebutuhan Tambahan</h2>
                     
                     <div className="space-y-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="routeChoice" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Preferensi Rute (Opsional)</label>
+                          <label htmlFor="routeChoice" className="block text-sm font-medium text-wnb-muted mb-1.5">Preferensi Rute (Opsional)</label>
                           <select
                             id="routeChoice"
                             name="routeChoice"
                             value={values.routeChoice}
                             onChange={handleChange}
-                            className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                            className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                           >
                             {getBookingRouteOptions().map(opt => (
                               <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -464,25 +504,25 @@ export function BookingPage() {
                         </div>
 
                         <div>
-                          <label htmlFor="meetingPoint" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Preferensi Titik Temu (Opsional)</label>
+                          <label htmlFor="meetingPoint" className="block text-sm font-medium text-wnb-muted mb-1.5">Preferensi Titik Temu (Opsional)</label>
                           <select
                             id="meetingPoint"
                             name="meetingPoint"
                             value={values.meetingPoint}
                             onChange={handleChange}
                             aria-describedby="meetingPoint-helper"
-                            className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow"
+                            className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow text-wnb-text"
                           >
                             {MEETING_POINT_OPTIONS.map(opt => (
                               <option key={opt.value} value={opt.value}>{opt.label}</option>
                             ))}
                           </select>
-                          <p id="meetingPoint-helper" className="text-xs text-gray-500 mt-1">Titik temu final ditentukan setelah Paket dan Rute diperiksa.</p>
+                          <p id="meetingPoint-helper" className="text-xs text-wnb-subtle mt-1">Titik temu final ditentukan setelah Paket dan Rute diperiksa.</p>
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Kebutuhan Tambahan (Opsional)</label>
+                        <label className="block text-sm font-medium text-wnb-muted mb-2">Kebutuhan Tambahan (Opsional)</label>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                           {ADDITIONAL_NEEDS_OPTIONS.map((opt) => (
                             <div key={opt.value} className="flex items-start gap-2.5">
@@ -493,9 +533,9 @@ export function BookingPage() {
                                 value={opt.value}
                                 checked={values.additionalNeeds.includes(opt.value as AdditionalNeed)}
                                 onChange={handleChange}
-                                className="mt-1 w-4 h-4 rounded border-gray-300 text-wnb-accent focus:ring-wnb-accent"
+                                className="mt-1 w-4 h-4 rounded border-wnb-border text-wnb-accent focus:ring-wnb-accent"
                               />
-                              <label htmlFor={`need-${opt.value}`} className="text-sm text-gray-700 dark:text-gray-300 cursor-pointer">
+                              <label htmlFor={`need-${opt.value}`} className="text-sm text-wnb-muted cursor-pointer">
                                 {opt.label}
                               </label>
                             </div>
@@ -504,7 +544,7 @@ export function BookingPage() {
                       </div>
 
                       <div>
-                        <label htmlFor="safetyNeeds" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Kebutuhan Kenyamanan / Keselamatan Khusus</label>
+                        <label htmlFor="safetyNeeds" className="block text-sm font-medium text-wnb-muted mb-1.5">Kebutuhan Kenyamanan / Keselamatan Khusus</label>
                         <textarea
                           id="safetyNeeds"
                           name="safetyNeeds"
@@ -513,17 +553,17 @@ export function BookingPage() {
                           rows={3}
                           maxLength={500}
                           aria-describedby="safetyNeeds-helper"
-                          className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow resize-y"
+                          className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow resize-y text-wnb-text"
                           placeholder="Adakah anggota rombongan dengan kebutuhan fisik khusus, balita, atau lansia?"
                         />
-                        <div className="flex justify-between items-center mt-1 text-xs text-gray-500">
+                        <div className="flex justify-between items-center mt-1 text-xs text-wnb-subtle">
                           <p id="safetyNeeds-helper">Jelaskan secara umum. Jangan memasukkan diagnosis medis rinci.</p>
                           <span>{values.safetyNeeds.length}/500</span>
                         </div>
                       </div>
 
                       <div>
-                        <label htmlFor="additionalNotes" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Catatan Tambahan</label>
+                        <label htmlFor="additionalNotes" className="block text-sm font-medium text-wnb-muted mb-1.5">Catatan Tambahan</label>
                         <textarea
                           id="additionalNotes"
                           name="additionalNotes"
@@ -531,10 +571,10 @@ export function BookingPage() {
                           onChange={handleChange}
                           rows={3}
                           maxLength={1000}
-                          className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow resize-y"
+                          className="w-full px-4 py-2.5 rounded-xl border border-wnb-border bg-wnb-surface focus:ring-2 focus:ring-wnb-accent focus:border-transparent outline-none transition-shadow resize-y text-wnb-text"
                           placeholder="Catatan atau pertanyaan lain untuk tim WNB..."
                         />
-                        <div className="flex justify-end mt-1 text-xs text-gray-500">
+                        <div className="flex justify-end mt-1 text-xs text-wnb-subtle">
                           <span>{values.additionalNotes.length}/1000</span>
                         </div>
                       </div>
@@ -542,7 +582,7 @@ export function BookingPage() {
                   </section>
 
                   {/* Section: Persetujuan */}
-                  <section className="bg-gray-50 dark:bg-gray-900 p-5 rounded-xl border border-gray-200 dark:border-gray-800">
+                  <section className="bg-wnb-surface-elevated p-5 rounded-xl border border-wnb-border">
                     <div className="flex items-start gap-3">
                       <input
                         ref={fieldRefs.privacyConsent}
@@ -553,15 +593,14 @@ export function BookingPage() {
                         onChange={handleChange}
                         aria-invalid={!!errors.privacyConsent}
                         aria-describedby={errors.privacyConsent ? "privacyConsent-error privacyConsent-desc" : "privacyConsent-desc"}
-                        className="mt-1 w-5 h-5 rounded border-gray-300 text-wnb-accent focus:ring-wnb-accent"
+                        className="mt-1 w-5 h-5 rounded border-wnb-border text-wnb-accent focus:ring-wnb-accent"
                       />
                       <div>
-                        <label htmlFor="privacyConsent" className="text-sm font-medium text-gray-900 dark:text-gray-100 cursor-pointer block mb-1">
-                          Saya menyetujui penggunaan data formulir ini <span className="text-red-500">*</span>
+                        <label htmlFor="privacyConsent" className="text-sm font-medium text-wnb-text cursor-pointer block mb-1">
+                          Saya menyetujui penggunaan data formulir ini <span className="text-wnb-danger">*</span>
                         </label>
-                        <p id="privacyConsent-desc" className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-                          Data digunakan untuk menindaklanjuti permintaan Anda, dimasukkan ke ringkasan, dan diteruskan via pesan WhatsApp. 
-                          Persetujuan ini bukan izin publikasi foto/dokumentasi, dan permintaan ini belum merupakan konfirmasi booking akhir.
+                        <p id="privacyConsent-desc" className="text-xs text-wnb-muted leading-relaxed">
+                          Data pada formulir ini hanya diproses di browser untuk membentuk ringkasan atau pesan WhatsApp. Website tidak menyimpan data ini. Permintaan baru diteruskan setelah Anda membuka WhatsApp dan menekan tombol Kirim. Permintaan ini belum menjadi konfirmasi booking dan bukan persetujuan publikasi dokumentasi.
                         </p>
                         <BookingFieldError id="privacyConsent-error" error={errors.privacyConsent} />
                       </div>
@@ -573,9 +612,9 @@ export function BookingPage() {
                     <BookingStatusNotice status={status} fallbackText={fallbackText} />
                     
                     {!isWaAvailable && status === "idle" && (
-                      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4 text-blue-800 dark:text-blue-200 text-sm">
+                      <div className="bg-wnb-surface border border-wnb-border rounded-xl p-4 text-wnb-text text-sm">
                         <h4 className="font-semibold mb-1">Kanal Pemesanan Sedang Dilengkapi</h4>
-                        <p>Nomor WhatsApp resmi WNB belum dikonfigurasi. Anda tetap dapat menyalin ringkasan permintaan untuk disimpan atau disampaikan melalui kanal resmi setelah tersedia.</p>
+                        <p className="text-wnb-muted">Nomor WhatsApp resmi WNB belum dikonfigurasi. Anda tetap dapat menyalin ringkasan permintaan untuk disimpan atau disampaikan melalui kanal resmi setelah tersedia.</p>
                       </div>
                     )}
 
@@ -604,7 +643,7 @@ export function BookingPage() {
                         <button
                           type="button"
                           onClick={handleCopySummary}
-                          className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full font-medium transition-colors flex items-center justify-center gap-2"
+                          className="w-full sm:w-auto px-6 py-3.5 bg-wnb-surface border border-wnb-border hover:bg-wnb-surface-elevated text-wnb-text rounded-full font-medium transition-colors flex items-center justify-center gap-2"
                         >
                           <Copy className="w-4 h-4" />
                           Salin Saja
@@ -626,7 +665,7 @@ export function BookingPage() {
             </div>
           </div>
         </Container>
-      </main>
+      </div>
     </>
   );
 }

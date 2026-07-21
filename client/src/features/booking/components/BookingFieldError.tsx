@@ -11,7 +11,7 @@ export function BookingFieldError({ id, error }: BookingFieldErrorProps) {
   return (
     <div 
       id={id}
-      className="flex items-center gap-1.5 mt-1.5 text-sm text-red-600 dark:text-red-400"
+      className="flex items-center gap-1.5 mt-1.5 text-sm text-wnb-danger"
       aria-live="polite"
     >
       <AlertCircle className="w-4 h-4 flex-shrink-0" />

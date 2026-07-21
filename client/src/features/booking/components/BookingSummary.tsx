@@ -49,81 +49,81 @@ export function BookingSummary({ values }: BookingSummaryProps) {
     : "";
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
-      <h3 className="font-semibold text-lg mb-4 text-gray-900 dark:text-gray-100">Ringkasan Permintaan</h3>
+    <div className="bg-wnb-surface rounded-2xl p-6 border border-wnb-border">
+      <h3 className="font-semibold text-lg mb-4 text-wnb-text">Ringkasan Permintaan</h3>
       
       <dl className="space-y-3 text-sm">
         <div>
-          <dt className="text-gray-500 dark:text-gray-400">Nama Pemesan</dt>
-          <dd className="font-medium text-gray-900 dark:text-gray-100">{values.customerName || "-"}</dd>
+          <dt className="text-wnb-muted">Nama Pemesan</dt>
+          <dd className="font-medium text-wnb-text">{values.customerName || "-"}</dd>
         </div>
         <div>
-          <dt className="text-gray-500 dark:text-gray-400">WhatsApp</dt>
-          <dd className="font-medium text-gray-900 dark:text-gray-100">{values.customerWhatsapp ? normalizeCustomerWhatsapp(values.customerWhatsapp) : "-"}</dd>
+          <dt className="text-wnb-muted">WhatsApp</dt>
+          <dd className="font-medium text-wnb-text">{values.customerWhatsapp ? normalizeCustomerWhatsapp(values.customerWhatsapp) : "-"}</dd>
         </div>
         {values.organizationName && (
           <div>
-            <dt className="text-gray-500 dark:text-gray-400">Instansi / Organisasi</dt>
-            <dd className="font-medium text-gray-900 dark:text-gray-100">{values.organizationName}</dd>
+            <dt className="text-wnb-muted">Instansi / Organisasi</dt>
+            <dd className="font-medium text-wnb-text">{values.organizationName}</dd>
           </div>
         )}
         
-        <hr className="border-gray-200 dark:border-gray-800 my-3" />
+        <hr className="border-wnb-border my-3" />
         
         <div>
-          <dt className="text-gray-500 dark:text-gray-400">Paket Wisata</dt>
-          <dd className="font-medium text-gray-900 dark:text-gray-100">{packageLabel}</dd>
+          <dt className="text-wnb-muted">Paket Wisata</dt>
+          <dd className="font-medium text-wnb-text">{packageLabel}</dd>
         </div>
         <div>
-          <dt className="text-gray-500 dark:text-gray-400">Tanggal Rencana</dt>
-          <dd className="font-medium text-gray-900 dark:text-gray-100">{dateStr}</dd>
+          <dt className="text-wnb-muted">Tanggal Rencana</dt>
+          <dd className="font-medium text-wnb-text">{dateStr}</dd>
         </div>
         {flexibilityLabel && (
           <div>
-            <dt className="text-gray-500 dark:text-gray-400">Fleksibilitas</dt>
-            <dd className="font-medium text-gray-900 dark:text-gray-100">{flexibilityLabel}</dd>
+            <dt className="text-wnb-muted">Fleksibilitas</dt>
+            <dd className="font-medium text-wnb-text">{flexibilityLabel}</dd>
           </div>
         )}
         <div>
-          <dt className="text-gray-500 dark:text-gray-400">Jumlah Peserta</dt>
-          <dd className="font-medium text-gray-900 dark:text-gray-100">{values.participantCount || "-"}</dd>
+          <dt className="text-wnb-muted">Jumlah Peserta</dt>
+          <dd className="font-medium text-wnb-text">{values.participantCount || "-"}</dd>
         </div>
         <div>
-          <dt className="text-gray-500 dark:text-gray-400">Jenis Kelompok</dt>
-          <dd className="font-medium text-gray-900 dark:text-gray-100">{groupLabel}</dd>
+          <dt className="text-wnb-muted">Jenis Kelompok</dt>
+          <dd className="font-medium text-wnb-text">{groupLabel}</dd>
         </div>
 
         {(routeLabel || meetingLabel || additionalNeedsLabels || values.safetyNeeds || values.additionalNotes) && (
           <>
-            <hr className="border-gray-200 dark:border-gray-800 my-3" />
+            <hr className="border-wnb-border my-3" />
             {routeLabel && (
               <div>
-                <dt className="text-gray-500 dark:text-gray-400">Preferensi Rute</dt>
-                <dd className="font-medium text-gray-900 dark:text-gray-100">{routeLabel}</dd>
+                <dt className="text-wnb-muted">Preferensi Rute</dt>
+                <dd className="font-medium text-wnb-text">{routeLabel}</dd>
               </div>
             )}
             {meetingLabel && (
               <div>
-                <dt className="text-gray-500 dark:text-gray-400">Preferensi Titik Temu</dt>
-                <dd className="font-medium text-gray-900 dark:text-gray-100">{meetingLabel}</dd>
+                <dt className="text-wnb-muted">Preferensi Titik Temu</dt>
+                <dd className="font-medium text-wnb-text">{meetingLabel}</dd>
               </div>
             )}
             {additionalNeedsLabels && (
               <div>
-                <dt className="text-gray-500 dark:text-gray-400">Kebutuhan Tambahan</dt>
-                <dd className="font-medium text-gray-900 dark:text-gray-100">{additionalNeedsLabels}</dd>
+                <dt className="text-wnb-muted">Kebutuhan Tambahan</dt>
+                <dd className="font-medium text-wnb-text">{additionalNeedsLabels}</dd>
               </div>
             )}
             {values.safetyNeeds && (
               <div>
-                <dt className="text-gray-500 dark:text-gray-400">Kebutuhan Kenyamanan/Keselamatan</dt>
-                <dd className="font-medium text-gray-900 dark:text-gray-100 break-words">{values.safetyNeeds}</dd>
+                <dt className="text-wnb-muted">Kebutuhan Kenyamanan/Keselamatan</dt>
+                <dd className="font-medium text-wnb-text break-words">{values.safetyNeeds}</dd>
               </div>
             )}
             {values.additionalNotes && (
               <div>
-                <dt className="text-gray-500 dark:text-gray-400">Catatan Tambahan</dt>
-                <dd className="font-medium text-gray-900 dark:text-gray-100 break-words">{values.additionalNotes}</dd>
+                <dt className="text-wnb-muted">Catatan Tambahan</dt>
+                <dd className="font-medium text-wnb-text break-words">{values.additionalNotes}</dd>
               </div>
             )}
           </>

@@ -12,13 +12,13 @@ export function BookingStatusNotice({ status, fallbackText }: BookingStatusNotic
   if (status === "success-whatsapp") {
     return (
       <div 
-        className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4 flex gap-3 text-green-800 dark:text-green-200"
+        className="bg-wnb-surface border border-wnb-border rounded-xl p-4 flex gap-3 text-wnb-text"
         aria-live="polite"
       >
-        <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
+        <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#25D366]" />
         <div>
-          <h4 className="font-semibold text-sm mb-1">WhatsApp telah dibuka</h4>
-          <p className="text-sm opacity-90">Silakan periksa pesan dan tekan Kirim untuk meneruskan permintaan kepada WNB.</p>
+          <h4 className="font-semibold text-sm mb-1">WhatsApp Telah Dibuka</h4>
+          <p className="text-sm text-wnb-muted">Formulir Anda telah diteruskan. Silakan tekan tombol Kirim di aplikasi WhatsApp untuk menyelesaikan permintaan.</p>
         </div>
       </div>
     );
@@ -27,13 +27,13 @@ export function BookingStatusNotice({ status, fallbackText }: BookingStatusNotic
   if (status === "error-whatsapp-blocked") {
     return (
       <div 
-        className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-xl p-4 flex gap-3 text-orange-800 dark:text-orange-200"
-        aria-live="polite"
+        className="bg-wnb-surface border border-wnb-border rounded-xl p-4 flex gap-3 text-wnb-text"
+        role="alert"
       >
-        <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+        <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5 text-wnb-danger" />
         <div>
-          <h4 className="font-semibold text-sm mb-1">WhatsApp Tidak Dapat Dibuka</h4>
-          <p className="text-sm opacity-90">Browser mungkin memblokir tab baru atau WhatsApp tidak tersedia pada perangkat ini. Coba kembali atau salin ringkasan permintaan.</p>
+          <h4 className="font-semibold text-sm mb-1 text-wnb-danger">WhatsApp Tidak Dapat Dibuka</h4>
+          <p className="text-sm text-wnb-muted">Browser Anda memblokir jendela baru. Silakan gunakan tombol "Salin Ringkasan" di bawah dan kirim manual ke nomor kami.</p>
         </div>
       </div>
     );
@@ -42,13 +42,13 @@ export function BookingStatusNotice({ status, fallbackText }: BookingStatusNotic
   if (status === "success-copy") {
     return (
       <div 
-        className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4 flex gap-3 text-blue-800 dark:text-blue-200"
+        className="bg-wnb-surface border border-wnb-border rounded-xl p-4 flex gap-3 text-wnb-text"
         aria-live="polite"
       >
-        <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
+        <Copy className="w-5 h-5 flex-shrink-0 mt-0.5 text-wnb-text" />
         <div>
           <h4 className="font-semibold text-sm mb-1">Ringkasan Disalin</h4>
-          <p className="text-sm opacity-90">Ringkasan permintaan berhasil disalin ke clipboard.</p>
+          <p className="text-sm text-wnb-muted">Detail permintaan Anda telah disalin ke clipboard. Silakan tempel (paste) dan kirim ke WhatsApp kami.</p>
         </div>
       </div>
     );
@@ -57,17 +57,17 @@ export function BookingStatusNotice({ status, fallbackText }: BookingStatusNotic
   if (status === "error-copy") {
     return (
       <div 
-        className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 flex gap-3 text-red-800 dark:text-red-200"
-        aria-live="polite"
+        className="bg-wnb-surface border border-wnb-border rounded-xl p-4 flex gap-3 text-wnb-text"
+        role="alert"
       >
-        <Copy className="w-5 h-5 flex-shrink-0 mt-0.5" />
-        <div className="w-full">
-          <h4 className="font-semibold text-sm mb-1">Ringkasan belum dapat disalin</h4>
-          <p className="text-sm opacity-90 mb-2">Pilih teks ringkasan di bawah dan salin secara manual.</p>
+        <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5 text-wnb-danger" />
+        <div>
+          <h4 className="font-semibold text-sm mb-1 text-wnb-danger">Gagal Menyalin</h4>
+          <p className="text-sm text-wnb-muted">Browser Anda tidak mengizinkan akses clipboard. Silakan salin teks ringkasan secara manual di bawah ini.</p>
           {fallbackText && (
             <textarea 
               readOnly 
-              className="w-full h-32 p-2 text-sm border border-red-200 dark:border-red-800 rounded bg-white dark:bg-gray-800"
+              className="w-full h-32 p-2 mt-3 text-sm border border-wnb-border rounded bg-wnb-surface"
               value={fallbackText}
               aria-label="Teks ringkasan untuk disalin manual"
             />
