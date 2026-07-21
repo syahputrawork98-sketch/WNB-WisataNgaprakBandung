@@ -10,8 +10,12 @@ import type {
   BookingFormValues, 
   BookingFieldErrors, 
   BookingStatus,
-  AdditionalNeed
+  AdditionalNeed,
+  DateFlexibility,
+  GroupType,
+  MeetingPoint
 } from "@/features/booking/bookingTypes";
+import type { ChangeEvent } from "react";
 
 export function useBookingForm() {
   const [searchParams] = useSearchParams();
@@ -101,7 +105,7 @@ export function useBookingForm() {
   }, [searchParams]);
 
   // Handlers
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
     
     // Reset status when form changes
@@ -117,14 +121,37 @@ export function useBookingForm() {
         newValues.additionalNeeds = checked 
           ? [...newValues.additionalNeeds, val]
           : newValues.additionalNeeds.filter(n => n !== val);
-      } else {
-        (newValues as any)[name] = checked;
-        if (name === "dateUndecided" && checked) {
+      } else if (name === "dateUndecided") {
+        newValues.dateUndecided = checked;
+        if (checked) {
           newValues.plannedDate = "";
         }
+      } else if (name === "privacyConsent") {
+        newValues.privacyConsent = checked;
       }
     } else {
-      (newValues as any)[name] = value;
+      switch (name) {
+        case "customerName":
+        case "customerWhatsapp":
+        case "organizationName":
+        case "packageChoice":
+        case "plannedDate":
+        case "participantCount":
+        case "routeChoice":
+        case "safetyNeeds":
+        case "additionalNotes":
+          newValues[name] = value;
+          break;
+        case "dateFlexibility":
+          newValues.dateFlexibility = value as DateFlexibility;
+          break;
+        case "groupType":
+          newValues.groupType = value as GroupType;
+          break;
+        case "meetingPoint":
+          newValues.meetingPoint = value as MeetingPoint;
+          break;
+      }
     }
 
     setValues(newValues);
@@ -254,7 +281,7 @@ export function useBookingForm() {
     }
   };
   
-  const hasErrors = Object.keys(errors).length > 0;
+  const hasErrors = Object.values(errors).some(Boolean);
   const isWaAvailable = !!getOfficialWhatsAppNumber();
 
   return {

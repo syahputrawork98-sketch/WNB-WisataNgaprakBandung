@@ -1,3 +1,5 @@
+import type { ChangeEvent } from "react";
+
 export type DateFlexibility =
   | ""
   | "fixed"
@@ -64,5 +66,5 @@ export type BookingStatus =
   | "error-copy";
 
 export type BookingChangeHandler = (
-  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
 ) => void;
