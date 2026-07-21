@@ -4,23 +4,23 @@ import { Users, Map, CarFront, Camera } from "lucide-react";
 
 const EXPERIENCE_PILLARS = [
   {
-    title: "Petualangan Berkarakter",
-    description: "Land Rover klasik, alam, jalur, dan suasana hangat menjadi identitas pengalaman WNB.",
+    title: "Berkarakter",
+    description: "Land Rover klasik, alam, jalur, dan suasana perjalanan menjadi identitas pengalaman.",
     icon: Users,
   },
   {
     title: "Dipersiapkan secara Bertanggung Jawab",
-    description: "Perjalanan dipertimbangkan berdasarkan kesiapan operasional dan kondisi yang dihadapi.",
+    description: "Perjalanan dipertimbangkan berdasarkan kesiapan dan kondisi aktual, tanpa klaim keselamatan mutlak.",
     icon: Map,
   },
   {
     title: "Disesuaikan dengan Peserta",
-    description: "Tingkat petualangan mempertimbangkan pengalaman, kebutuhan, dan karakter peserta.",
+    description: "Pengalaman mempertimbangkan kebutuhan, pengalaman, jumlah, dan karakter peserta.",
     icon: CarFront,
   },
   {
-    title: "Dirancang Menjadi Cerita",
-    description: "Adrenalin, kebersamaan, dan perjalanan dirangkai menjadi pengalaman yang berkesan.",
+    title: "Hangat dan Berkesan",
+    description: "Pelayanan, kebersamaan, dan cerita perjalanan menjadi bagian dari pengalaman.",
     icon: Camera,
   },
 ];

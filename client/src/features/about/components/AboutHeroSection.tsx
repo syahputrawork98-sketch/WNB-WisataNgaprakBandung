@@ -25,7 +25,7 @@ export function AboutHeroSection() {
         </h1>
 
         <p className="text-base sm:text-lg text-wnb-muted leading-relaxed max-w-3xl mt-4">
-          WNB lahir dari kecintaan terhadap Land Rover klasik, off-road, alam, dan kebersamaan komunitas. Pengalaman tersebut kini dikembangkan agar lebih banyak orang dapat menjelajahi sisi berbeda Bandung melalui perjalanan yang berkarakter, terarah, dan berkesan.
+          WNB tumbuh dari kecintaan terhadap Land Rover klasik, off-road, alam, dan kebersamaan. Kini, pengalaman tersebut dikembangkan kembali menjadi perjalanan yang berkarakter, terarah, dan dapat disesuaikan dengan peserta.
         </p>
       </Container>
     </section>

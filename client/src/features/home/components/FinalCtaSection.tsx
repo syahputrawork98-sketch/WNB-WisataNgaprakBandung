@@ -32,10 +32,10 @@ export function FinalCtaSection() {
         >
           Mulai dari perjalanan pertama. Kembali untuk tantangan berikutnya.
         </h2>
-        <p className="text-sm sm:text-base text-wnb-muted leading-relaxed max-w-2xl">
-          Pilihan pengalaman akan disesuaikan dengan kebutuhan Anda dan mengikuti kondisi perjalanan secara aktual.
+        <p className="text-base sm:text-lg text-wnb-muted leading-relaxed max-w-2xl mx-auto">
+          Ceritakan kebutuhan perjalanan Anda, dan biarkan kami membantu menyesuaikan petualangan yang tepat untuk Anda.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
+        <div className="flex flex-wrap justify-center gap-4 mt-4 relative z-20">
           <LinkButton to={ROUTE_PATHS.booking} variant="primary" size="md">
             Rencanakan Perjalanan
           </LinkButton>

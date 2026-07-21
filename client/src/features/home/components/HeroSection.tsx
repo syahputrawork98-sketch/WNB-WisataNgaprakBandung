@@ -38,11 +38,11 @@ export function HeroSection() {
             </h1>
           </div>
           <p className="text-base sm:text-lg text-wnb-muted leading-relaxed">
-            Jelajahi alam Bandung bersama Land Rover klasik melalui petualangan yang dapat disesuaikan, dari perjalanan pertama hingga tantangan berikutnya.
+            Pengalaman petualangan bersama Land Rover klasik yang dapat disesuaikan dengan peserta dan kondisi perjalanan.
           </p>
           <div className="flex flex-wrap gap-4 mt-2">
             <LinkButton to={ROUTE_PATHS.packages} variant="primary" size="md">
-              Pilih Petualangan
+              Lihat Paket
             </LinkButton>
             <LinkButton to={ROUTE_PATHS.routes} variant="secondary" size="md">
               Jelajahi Rute

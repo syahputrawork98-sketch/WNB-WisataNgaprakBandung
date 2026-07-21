@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import { ROUTE_PATHS } from "@/routes/routePaths";
 import { MainLayout } from "@/layouts/MainLayout/MainLayout";
 
@@ -18,6 +18,7 @@ export function AppRoutes() {
       <Route element={<MainLayout />}>
         <Route path={ROUTE_PATHS.home} element={<HomePage />} />
         <Route path={ROUTE_PATHS.about} element={<AboutPage />} />
+        <Route path={ROUTE_PATHS.aboutLegacy} element={<Navigate to={ROUTE_PATHS.about} replace />} />
         <Route path={ROUTE_PATHS.packages} element={<PackageListPage />} />
         <Route path={ROUTE_PATHS.packageDetail} element={<PackageDetailPage />} />
         <Route path={ROUTE_PATHS.routes} element={<RouteListPage />} />

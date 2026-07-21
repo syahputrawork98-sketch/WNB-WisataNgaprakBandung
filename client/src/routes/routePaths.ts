@@ -1,6 +1,7 @@
 export const ROUTE_PATHS = {
   home: "/",
-  about: "/about",
+  about: "/tentang-kami",
+  aboutLegacy: "/about",
   packages: "/paket",
   packageDetail: "/paket/:slug",
   routes: "/rute",

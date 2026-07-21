@@ -18,7 +18,7 @@ export function OperationalBaseSection() {
             Jl. Encep Katawirya No. 128F, Cimahi Utara, Kota Cimahi
           </p>
           <p>
-            Alamat ini digunakan sebagai kantor pusat administrasi dan garasi unit cadangan WNB. Titik temu perjalanan bersifat fleksibel dan ditentukan berdasarkan kesepakatan pemesanan.
+            Alamat digunakan sebagai kantor administrasi dan garasi unit cadangan. Alamat bukan titik temu perjalanan tetap. Titik temu ditentukan berdasarkan kesepakatan dalam proses perencanaan.
           </p>
         </div>
       </Container>

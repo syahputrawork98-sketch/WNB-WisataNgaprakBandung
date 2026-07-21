@@ -14,12 +14,12 @@ export function AboutCtaSection() {
           id="about-cta-heading" 
           className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display uppercase tracking-wide text-wnb-white leading-tight"
         >
-          Bagi WNB, perjalanan terbaik bukan hanya tentang tempat yang dituju, tetapi cerita yang terjadi sepanjang jalan.
+          Mari merencanakan petualangan Anda bersama WNB.
         </h2>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
           <LinkButton to={ROUTE_PATHS.packages} variant="primary" size="md">
-            Pilih Petualangan
+            Lihat Paket
           </LinkButton>
           <LinkButton to={ROUTE_PATHS.booking} variant="secondary" size="md">
             Rencanakan Perjalanan

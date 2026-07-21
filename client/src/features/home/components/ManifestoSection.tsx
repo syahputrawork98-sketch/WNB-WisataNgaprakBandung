@@ -47,11 +47,14 @@ export function ManifestoSection() {
 
           <div className="flex flex-col gap-6">
             <p className="text-sm sm:text-base text-wnb-muted leading-relaxed">
-              Bagi kami, perjalanan bukan hanya tentang mencapai tujuan. Land Rover klasik yang menemani Anda bukanlah sekadar alat transportasi, melainkan bagian tak terpisahkan dari karakter petualangan, sensasi penjelajahan, dan kenangan yang tercipta di sepanjang jalur.
+              Pengalaman WNB dibentuk oleh Land Rover klasik, alam, jalur, kebersamaan, dan penyesuaian peserta.
+            </p>
+            <p className="text-sm sm:text-base text-wnb-muted leading-relaxed">
+              Kendaraan merupakan bagian karakter perjalanan, bukan sekadar transportasi.
             </p>
             <div className="mt-2">
               <LinkButton to={ROUTE_PATHS.about} variant="secondary" size="md">
-                Baca Cerita WNB
+                Kenali WNB
               </LinkButton>
             </div>
           </div>

@@ -5,8 +5,7 @@ import type { ExploreItem, VehicleItem } from "./homeTypes";
 export const EXPLORE_ITEMS: readonly ExploreItem[] = [
   {
     title: "Paket Perjalanan",
-    description:
-      "Pilihan bentuk pengalaman perjalanan yang disesuaikan dengan kebutuhan Anda.",
+    description: "Kenali pilihan pengalaman berdasarkan kebutuhan peserta, durasi, dan tujuan perjalanan.",
     path: ROUTE_PATHS.packages,
     linkLabel: "Lihat Paket",
     icon: Compass,
@@ -18,27 +17,13 @@ export const EXPLORE_ITEMS: readonly ExploreItem[] = [
   },
   {
     title: "Rute Petualangan",
-    description:
-      "Gambaran karakter jalur dan tingkat petualangan yang dapat Anda pilih.",
+    description: "Pelajari arah karakter jalur WNB. Informasi rinci akan ditampilkan setelah data siap dipublikasikan.",
     path: ROUTE_PATHS.routes,
-    linkLabel: "Lihat Rute",
+    linkLabel: "Jelajahi Rute",
     icon: Map,
     media: {
       src: "/images/home/explore-route.webp",
       alt: "Jalan tanah yang melintasi lanskap pegunungan",
-      illustrationNotice: false,
-    },
-  },
-  {
-    title: "Galeri Perjalanan",
-    description:
-      "Ruang dokumentasi suasana, kebersamaan, dan cerita perjalanan WNB.",
-    path: ROUTE_PATHS.gallery,
-    linkLabel: "Buka Galeri",
-    icon: Images,
-    media: {
-      src: "/images/home/explore-gallery.webp",
-      alt: "Jalan hutan dengan pegunungan di kejauhan",
       illustrationNotice: false,
     },
   },

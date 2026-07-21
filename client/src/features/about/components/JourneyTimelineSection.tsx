@@ -10,7 +10,7 @@ export function JourneyTimelineSection() {
           <SectionHeading
             id="timeline-heading"
             eyebrow="Perjalanan"
-            title="Tumbuh Bersama Pengalaman"
+            title="Kisah dan Perjalanan WNB"
             align="center"
             headingLevel="h2"
           />
