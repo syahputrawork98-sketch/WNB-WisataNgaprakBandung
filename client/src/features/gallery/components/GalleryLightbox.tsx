@@ -102,6 +102,7 @@ export function GalleryLightbox({
       role="dialog"
       aria-modal="true"
       aria-labelledby="lightbox-title"
+      aria-describedby="lightbox-description"
       ref={dialogRef}
       onKeyDown={handleTab}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 sm:p-8"
@@ -171,7 +172,7 @@ export function GalleryLightbox({
             <h2 id="lightbox-title" className="text-lg font-bold text-white mb-1">
               {currentItem.title}
             </h2>
-            <p className="text-sm text-wnb-subtle line-clamp-3 sm:line-clamp-none">
+            <p id="lightbox-description" className="text-sm text-wnb-subtle line-clamp-3 sm:line-clamp-none">
               {currentItem.caption}
             </p>
           </div>

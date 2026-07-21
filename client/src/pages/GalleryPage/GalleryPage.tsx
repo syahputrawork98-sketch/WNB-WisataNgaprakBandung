@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Info, Image as ImageIcon } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { LinkButton } from "@/components/common/LinkButton";
@@ -13,23 +13,26 @@ import type { GalleryFilterKey, GalleryItem } from "@/features/gallery/galleryTy
 export function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState<GalleryFilterKey>("semua");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const lightboxTriggerRef = useRef<HTMLButtonElement | null>(null);
 
   const displayedItems = useMemo(() => {
     return getGalleryItemsByCategory(activeFilter);
   }, [activeFilter]);
 
-  const handleOpenLightbox = (item: GalleryItem) => {
+  const handleOpenLightbox = (item: GalleryItem, trigger: HTMLButtonElement) => {
     const idx = displayedItems.findIndex((i) => i.id === item.id);
     if (idx !== -1) {
+      lightboxTriggerRef.current = trigger;
       setLightboxIndex(idx);
     }
   };
 
   const handleCloseLightbox = () => {
+    const trigger = lightboxTriggerRef.current;
     setLightboxIndex(null);
-    // Note: restoring focus requires finding the DOM element which could be done with a ref map, 
-    // but a simple solution is relying on browser focus history or manual management in more complex setups.
-    // For simplicity, we just set state. In a real app with strict a11y, we'd focus the button directly.
+    if (trigger) {
+      window.requestAnimationFrame(() => trigger.focus());
+    }
   };
 
   const handleNext = () => {

@@ -4,7 +4,7 @@ import { GalleryMediaView } from "./GalleryMediaView";
 
 type GalleryCardProps = {
   item: GalleryItem;
-  onClick: (item: GalleryItem) => void;
+  onClick: (item: GalleryItem, trigger: HTMLButtonElement) => void;
 };
 
 export function GalleryCard({ item, onClick }: GalleryCardProps) {
@@ -39,7 +39,7 @@ export function GalleryCard({ item, onClick }: GalleryCardProps) {
           type="button"
           aria-haspopup="dialog"
           aria-label={`Buka visual ${item.title}`}
-          onClick={() => onClick(item)}
+          onClick={(event) => onClick(item, event.currentTarget)}
           className="mt-auto w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-wnb-black border border-wnb-border text-sm font-medium text-white rounded transition-colors group-hover:bg-wnb-accent group-hover:text-wnb-black group-hover:border-wnb-accent focus:outline-none"
         >
           <Camera className="w-4 h-4" aria-hidden="true" />
