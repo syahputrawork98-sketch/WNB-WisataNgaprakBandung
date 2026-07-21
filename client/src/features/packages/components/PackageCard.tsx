@@ -1,8 +1,10 @@
-import { Clock, Users, Check } from "lucide-react";
-import { LinkButton } from "@/components/common/LinkButton";
-import { buildPackageDetailPath } from "@/routes/routePaths";
+import { Link } from "react-router";
+import { Clock, Users } from "lucide-react";
 import type { TravelPackage } from "../packagesTypes";
-import { getFormattedPriceText } from "../packagesData";
+import {
+  buildPackagePath,
+  getFormattedPriceText,
+} from "../packagesData";
 import { PackageMediaView } from "./PackageMediaView";
 
 type PackageCardProps = {
@@ -10,13 +12,21 @@ type PackageCardProps = {
 };
 
 export function PackageCard({ pkg }: PackageCardProps) {
-  const topInclusions = pkg.inclusions.slice(0, 3);
   const formattedPrice = getFormattedPriceText(pkg.priceModel);
 
   return (
-    <article className="bg-wnb-surface border border-wnb-border rounded-wnb-lg overflow-hidden flex flex-col hover:border-wnb-border-strong transition-colors duration-200 group">
-      <PackageMediaView media={pkg.media} className="h-48 w-full border-b border-wnb-border" />
-      
+    <Link
+      to={buildPackagePath(pkg.slug)}
+      className="group flex flex-col h-full bg-wnb-surface border border-wnb-border rounded-wnb-lg overflow-hidden transition-all duration-300 hover:border-wnb-focus hover:shadow-wnb-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-wnb-focus"
+    >
+      {/* Media Thumbnail Header */}
+      <div className="h-48 sm:h-56 overflow-hidden border-b border-wnb-border shrink-0">
+        <PackageMediaView
+          media={pkg.media}
+          className="w-full h-full transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+
       <div className="p-6 flex flex-col gap-4 flex-grow justify-between">
         <div className="flex flex-col gap-4">
           {/* Category & Variant Badge */}
@@ -39,8 +49,27 @@ export function PackageCard({ pkg }: PackageCardProps) {
             {pkg.shortDescription}
           </p>
 
+          {/* Target Audience Summary */}
+          {pkg.audience && pkg.audience.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              {pkg.audience.slice(0, 3).map((item, idx) => (
+                <span
+                  key={idx}
+                  className="text-[10px] uppercase tracking-wider text-wnb-subtle bg-wnb-black px-2 py-1 rounded border border-wnb-border/60"
+                >
+                  {item}
+                </span>
+              ))}
+              {pkg.audience.length > 3 && (
+                <span className="text-[10px] text-wnb-subtle px-1 py-1">
+                  +{pkg.audience.length - 3}
+                </span>
+              )}
+            </div>
+          )}
+
           {/* Key Info: Duration & Capacity */}
-          <div className="flex flex-wrap items-center gap-4 text-xs text-wnb-muted py-2 border-y border-wnb-border/50">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-wnb-muted py-2 border-t border-wnb-border/50">
             <div className="flex items-center gap-1.5">
               <Clock className="w-4 h-4 text-wnb-subtle shrink-0" aria-hidden="true" />
               <span>{pkg.duration}</span>
@@ -50,44 +79,24 @@ export function PackageCard({ pkg }: PackageCardProps) {
               <span className="truncate">{pkg.capacity}</span>
             </div>
           </div>
-
-          {/* Inclusions Highlights */}
-          <div className="flex flex-col gap-1.5">
-            <span className="text-xs font-semibold uppercase tracking-wider text-wnb-white">
-              Termasuk:
-            </span>
-            <ul className="flex flex-col gap-1 text-xs text-wnb-muted">
-              {topInclusions.map((item, idx) => (
-                <li key={idx} className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-wnb-white shrink-0" aria-hidden="true" />
-                  <span className="truncate">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Footer / Price & CTA */}
-        <div className="mt-6 pt-4 border-t border-wnb-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="flex flex-col">
-            <span className="text-xs text-wnb-subtle uppercase tracking-wider">
-              Harga Publik
+        <div className="mt-6 pt-4 border-t border-wnb-border flex items-center justify-between gap-4">
+          <div className="flex flex-col gap-1">
+            <span className="text-[10px] uppercase tracking-widest text-wnb-subtle font-semibold">
+              Harga Estimasi
             </span>
-            <span className="text-base font-bold text-wnb-white">
-              {formattedPrice || "Tersedia sesuai permintaan"}
+            <span className="text-lg font-bold text-wnb-white">
+              {formattedPrice || "Hubungi Kami"}
             </span>
           </div>
 
-          <LinkButton
-            to={buildPackageDetailPath(pkg.slug)}
-            size="sm"
-            variant="secondary"
-            className="w-full sm:w-auto text-center"
-          >
+          <div className="text-xs font-semibold text-wnb-accent border border-wnb-accent px-4 py-2 rounded transition-colors group-hover:bg-wnb-accent group-hover:text-wnb-black">
             Lihat Detail
-          </LinkButton>
+          </div>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

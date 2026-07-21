@@ -1,4 +1,4 @@
-import { Compass, Users, Clock, ShieldCheck } from "lucide-react";
+import { Compass, Users, Clock, Map } from "lucide-react";
 
 export function PackageSelectionGuide() {
   return (
@@ -8,7 +8,7 @@ export function PackageSelectionGuide() {
           Panduan Memilih Paket
         </h2>
         <p className="text-wnb-muted leading-relaxed max-w-3xl">
-          Bingung memilih petualangan yang tepat? Berikut adalah panduan singkat
+          Bingung memilih petualangan yang tepat? Berikut adalah panduan umum
           untuk mencocokkan kebutuhan Anda dengan paket WNB.
         </p>
       </div>
@@ -19,13 +19,11 @@ export function PackageSelectionGuide() {
             <Users className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-wnb-white uppercase tracking-wider text-sm">
-            Berdasarkan Peserta
+            Peserta Perjalanan
           </h3>
-          <ul className="text-sm text-wnb-muted flex flex-col gap-2 list-disc list-inside">
-            <li><strong>Keluarga/Pemula:</strong> Short Trip, Full Experience</li>
-            <li><strong>Pasangan:</strong> Anniversary, Surprise</li>
-            <li><strong>Perusahaan:</strong> Corporate Adventure</li>
-          </ul>
+          <p className="text-sm text-wnb-muted leading-relaxed">
+            Pilih paket berdasarkan dengan siapa Anda bepergian. Kami memiliki paket yang ideal untuk keluarga, pasangan, hingga kelompok korporat.
+          </p>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -33,13 +31,11 @@ export function PackageSelectionGuide() {
             <Clock className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-wnb-white uppercase tracking-wider text-sm">
-            Berdasarkan Durasi
+            Durasi Perjalanan
           </h3>
-          <ul className="text-sm text-wnb-muted flex flex-col gap-2 list-disc list-inside">
-            <li><strong>Ringkas (3-4 jam):</strong> Short Trip</li>
-            <li><strong>Penuh (5-8 jam):</strong> Full Exp, Corporate</li>
-            <li><strong>Menginap:</strong> Adventure Camping</li>
-          </ul>
+          <p className="text-sm text-wnb-muted leading-relaxed">
+            Sesuaikan dengan waktu yang Anda miliki. Tersedia pilihan durasi singkat (3-4 jam), pengalaman penuh seharian, hingga menginap (camping).
+          </p>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -47,25 +43,22 @@ export function PackageSelectionGuide() {
             <Compass className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-wnb-white uppercase tracking-wider text-sm">
-            Tingkat Tantangan
+            Tujuan Perjalanan
           </h3>
-          <ul className="text-sm text-wnb-muted flex flex-col gap-2 list-disc list-inside">
-            <li><strong>Santai:</strong> Short Trip, Anniversary</li>
-            <li><strong>Menengah:</strong> Full Exp, Corporate</li>
-            <li><strong>Tinggi:</strong> Trail Exploration</li>
-          </ul>
+          <p className="text-sm text-wnb-muted leading-relaxed">
+            Apakah Anda mencari liburan santai, perayaan momen spesial, acara team-building, atau sekadar eksplorasi alam lepas.
+          </p>
         </div>
 
         <div className="flex flex-col gap-3">
           <div className="w-10 h-10 rounded-full bg-wnb-black border border-wnb-border flex items-center justify-center text-wnb-accent">
-            <ShieldCheck className="w-5 h-5" />
+            <Map className="w-5 h-5" />
           </div>
           <h3 className="font-bold text-wnb-white uppercase tracking-wider text-sm">
-            Saran WNB
+            Format Perjalanan
           </h3>
-          <p className="text-sm text-wnb-muted">
-            Jika ini adalah pengalaman off-road pertama Anda bersama anak-anak, kami
-            menyarankan <strong>Family Adventure — Short Trip</strong>.
+          <p className="text-sm text-wnb-muted leading-relaxed">
+            Tentukan apakah Anda lebih nyaman dengan perjalanan eksklusif khusus rombongan Anda (Private) atau bergabung dengan yang lain (Open Trip).
           </p>
         </div>
       </div>

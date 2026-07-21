@@ -5,19 +5,19 @@ export function PackageProcessSection() {
   const steps = [
     {
       number: "01",
-      title: "Pilih Petualangan Dasar",
+      title: "Pilih Pengalaman",
       description:
         "Tentukan karakter perjalanan awal yang paling mendekati keinginan Anda, baik dari durasi, rute, maupun teman seperjalanan.",
     },
     {
       number: "02",
-      title: "Diskusikan Kebutuhan",
+      title: "Sampaikan Kebutuhan",
       description:
         "Sampaikan ide kustomisasi Anda, seperti tanggal, titik kumpul, hingga tambahan kegiatan seperti piknik atau dokumentasi.",
     },
     {
       number: "03",
-      title: "Penyesuaian & Finalisasi",
+      title: "WNB Memeriksa dan Mengonfirmasi",
       description:
         "Kami menyusun rincian penawaran, menyesuaikan armada Land Rover, serta memastikan ketersediaan jalur pada jadwal Anda.",
     },
@@ -63,12 +63,12 @@ export function PackageProcessSection() {
       </div>
 
       <div className="bg-wnb-black/50 border border-wnb-border p-4 rounded-wnb-md text-sm text-wnb-muted text-left max-w-3xl w-full mx-auto">
-        <strong>Catatan Ketersediaan & Harga:</strong> Seluruh harga paket yang dicantumkan bersifat acuan dasar (Mulai dari). Harga akhir bergantung pada tingkat kustomisasi, jumlah kendaraan, rute akhir, dan opsi tambahan. Khusus paket Open Trip, ketersediaan mengikuti jadwal terpublikasi WNB.
+        <strong>Catatan Ketersediaan & Harga:</strong> Harga akhir bergantung pada tingkat kustomisasi, jumlah kendaraan, rute akhir, dan opsi tambahan. Khusus paket Open Trip, ketersediaan mengikuti jadwal terpublikasi WNB. Pengiriman permintaan belum menjadi konfirmasi pemesanan.
       </div>
 
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
         <LinkButton to={ROUTE_PATHS.booking} size="lg" variant="primary">
-          Diskusikan Perjalanan Anda
+          Rencanakan Perjalanan
         </LinkButton>
       </div>
     </section>

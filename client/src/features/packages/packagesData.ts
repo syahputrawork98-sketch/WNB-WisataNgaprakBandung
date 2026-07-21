@@ -225,8 +225,11 @@ export const REGULAR_PACKAGES: readonly TravelPackage[] = [
     duration: "4–5 jam",
     capacity: "2 sampai maksimal 6 pelanggan per unit",
     vehicle: "Land Rover Classic Long",
-    price: 1850000,
-    priceUnit: "per unit",
+    priceModel: {
+      amount: 1850000,
+      unit: "per unit",
+      displayMode: "exact",
+    },
     inclusions: [
       "Kendaraan Land Rover Classic Long",
       "Driver & Helper",

@@ -62,15 +62,25 @@ export function PackageDetailPage() {
     <main id="main-content" className="py-12 sm:py-16">
       <Container className="flex flex-col gap-10">
         {/* Navigation Breadcrumb */}
-        <div>
-          <Link
-            to={ROUTE_PATHS.packages}
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-wnb-muted hover:text-wnb-white transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-wnb-focus"
-          >
-            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-            <span>Kembali ke Daftar Paket</span>
-          </Link>
-        </div>
+        <nav aria-label="Breadcrumb">
+          <ol className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-wnb-muted">
+            <li>
+              <Link to={ROUTE_PATHS.home} className="hover:text-wnb-white transition-colors duration-200 focus-visible:outline-wnb-focus">
+                Beranda
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-wnb-subtle">/</li>
+            <li>
+              <Link to={ROUTE_PATHS.packages} className="hover:text-wnb-white transition-colors duration-200 focus-visible:outline-wnb-focus">
+                Paket
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-wnb-subtle">/</li>
+            <li aria-current="page" className="text-wnb-white truncate max-w-[200px] sm:max-w-none">
+              {pkg.name}
+            </li>
+          </ol>
+        </nav>
 
         {/* Header Title Section */}
         <div className="flex flex-col gap-4 max-w-4xl">
@@ -102,6 +112,7 @@ export function PackageDetailPage() {
                 <PackageMediaView
                   media={pkg.media}
                   className="w-full h-full"
+                  priority={true}
                 />
               </div>
             )}
@@ -147,7 +158,7 @@ export function PackageDetailPage() {
                   <Car className="w-5 h-5 text-wnb-accent shrink-0 mt-0.5" aria-hidden="true" />
                   <div>
                     <span className="text-wnb-subtle block uppercase tracking-wider text-[10px]">
-                      Konfigurasi Armada
+                      Kendaraan
                     </span>
                     <span className="text-wnb-white font-medium text-sm">
                       {pkg.vehicle}
@@ -217,25 +228,30 @@ export function PackageDetailPage() {
               </section>
 
               {/* Optional Activities */}
-              <section
-                aria-labelledby="package-activities-heading"
-                className="p-6 bg-wnb-surface border border-wnb-border rounded-wnb-lg flex flex-col gap-3"
-              >
-                <h2
-                  id="package-activities-heading"
-                  className="text-sm font-semibold uppercase tracking-wider text-wnb-white border-b border-wnb-border pb-2"
+              {pkg.optionalActivities && pkg.optionalActivities.length > 0 && (
+                <section
+                  aria-labelledby="package-activities-heading"
+                  className="p-6 bg-wnb-surface border border-wnb-border rounded-wnb-lg flex flex-col gap-3"
                 >
-                  Opsi Aktivitas Pendamping:
-                </h2>
-                <ul className="flex flex-col gap-2 text-xs text-wnb-muted pt-1">
-                  {pkg.optionalActivities.map((act, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-wnb-accent shrink-0" aria-hidden="true" />
-                      <span>{act}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+                  <h2
+                    id="package-activities-heading"
+                    className="text-sm font-semibold uppercase tracking-wider text-wnb-white border-b border-wnb-border pb-2"
+                  >
+                    Pilihan Aktivitas Tambahan:
+                  </h2>
+                  <p className="text-[10px] text-wnb-subtle italic -mt-1">
+                    *Aktivitas ini bersifat opsional dan tidak otomatis termasuk dalam harga dasar.
+                  </p>
+                  <ul className="flex flex-col gap-2 text-xs text-wnb-muted pt-1">
+                    {pkg.optionalActivities.map((act, idx) => (
+                      <li key={idx} className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-wnb-accent shrink-0" aria-hidden="true" />
+                        <span>{act}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
             </div>
 
             {/* Terms & Public Notes Section */}

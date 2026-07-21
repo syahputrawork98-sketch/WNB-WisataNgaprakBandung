@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Container } from "@/components/common/Container";
+import { LinkButton } from "@/components/common/LinkButton";
+import { ROUTE_PATHS } from "@/routes/routePaths";
 import type { PackageCategory } from "@/features/packages/packagesTypes";
 import {
   CATEGORY_FILTERS,
@@ -41,6 +43,11 @@ export function PackageListPage() {
           </p>
         </div>
 
+        {/* Package Selection Guide */}
+        <div className="mb-12">
+          <PackageSelectionGuide />
+        </div>
+
         {/* Category Filters */}
         <div className="mb-10">
           <PackageFilter
@@ -65,11 +72,23 @@ export function PackageListPage() {
           </div>
         )}
 
-        {/* Package Selection Guide */}
-        <PackageSelectionGuide />
-
-        {/* Process & Closing Section */}
+        {/* Process Section */}
         <PackageProcessSection />
+
+        {/* Closing CTA */}
+        <section className="mt-16 flex flex-col items-center justify-center gap-6 text-center">
+          <h2 className="text-2xl font-bold font-display text-wnb-white uppercase tracking-wider">
+            Siap Memulai Perjalanan?
+          </h2>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <LinkButton to={ROUTE_PATHS.booking} size="lg" variant="primary">
+              Rencanakan Perjalanan
+            </LinkButton>
+            <LinkButton to={ROUTE_PATHS.routes} size="lg" variant="secondary">
+              Jelajahi Rute
+            </LinkButton>
+          </div>
+        </section>
       </Container>
     </main>
   );
