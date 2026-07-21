@@ -71,6 +71,7 @@ export function PackageListPage() {
             description={activeCategory === "open-trip" ? "Keberangkatan Open Trip belum dibuka saat ini. Anda dapat melihat Paket lain atau merencanakan perjalanan privat bersama WNB." : "Tidak ada Paket yang sesuai dengan pilihan Anda. Ubah kategori atau tampilkan kembali seluruh Paket."}
             actionLabel="Hapus Filter"
             onAction={() => setActiveCategory("semua")}
+            headingLevel="h2"
           />
         )}
 

@@ -8,6 +8,7 @@ type EmptyStateProps = {
   actionLabel?: string;
   onAction?: () => void;
   className?: string;
+  headingLevel?: "h2" | "h3";
 };
 
 export function EmptyState({
@@ -16,8 +17,11 @@ export function EmptyState({
   icon,
   actionLabel,
   onAction,
-  className = ""
+  className = "",
+  headingLevel = "h3"
 }: EmptyStateProps) {
+  const Heading = headingLevel;
+
   return (
     <div className={`flex flex-col items-center justify-center text-center py-16 px-4 ${className}`}>
       {icon && (
@@ -26,9 +30,9 @@ export function EmptyState({
         </div>
       )}
       
-      <h3 className="mb-4 text-xl font-semibold tracking-tight text-wnb-white sm:text-2xl">
+      <Heading className="mb-4 text-xl font-semibold tracking-tight text-wnb-white sm:text-2xl">
         {title}
-      </h3>
+      </Heading>
       
       <p className="mb-8 text-base text-wnb-muted max-w-md">
         {description}

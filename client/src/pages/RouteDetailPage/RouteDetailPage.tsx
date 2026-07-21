@@ -14,23 +14,21 @@ export function RouteDetailPage() {
   // 14.1 Kondisi Rute Tidak Ditemukan
   if (!route) {
     return (
-      <div className="py-20">
-        <SystemState
-          eyebrow="404 — Rute Tidak Ditemukan"
-          title="Rute Perjalanan Tidak Ditemukan"
-          description="Rute yang Anda cari tidak tersedia atau tautan yang dibuka tidak sesuai. Silakan periksa daftar Rute WNB untuk melihat pilihan perjalanan lainnya."
-          primaryAction={{
-            label: "Kembali ke Daftar Rute",
-            to: ROUTE_PATHS.routes,
-            variant: "primary"
-          }}
-          secondaryAction={{
-            label: "Lihat Paket",
-            to: ROUTE_PATHS.packages,
-            variant: "secondary"
-          }}
-        />
-      </div>
+      <SystemState
+        eyebrow="404 — Rute Tidak Ditemukan"
+        title="Rute Perjalanan Tidak Ditemukan"
+        description="Rute yang Anda cari tidak tersedia atau tautan yang dibuka tidak sesuai. Silakan periksa daftar Rute WNB untuk melihat pilihan perjalanan lainnya."
+        primaryAction={{
+          label: "Kembali ke Daftar Rute",
+          to: ROUTE_PATHS.routes,
+          variant: "primary"
+        }}
+        secondaryAction={{
+          label: "Lihat Paket",
+          to: ROUTE_PATHS.packages,
+          variant: "secondary"
+        }}
+      />
     );
   }
 

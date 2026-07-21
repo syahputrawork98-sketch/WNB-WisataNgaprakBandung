@@ -27,23 +27,21 @@ export function PackageDetailPage() {
 
   if (!pkg) {
     return (
-      <div className="py-20">
-        <SystemState
-          eyebrow="404 — Paket Tidak Ditemukan"
-          title="Paket Wisata Tidak Ditemukan"
-          description="Paket yang Anda cari tidak tersedia atau tautan yang dibuka tidak sesuai. Silakan pilih Paket lain atau sampaikan kebutuhan perjalanan Anda kepada WNB."
-          primaryAction={{
-            label: "Kembali ke Daftar Paket",
-            to: ROUTE_PATHS.packages,
-            variant: "primary"
-          }}
-          secondaryAction={{
-            label: "Rencanakan Perjalanan",
-            to: ROUTE_PATHS.booking,
-            variant: "secondary"
-          }}
-        />
-      </div>
+      <SystemState
+        eyebrow="404 — Paket Tidak Ditemukan"
+        title="Paket Wisata Tidak Ditemukan"
+        description="Paket yang Anda cari tidak tersedia atau tautan yang dibuka tidak sesuai. Silakan pilih Paket lain atau sampaikan kebutuhan perjalanan Anda kepada WNB."
+        primaryAction={{
+          label: "Kembali ke Daftar Paket",
+          to: ROUTE_PATHS.packages,
+          variant: "primary"
+        }}
+        secondaryAction={{
+          label: "Rencanakan Perjalanan",
+          to: ROUTE_PATHS.booking,
+          variant: "secondary"
+        }}
+      />
     );
   }
 
