@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router";
 import { Container } from "@/components/common/Container";
 import { LinkButton } from "@/components/common/LinkButton";
-import { ROUTE_PATHS } from "@/routes/routePaths";
+import { ROUTE_PATHS, buildBookingPath } from "@/routes/routePaths";
 import { getRouteBySlug } from "@/features/routes/routesData";
 import { RouteMediaView } from "@/features/routes/components/RouteMediaView";
 import { AlertCircle, MapPin, Sun, CloudRain, ShieldAlert, ListChecks, CheckCircle2, CloudFog } from "lucide-react";
@@ -309,7 +309,7 @@ export function RouteDetailPage() {
               {/* 14.11 CTA Perencanaan */}
               <div className="flex flex-col gap-3">
                 <LinkButton
-                  to={ROUTE_PATHS.booking}
+                  to={buildBookingPath({ routeSlug: route.slug })}
                   size="lg"
                   variant="primary"
                   className="w-full text-center"

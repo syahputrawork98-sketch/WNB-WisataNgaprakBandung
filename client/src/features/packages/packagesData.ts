@@ -5,6 +5,7 @@ import type {
   CategoryFilterItem,
   PackageCategory,
 } from "./packagesTypes";
+import { buildBookingPath } from "@/routes/routePaths";
 
 export const CATEGORY_FILTERS: readonly CategoryFilterItem[] = [
   { key: "semua", label: "Semua" },
@@ -493,5 +494,5 @@ export function getRelatedPackages(
 }
 
 export function buildPackageBookingPath(slug: string): string {
-  return `/booking?package=${encodeURIComponent(slug)}`;
+  return buildBookingPath({ packageSlug: slug });
 }
