@@ -1,4 +1,5 @@
-import type {\n  PackagePrice,
+import type {
+  PackagePrice,
   TravelPackage,
   SpecialExperience,
   CategoryFilterItem,
