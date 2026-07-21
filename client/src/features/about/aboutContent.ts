@@ -1,4 +1,4 @@
-import { ShieldCheck, Target, HeartHandshake, Zap, CarFront, Users, Camera } from "lucide-react";
+import { ShieldCheck, Target, HeartHandshake, Zap } from "lucide-react";
 
 export const TIMELINE_EVENTS = [
   {

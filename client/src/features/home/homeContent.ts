@@ -1,4 +1,4 @@
-import { Compass, Map, Images } from "lucide-react";
+import { Compass, Map } from "lucide-react";
 import { ROUTE_PATHS } from "@/routes/routePaths";
 import type { ExploreItem, VehicleItem } from "./homeTypes";
 
