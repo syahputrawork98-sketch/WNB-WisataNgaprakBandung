@@ -164,10 +164,14 @@ export function BookingPage() {
     }
     
     // Clear error for this field by deleting the key
-    if (errors[name as keyof BookingFormValues]) {
+    const isDateUndecidedChecked = name === "dateUndecided" && type === "checkbox" && (e.target as HTMLInputElement).checked;
+    if (errors[name as keyof BookingFormValues] || isDateUndecidedChecked) {
       setErrors(prev => {
         const next = { ...prev };
         delete next[name as keyof BookingFormValues];
+        if (isDateUndecidedChecked) {
+          delete next.plannedDate;
+        }
         return next;
       });
     }
@@ -207,6 +211,7 @@ export function BookingPage() {
       return null;
     }
     
+    setErrors({});
     return buildBookingMessage(values);
   };
 

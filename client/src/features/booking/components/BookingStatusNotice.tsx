@@ -18,7 +18,7 @@ export function BookingStatusNotice({ status, fallbackText }: BookingStatusNotic
         <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#25D366]" />
         <div>
           <h4 className="font-semibold text-sm mb-1">WhatsApp Telah Dibuka</h4>
-          <p className="text-sm text-wnb-muted">Formulir Anda telah diteruskan. Silakan tekan tombol Kirim di aplikasi WhatsApp untuk menyelesaikan permintaan.</p>
+          <p className="text-sm text-wnb-muted">WhatsApp telah dibuka. Silakan periksa isi pesan dan tekan tombol Kirim untuk meneruskan permintaan kepada WNB.</p>
         </div>
       </div>
     );
@@ -33,7 +33,7 @@ export function BookingStatusNotice({ status, fallbackText }: BookingStatusNotic
         <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5 text-wnb-danger" />
         <div>
           <h4 className="font-semibold text-sm mb-1 text-wnb-danger">WhatsApp Tidak Dapat Dibuka</h4>
-          <p className="text-sm text-wnb-muted">Browser Anda memblokir jendela baru. Silakan gunakan tombol "Salin Ringkasan" di bawah dan kirim manual ke nomor kami.</p>
+          <p className="text-sm text-wnb-muted">Browser Anda memblokir jendela baru. Silakan gunakan tombol "Salin Saja" di bawah dan kirim manual ke nomor kami.</p>
         </div>
       </div>
     );
@@ -48,7 +48,7 @@ export function BookingStatusNotice({ status, fallbackText }: BookingStatusNotic
         <Copy className="w-5 h-5 flex-shrink-0 mt-0.5 text-wnb-text" />
         <div>
           <h4 className="font-semibold text-sm mb-1">Ringkasan Disalin</h4>
-          <p className="text-sm text-wnb-muted">Detail permintaan Anda telah disalin ke clipboard. Silakan tempel (paste) dan kirim ke WhatsApp kami.</p>
+          <p className="text-sm text-wnb-muted">Ringkasan permintaan berhasil disalin ke clipboard. Simpan ringkasan ini atau tempelkan pada kanal resmi WNB ketika tersedia.</p>
         </div>
       </div>
     );
