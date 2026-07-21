@@ -62,3 +62,7 @@ export type BookingStatus =
   | "error-whatsapp-blocked"
   | "success-copy"
   | "error-copy";
+
+export type BookingChangeHandler = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+) => void;
